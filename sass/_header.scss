@@ -1,0 +1,45 @@
+.site-header {
+  display: flex;
+  padding: $baseline-height/2 $column;
+
+  &:after {
+    @include clearfix;
+  }
+}
+.title-container {
+  display: inline-block;
+  flex: 1;
+  align-self: center;
+}
+.site-title {
+  @extend %twenty-one-pixels;
+  font-weight: 700;
+
+  a {
+    text-decoration: none;
+  }
+}
+.tagline {
+  @extend %fourteen-pixels;
+  margin: 6px 0 0;
+}
+
+@media all and (min-width: $eight-hundred) {
+
+  .site-header {
+    display: flex;
+    flex-direction: row;
+    padding: $baseline-height $column;
+  }
+  .title-container {
+    flex-shrink: 0;
+  }
+  .site-title {
+    font-size: 1.5em; /* 24px / 16px */
+    line-height: 1.1667; /* 28px */
+  }
+  .tagline {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+}

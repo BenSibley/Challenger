@@ -1,3 +1,13 @@
 .site-footer {
   clear: both;
+  margin-top: $baseline-height * 3;
+}
+.design-credit {
+  margin: 24px 0;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    font-weight: 700;
+  }
 }

@@ -1,0 +1,167 @@
+.toggle-navigation {
+  position: relative;
+  z-index: 19;
+  align-self: center;
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 8px 5px;
+  margin-left: -36px;
+
+  &:hover {
+    cursor: pointer;
+  }
+  svg {
+    display: block;
+  }
+  .top,
+  .middle,
+  .bottom {
+    transform-origin: 50% 50%;
+    transition: transform 0.3s;
+  }
+  &.open {
+
+    .top,
+    .bottom {
+      transform: scale(0, 0.9)
+    }
+    .middle {
+      transform: scale(1.38, 1)
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+}
+.menu-primary-container {
+  position: fixed;
+  z-index: 19;
+  top: 67px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.97);
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  text-align: left;
+  transition: opacity 0.3s, visibility 0.3s;
+
+  &:after {
+    content: '';
+    position: absolute;
+  }
+}
+.admin-bar .menu-primary-container {
+  top: 113px;
+}
+.menu-primary {
+  padding: $baseline-height/2 $column 0;
+  transition: transform 0.25s;
+}
+.menu-primary-items,
+.menu-unset ul {
+  list-style: none;
+  margin: 0;
+
+  &:after {
+    @include clearfix;
+  }
+  li {
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    &.visible {
+      opacity: 1;
+    }
+    &.current-menu-item,
+    &.current-menu-ancestor {
+
+      > a {
+        text-decoration: underline;
+      }
+    }
+  }
+  a {
+    display: block;
+    padding: 12px 0;
+    text-decoration: none;
+    transition: color 0.15s;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-gray-40;
+    }
+  }
+  ul {
+    list-style: none;
+    margin: 0 0 0 24px;
+  }
+}
+
+@media all and (max-width: 799px) {
+
+  .menu-primary-container {
+
+    &.open {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+@media all and (min-width: $eight-hundred) {
+
+  .toggle-navigation {
+    display: none; 
+  }
+  .menu-primary-container {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    background: none;
+  }
+  .menu-primary {
+    text-align: right;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      opacity: 1;
+    }
+    a {
+      font-size: 1.125em; /* 18px / 16px */
+      line-height: 1.333; /* 24px */
+      color: $color-gray-15;
+      padding: 0;
+
+      &:link,
+      &:visited {
+        color: $color-gray-15;
+      }
+      &:hover,
+      &:active,
+      &:focus {
+        color: $color-gray-40;
+      }
+    }
+  }
+  .menu-primary-items,
+  .menu-unset {
+
+    > li {
+      margin-right: 36px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    ul {
+      display: none;
+    }
+  }
+}

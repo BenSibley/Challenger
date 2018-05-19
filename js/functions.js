@@ -18,7 +18,6 @@ jQuery(document).ready(function($){
     objectFitAdjustment();
 
     toggleNavigation.on('click', openPrimaryMenu);
-    body.on('click', '#search-icon', openSearchBar);
 
     $('.post-content').fitVids({
         customSelector: 'iframe[src*="dailymotion.com"], iframe[src*="slideshare.net"], iframe[src*="animoto.com"], iframe[src*="blip.tv"], iframe[src*="funnyordie.com"], iframe[src*="hulu.com"], iframe[src*="ted.com"], iframe[src*="wordpress.tv"]'
@@ -40,85 +39,44 @@ jQuery(document).ready(function($){
             $(this).removeClass('open');
 
             // change screen reader text
-            //$(this).children('span').text(objectL10n.openMenu);
+            $(this).children('span').text(objectL10n.openMenu);
 
             // change aria text
             $(this).attr('aria-expanded', 'false');
+
+            menuPrimaryItems.find('li').removeClass('visible');
 
         } else {
             menuPrimaryContainer.addClass('open');
             $(this).addClass('open');
 
             // change screen reader text
-            //$(this).children('span').text(objectL10n.closeMenu);
+            $(this).children('span').text(objectL10n.closeMenu);
 
             // change aria text
             $(this).attr('aria-expanded', 'true');
-        }
-    }
 
-    // display the dropdown menus
-    toggleDropdown.on('click', openDropdownMenu);
-
-    function openDropdownMenu() {
-
-        // get the buttons parent (li)
-        var menuItem = $(this).parent();
-
-        // if already opened
-        if( menuItem.hasClass('open') ) {
-
-            // remove open class
-            menuItem.removeClass('open');
-
-            // change screen reader text
-            //$(this).children('span').text(objectL10n.openMenu);
-
-            // change aria text
-            $(this).attr('aria-expanded', 'false');
-        } else {
-
-            // add class to open the menu
-            menuItem.addClass('open');
-
-            // change screen reader text
-            //$(this).children('span').text(objectL10n.closeMenu);
-
-            // change aria text
-            $(this).attr('aria-expanded', 'true');
-        }
-    }
-
-    function openSearchBar(){
-
-        if( $(this).hasClass('open') ) {
-
-            $(this).removeClass('open');
-            socialMediaIcons.removeClass('fade');
-
-            // make search input inaccessible to keyboards
-            siteHeader.find('.search-field').attr('tabindex', -1);
-
-            // handle mobile width search bar sizing
-            if( window.innerWidth < 900 ) {
-                siteHeader.find('.search-form').attr('style', '');
+            var top = siteHeader.outerHeight();
+            if ( body.hasClass('admin-bar') ) {
+                if ( window.innerWidth < 783 ) {
+                    top = top + 46;
+                } else {
+                    top = top + 32;
+                }
+                
             }
-        } else {
+            menuPrimaryContainer.css('top', top + 'px');
 
-            $(this).addClass('open');
-            socialMediaIcons.addClass('fade');
-
-            // make search input keyboard accessible
-            siteHeader.find('.search-field').attr('tabindex', 0);
-
-            // handle mobile width search bar sizing
-            if( window.innerWidth < 800 ) {
-
-                // distance to other side (35px is width of icon space)
-                var leftDistance = window.innerWidth * 0.83332 - 35;
-
-                siteHeader.find('.search-form').css('left', -leftDistance + 'px')
-            }
+            // var menuItemCount = menuPrimaryItems.children().length;
+            var delay = 300/menuPrimaryItems.children().length;;
+            var currentDelay = 100
+            menuPrimaryItems.find('li').each(function() {
+                const li = $(this);
+                setTimeout( function(){ 
+                    li.addClass('visible');
+                }, currentDelay)
+                currentDelay += delay;
+            });
         }
     }
 

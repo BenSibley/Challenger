@@ -11,10 +11,9 @@ body {
   line-height: 1.5;
   margin: 0;
   padding: 0;
-  //font-family: $primary-font-stack;
-//  background: $background;
-//  color: $gray;
-  -webkit-font-smoothing: antialiased;
+  font-family: $primary-font-stack;
+  color: $color-gray-15;
+  background: #fff;
 }
 .overflow-container {
   position: relative;
@@ -23,7 +22,6 @@ body {
   min-height: 100%;
 }
 .main {
-//  background: $background;
   margin: 0 auto;
 }
 .loop-container {
@@ -36,24 +34,24 @@ p {
   margin: $baseline-height 0;
 }
 a {
-//  color: $orange;
+ color: $color-gray-15;
 
   &:link,
   &:visited {
-//    color: $orange;
+   color: $color-gray-15;
   }
   &:hover,
   &:active,
   &:focus {
-//    color: $orange-dark;
+   color: $color-gray-40;
   }
 }
 
 h1,h2,h3,h4,h5,h6 {
-  //font-family: $primary-font-stack;
+  font-family: $primary-font-stack;
   margin: 0;
   padding: 0;
-  font-weight: 400;
+  font-weight: 700;
 }
 h1 {
   @extend %twenty-eight-pixels;
@@ -87,18 +85,18 @@ li li {
 
 pre {
   word-wrap: break-word;
-//  background: $off-white;
+  background: $color-gray-93;
   white-space: pre-wrap;
   padding: $baseline-height / 2;
 }
 code {
-//  background: $off-white;
+  background: $color-gray-93;
   padding: 0 $baseline-height / 4;
 }
 blockquote {
   margin: $baseline-height $baseline-height $baseline-height 0;
   padding-left: $baseline-height;
-//  border-left: solid 3px $orange;
+  border-left: solid 3px $color-gray-15;
 
   cite {
     display: block;
@@ -117,7 +115,7 @@ table {
 td,
 th {
   padding: $baseline-height / 2;
-  //border: solid 1px $color-gray-40;
+  border: solid 1px $color-gray-70;
 }
 
 /* Images */
@@ -154,42 +152,46 @@ img,
 .wp-caption-text,
 .gallery-caption {
   @extend %twelve-pixels;
-//  margin: 0 0 $baseline-height / 0.813;
-//  color: $gray-medium;
 }
 
 /* Form styles */
 
-input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="file"]):not([type="image"]),
-textarea {
-  @extend %twelve-pixels;
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+textarea  {
   width: 100%;
-//  font-family: $primary-font-stack;
-  padding: 10px 12px;
-  max-width: $baseline-height * 10 * 1.85;
-//  background: $background;
-//  color: $gray-medium;
-//  outline: solid 1px $gray-light;
-  border: none;
-  border-radius: 0;
+  font-family: $primary-font-stack;
+  padding: 8px 12px;
+  color: $color-gray-15;
+  border: solid 1px $color-gray-88;
+  border-radius: 4px;
   -webkit-appearance: none;
-  transition: all 0.1s ease-in-out;
+  transition: border-color 0.15s;
+
+  &:focus {
+    outline: none;
+    border-color: $color-gray-15;
+  }
 }
-textarea {
-  max-width: $baseline-height * 15 * 1.85;
+textarea { 
   overflow: auto; /* to hide scrollbar in IE */
 }
 input[type="submit"] {
-  @extend %twelve-pixels;
-//  font-family: $primary-font-stack;
-  padding: 10px 12px;
+  @extend %fourteen-pixels;
+  font-family: $primary-font-stack;
+  font-weight: 700;
+  padding: 10px 18px;
   color: white;
-//  background: $orange;
-  outline: none;
+  background: $color-gray-15;
   border: none;
   border-radius: 0;
   -webkit-appearance: none;
-  transition: all 0.1s ease-in-out;
+  transition: background 0.15s;
 
   &:hover {
     cursor: pointer;
@@ -197,31 +199,23 @@ input[type="submit"] {
   &:hover,
   &:active,
   &:focus {
-//    background: $color-gray-40;
+    outline: none;
+    background: $color-gray-33;
   }
 }
 
-input[type="search"] {
-//  margin-right: $baseline-height;
-//  padding-right: $baseline-height / 4; /* so safari 'x' doesn't get cut off */
+::-webkit-input-placeholder {
+  color: $color-gray-40;
 }
-//::-webkit-input-placeholder {
-//  color: $gray-medium;
-//}
-//:-moz-placeholder /* Firefox 18- */ {
-//  color: $gray-medium;
-//}
-//::-moz-placeholder /* Firefox 19+ */ {
-//  color: $gray-medium;
-//}
-//:-ms-input-placeholder {
-//  color: $gray-medium;
-//}
-//
-///* sticky */
-//.excerpt.sticky {
-//  outline: solid 3px $orange;
-//}
+:-moz-placeholder /* Firefox 18- */ {
+  color: $color-gray-40;
+}
+::-moz-placeholder /* Firefox 19+ */ {
+  color: $color-gray-40;
+}
+:-ms-input-placeholder {
+  color: $color-gray-40;
+}
 
 /* ie image border fix */
 
@@ -264,7 +258,7 @@ a img {
   color: white !important;
   z-index: 99;
   padding: $baseline-height;
-//  background: $color-gray-20;
+ background: $color-gray-15;
   transition: top 0.2s ease-in-out;
 
   &:focus {

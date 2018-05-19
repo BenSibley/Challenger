@@ -1,0 +1,33 @@
+.more-link-wrapper {
+  text-align: center;
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    border: solid 1px $color-gray-85;
+    border-radius: 4px;
+    padding: 11px 17px;
+    font-weight: 700;
+    transition: color 0.2s, border-color 0.2s;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-gray-15;
+      border-color: $color-gray-15;
+    }
+  }
+}
+
+@media all and (min-width: $nine-hundred) {
+
+
+  .more-link-wrapper {
+    font-size: 18px;
+    line-height: 1.1667;
+
+    a {
+      padding: 18px 24px;
+    }
+  }
+}

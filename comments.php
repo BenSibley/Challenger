@@ -7,7 +7,7 @@ if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! p
 if ( comments_open() ) { ?>
     <section id="comments" class="comments">
         <ol class="comment-list">
-            <?php wp_list_comments( array( 'callback' => 'ct_startup_blog_customize_comments' ) ); ?>
+            <?php wp_list_comments( array( 'callback' => 'ct_challenger_customize_comments' ) ); ?>
         </ol>
         <?php
         if ( ( get_option( 'page_comments' ) == 1 ) && ( get_comment_pages_count() > 1 ) ) { ?>
@@ -22,7 +22,7 @@ if ( comments_open() ) { ?>
 } elseif ( ! comments_open() && have_comments() && pings_open() ) { ?>
     <section id="comments" class="comments">
         <ol class="comment-list">
-            <?php wp_list_comments( array( 'callback' => 'ct_startup_blog_customize_comments' ) ); ?>
+            <?php wp_list_comments( array( 'callback' => 'ct_challenger_customize_comments' ) ); ?>
         </ol>
         <?php
         if ( ( get_option( 'page_comments' ) == 1 ) && ( get_comment_pages_count() > 1 ) ) { ?>
@@ -42,7 +42,7 @@ if ( comments_open() ) { ?>
 } elseif ( ! comments_open() && have_comments() ) { ?>
     <section id="comments" class="comments">
         <ol class="comment-list">
-            <?php wp_list_comments( array( 'callback' => 'ct_startup_blog_customize_comments' ) ); ?>
+            <?php wp_list_comments( array( 'callback' => 'ct_challenger_customize_comments' ) ); ?>
         </ol>
         <?php
         if ( ( get_option( 'page_comments' ) == 1 ) && ( get_comment_pages_count() > 1 ) ) { ?>

@@ -1,6 +1,5 @@
 <?php do_action( 'challenger_main_bottom' ); ?>
 </section> <!-- .main -->
-<?php get_sidebar( 'primary' ); ?>
 <?php do_action( 'challenger_after_main' ); ?>
 
 <footer id="site-footer" class="site-footer" role="contentinfo">

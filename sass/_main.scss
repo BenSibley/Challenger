@@ -1,0 +1,35 @@
+.main {
+  padding: 0 $column;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.loop-container {
+  margin-top: $baseline-height;
+}
+
+@media all and (min-width: $six-hundred) {
+
+  .main {
+    padding: 0 $column * 2;
+  }
+}
+
+@media all and (min-width: $eight-hundred) {
+
+  .main {
+    padding: 0 $column * 3;
+  }
+  .loop-container {
+    margin-top: $baseline-height * 2;
+  }
+  .has-tagline .loop-container {
+    margin-top: $baseline-height;
+  }
+}
+
+@media all and (min-width: $eleven-hundred) {
+
+  .main {
+    padding: 0 $column * 4;
+  }
+}

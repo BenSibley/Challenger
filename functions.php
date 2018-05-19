@@ -387,29 +387,11 @@ if ( ! function_exists( ( 'ct_challenger_wp_page_menu' ) ) ) {
 	function ct_challenger_wp_page_menu() {
 		wp_page_menu( array(
 				"menu_class" => "menu-unset",
-				"depth"      => - 1
+				"depth"      => -1
 			)
 		);
 	}
 }
-
-//----------------------------------------------------------------------------------
-//	Add buttons to the menu for dropdown menus on mobile
-//----------------------------------------------------------------------------------
-if ( ! function_exists( ( 'ct_challenger_nav_dropdown_buttons' ) ) ) {
-	function ct_challenger_nav_dropdown_buttons( $item_output, $item, $depth, $args ) {
-
-		if ( $args->theme_location == 'primary' ) {
-
-			if ( in_array( 'menu-item-has-children', $item->classes ) || in_array( 'page_item_has_children', $item->classes ) ) {
-				$item_output = str_replace( $args->link_after . '</a>', $args->link_after . '</a><button class="toggle-dropdown" aria-expanded="false" name="toggle-dropdown"><span class="screen-reader-text">' . esc_html_x( "open menu", "verb: open the menu", "challenger" ) . '</span></button>', $item_output );
-			}
-		}
-
-		return $item_output;
-	}
-}
-add_filter( 'walker_nav_menu_start_el', 'ct_challenger_nav_dropdown_buttons', 10, 4 );
 
 //----------------------------------------------------------------------------------
 //	Label sticky posts
@@ -505,6 +487,9 @@ if ( ! function_exists( ( 'ct_challenger_body_class' ) ) ) {
 		if ( $full_post == 'yes' ) {
 			$classes[] = 'full-post';
 		}
+		if ( get_bloginfo( 'description' ) ) {
+			$classes[] = 'has-tagline';
+		}
 
 		return $classes;
 	}
@@ -530,19 +515,17 @@ if ( ! function_exists( ( 'ct_challenger_svg_output' ) ) ) {
 
 		$svg = '';
 		if ( $type == 'toggle-navigation' ) {
-			$svg = '<svg width="24px" height="18px" viewBox="0 0 24 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-				    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-				        <g transform="translate(-148.000000, -36.000000)" fill="#6B6B6B">
-				            <g transform="translate(123.000000, 25.000000)">
-				                <g transform="translate(25.000000, 11.000000)">
-				                    <rect x="0" y="16" width="24" height="2"></rect>
-				                    <rect x="0" y="8" width="24" height="2"></rect>
-				                    <rect x="0" y="0" width="24" height="2"></rect>
-				                </g>
-				            </g>
-				        </g>
-				    </g>
-				</svg>';
+			$svg = '<svg width="36px" height="24px" viewBox="0 0 36 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										<g transform="translate(-320.000000, -20.000000)" fill="#000000">
+												<g transform="translate(320.000000, 20.000000)">
+														<rect class="top" x="0" y="20" width="36" height="4" rx="2"></rect>
+														<rect class="middle" x="5" y="10" width="26" height="4" rx="2"></rect>
+														<rect class="bottom" x="0" y="0" width="36" height="4" rx="2"></rect>
+												</g>
+										</g>
+								</g>
+						</svg>';
 		}
 
 		return $svg;
