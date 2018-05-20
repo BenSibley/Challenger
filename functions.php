@@ -82,8 +82,8 @@ if ( ! function_exists( ( 'ct_challenger_register_widget_areas' ) ) ) {
 			'description'   => esc_html__( 'Widgets in this area will be shown on post pages after the content.', 'challenger' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>'
+			'before_title'  => '<div class="widget-title">',
+			'after_title'   => '</div>'
 		) );
 		register_sidebar( array(
 			'name'          => esc_html__( 'After Page Content', 'challenger' ),
@@ -91,8 +91,8 @@ if ( ! function_exists( ( 'ct_challenger_register_widget_areas' ) ) ) {
 			'description'   => esc_html__( 'Widgets in this area will be shown on pages after the content.', 'challenger' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>'
+			'before_title'  => '<div class="widget-title">',
+			'after_title'   => '</div>'
 		) );
 		register_sidebar( array(
 			'name'          => esc_html__( 'Before Post Content', 'challenger' ),
@@ -100,8 +100,8 @@ if ( ! function_exists( ( 'ct_challenger_register_widget_areas' ) ) ) {
 			'description'   => esc_html__( 'Widgets in this area will be shown on post pages before the content.', 'challenger' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>'
+			'before_title'  => '<div class="widget-title">',
+			'after_title'   => '</div>'
 		) );
 		register_sidebar( array(
 			'name'          => esc_html__( 'Before Page Content', 'challenger' ),
@@ -109,8 +109,8 @@ if ( ! function_exists( ( 'ct_challenger_register_widget_areas' ) ) ) {
 			'description'   => esc_html__( 'Widgets in this area will be shown on pages before the content.', 'challenger' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>'
+			'before_title'  => '<div class="widget-title">',
+			'after_title'   => '</div>'
 		) );
 	}
 }

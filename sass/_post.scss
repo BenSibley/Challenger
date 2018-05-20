@@ -193,7 +193,8 @@
   }
   .post-content,
   .post-meta,
-  .comments {
+  .comments,
+  .widget-area-after-post {
     padding: 0 $column * 1.2;
     font-size: 1.125em; /* 18px / 16px */
     line-height: 1.555; /* 28px */
@@ -207,7 +208,8 @@
   }
   .post-content,
   .post-meta,
-  .comments {
+  .comments,
+  .widget-area-after-post {
     padding: 0 $column * 1.333;
   }
   .author-box {
@@ -241,7 +243,8 @@
   }
   .post-content,
   .post-meta,
-  .comments {
+  .comments,
+  .widget-area-after-post {
     font-size: 1.3125em; /* 21px / 16px */
     line-height: 1.714; /* 36px */
   }
@@ -259,7 +262,8 @@
 
   .post-content,
   .post-meta,
-  .comments {
+  .comments,
+  .widget-area-after-post {
     padding: 0 $column * 1.5;
   }
 }

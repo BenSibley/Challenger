@@ -7,6 +7,7 @@
 		</div>
 		<?php ct_challenger_featured_image(); ?>
 		<div class="post-content">
+			<?php get_sidebar( 'before-post' ); ?>
 			<?php the_content(); ?>
 			<?php wp_link_pages( array(
 				'before' => '<p class="singular-pagination">' . esc_html__( 'Pages:', 'challenger' ),
@@ -19,6 +20,7 @@
 			<?php get_template_part( 'content/post-categories' ); ?>
 			<?php get_template_part( 'content/post-tags' ); ?>
 		</div>
+		<?php get_sidebar( 'after-post' ); ?>
 	</article>
 	<?php comments_template(); ?>
 </div>
