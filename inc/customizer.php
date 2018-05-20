@@ -12,7 +12,6 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	// check if exists in case user has no pages
 	if ( is_object( $wp_customize->get_section( 'static_front_page' ) ) ) {
 		$wp_customize->get_section( 'static_front_page' )->priority = 5;
-		$wp_customize->get_section( 'static_front_page' )->title    = __( 'Front Page', 'challenger' );
 	}
 
 	/***** Add PostMessage Support *****/
@@ -27,21 +26,21 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 			$link = 'https://www.competethemes.com/challenger-pro/';
 			echo "<a href='" . $link . "' target='_blank'><img src='" . get_template_directory_uri() . "/assets/images/challenger-pro.gif' /></a>";
 			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%1$s">%2$s Pro</a> makes advanced customization simple - and fun too!', 'challenger'), $link, wp_get_theme( get_template() ) ) . "</p>";
-			echo "<p>" . sprintf( esc_html_x('%s Pro adds the following features:', 'Startup Blog Pro adds the following features:', 'challenger'), wp_get_theme( get_template() ) ) . "</p>";
+			echo "<p>" . sprintf( esc_html_x('%s Pro adds the following features:', 'Challenger Pro adds the following features:', 'challenger'), wp_get_theme( get_template() ) ) . "</p>";
 			echo "<ul>
 					<li>" . esc_html__('6 new layouts', 'challenger') . "</li>
 					<li>" . esc_html__('4 post templates', 'challenger') . "</li>
 					<li>" . esc_html__('61 advanced color controls', 'challenger') . "</li>
 					<li>" . esc_html__('+ 5 more features', 'challenger') . "</li>
 				  </ul>";
-			// translators: placeholder is "Startup Blog"
-			echo "<p class='button-wrapper'><a target=\"_blank\" class='challenger-pro-button' href='" . $link . "'>" . sprintf( esc_html_x('View %s Pro', 'View Startup Blog Pro', 'challenger'), wp_get_theme( get_template() ) ) . "</a></p>";
+			// translators: placeholder is "Challenger"
+			echo "<p class='button-wrapper'><a target=\"_blank\" class='challenger-pro-button' href='" . $link . "'>" . sprintf( esc_html_x('View %s Pro', 'View Challenger Pro', 'challenger'), wp_get_theme( get_template() ) ) . "</a></p>";
 		}
 	}
 
-	/***** Startup Blog Pro Section *****/
+	/***** Challenger Pro Section *****/
 
-	// don't add if Startup Blog Pro is active
+	// don't add if Challenger Pro is active
 	if ( !defined( 'challenger_PRO_FILE' ) ) {
 		// section
 		$wp_customize->add_section( 'ct_challenger_pro', array(
@@ -60,193 +59,6 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 			)
 		) );
 	}
-
-	/***** Slider *****/
-
-	// section
-	$wp_customize->add_section( 'challenger_slider_settings', array(
-		'title'    => __( 'Recent Posts Slider', 'challenger' ),
-		'priority' => 20
-	) );
-	// setting
-	$wp_customize->add_setting( 'slider_recent_posts', array(
-		'default'           => '5',
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( 'slider_recent_posts', array(
-		'label'    => __( 'Number of posts in slider', 'challenger' ),
-		'section'  => 'challenger_slider_settings',
-		'settings' => 'slider_recent_posts',
-		'type'     => 'number'
-	) );
-	// setting
-	$wp_customize->add_setting( 'slider_post_category', array(
-		'default'           => 'all',
-		'sanitize_callback' => 'ct_challenger_sanitize_post_categories'
-	) );
-	$categories_array = array( 'all' => 'All' );
-	foreach ( get_categories() as $category ) {
-		$categories_array[$category->term_id] = $category->name;
-	}
-	// control
-	$wp_customize->add_control( 'slider_post_category', array(
-		'label'    => __( 'Post category', 'challenger' ),
-		'section'  => 'challenger_slider_settings',
-		'settings' => 'slider_post_category',
-		'type'     => 'select',
-		'choices' => $categories_array
-	) );
-	// setting
-	$wp_customize->add_setting( 'slider_display', array(
-		'default'           => 'homepage',
-		'sanitize_callback' => 'ct_challenger_sanitize_slider_display'
-	) );
-	// control
-	$wp_customize->add_control( 'slider_display', array(
-		'label'    => __( 'Display slider on:', 'challenger' ),
-		'section'  => 'challenger_slider_settings',
-		'settings' => 'slider_display',
-		'type'     => 'radio',
-		'choices' => array(
-			'homepage'  => __( 'Homepage', 'challenger' ),
-			'blog'      => __( 'Blog', 'challenger' ),
-			'all-pages' => __( 'All Pages', 'challenger' ),
-			'no'        => __( 'Do not display', 'challenger' )
-		)
-	) );
-	// setting
-	$wp_customize->add_setting( 'slider_arrow_navigation', array(
-		'default'           => 'yes',
-		'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
-	) );
-	// control
-	$wp_customize->add_control( 'slider_arrow_navigation', array(
-		'label'    => __( 'Display arrow navigation?', 'challenger' ),
-		'section'  => 'challenger_slider_settings',
-		'settings' => 'slider_arrow_navigation',
-		'type'     => 'radio',
-		'choices' => array(
-			'yes' => __( 'Yes', 'challenger' ),
-			'no'  => __( 'No', 'challenger' )
-		)
-	) );
-	// setting
-	$wp_customize->add_setting( 'slider_dot_navigation', array(
-		'default'           => 'yes',
-		'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
-	) );
-	// control
-	$wp_customize->add_control( 'slider_dot_navigation', array(
-		'label'    => __( 'Display dot navigation?', 'challenger' ),
-		'section'  => 'challenger_slider_settings',
-		'settings' => 'slider_dot_navigation',
-		'type'     => 'radio',
-		'choices' => array(
-			'yes' => __( 'Yes', 'challenger' ),
-			'no'  => __( 'No', 'challenger' )
-		)
-	) );
-	// setting
-	$wp_customize->add_setting( 'slider_button_text', array(
-		'default'           => __( 'Read more', 'challenger'),
-		'sanitize_callback' => 'ct_challenger_sanitize_text'
-	) );
-	// control
-	$wp_customize->add_control( 'slider_button_text', array(
-		'label'    => __( 'Button text', 'challenger' ),
-		'section'  => 'challenger_slider_settings',
-		'settings' => 'slider_button_text',
-		'type'     => 'text'
-	) );
-	// setting
-	$wp_customize->add_setting( 'slider_sticky', array(
-		'default'           => 'yes',
-		'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
-	) );
-	// control
-	$wp_customize->add_control( 'slider_sticky', array(
-		'label'    => __( 'Include "sticky" posts?', 'challenger' ),
-		'section'  => 'challenger_slider_settings',
-		'settings' => 'slider_sticky',
-		'type'     => 'radio',
-		'choices'  => array(
-			'yes' => __( 'Yes', 'challenger' ),
-			'no'  => __( 'No', 'challenger' )
-		)
-	) );
-
-	/***** Colors *****/
-
-	// section
-	$wp_customize->add_section( 'challenger_colors', array(
-		'title'    => __( 'Colors', 'challenger' ),
-		'priority' => 20
-	) );
-	// setting
-	$wp_customize->add_setting( 'color_primary', array(
-		'default'           => '#20a4e6',
-		'sanitize_callback' => 'sanitize_hex_color'
-	) );
-	// control
-	$wp_customize->add_control( new WP_Customize_Color_Control(
-		$wp_customize, 'color_primary', array(
-			'label'       => __( 'Primary Color', 'challenger' ),
-			'section'     => 'challenger_colors',
-			'settings'    => 'color_primary'
-		)
-	) );
-	// setting
-	$wp_customize->add_setting( 'color_secondary', array(
-		'default'           => '#17e6c3',
-		'sanitize_callback' => 'sanitize_hex_color'
-	) );
-	// control
-	$wp_customize->add_control( new WP_Customize_Color_Control(
-		$wp_customize, 'color_secondary', array(
-			'label'       => __( 'Secondary Color', 'challenger' ),
-			'section'     => 'challenger_colors',
-			'settings'    => 'color_secondary'
-		)
-	) );
-	// setting
-	$wp_customize->add_setting( 'color_background', array(
-		'default'           => '#f0f5f8',
-		'sanitize_callback' => 'sanitize_hex_color'
-	) );
-	// control
-	$wp_customize->add_control( new WP_Customize_Color_Control(
-		$wp_customize, 'color_background', array(
-			'label'       => __( 'Background Color', 'challenger' ),
-			'section'     => 'challenger_colors',
-			'settings'    => 'color_background'
-		)
-	) );
-
-	/***** Layout *****/
-
-	// section
-	$wp_customize->add_section( 'challenger_layout', array(
-		'title'    => __( 'Layout', 'challenger' ),
-		'priority' => 25,
-		'description' => sprintf( __( 'Want more layouts? Check out the <a target="_blank" href="%1$s">%2$s Pro plugin</a>.', 'challenger' ), 'https://www.competethemes.com/challenger/', wp_get_theme( get_template() ) )
-	) );
-	// setting
-	$wp_customize->add_setting( 'layout', array(
-		'default'           => 'right-sidebar',
-		'sanitize_callback' => 'ct_challenger_sanitize_layout'
-	) );
-	// control
-	$wp_customize->add_control( 'layout', array(
-		'label'    => __( 'Choose a Layout', 'challenger' ),
-		'section'  => 'challenger_layout',
-		'settings' => 'layout',
-		'type'     => 'radio',
-		'choices'  => array(
-			'right-sidebar' => __( 'Right sidebar', 'challenger' ),
-			'left-sidebar'  => __( 'Left sidebar', 'challenger' )
-		)
-	) );
 
 	/***** Social Media Icons *****/
 
@@ -282,37 +94,39 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 			$label = ucfirst( $social_site );
 
 			if ( $social_site == 'google-plus' ) {
-				$label = 'Google Plus';
+				$label = __('Google Plus', 'challenger');
 			} elseif ( $social_site == 'rss' ) {
-				$label = 'RSS';
+				$label = __('RSS', 'challenger');
 			} elseif ( $social_site == 'soundcloud' ) {
-				$label = 'SoundCloud';
+				$label = __('SoundCloud', 'challenger');
 			} elseif ( $social_site == 'slideshare' ) {
-				$label = 'SlideShare';
+				$label = __('SlideShare', 'challenger');
 			} elseif ( $social_site == 'codepen' ) {
-				$label = 'CodePen';
+				$label = __('CodePen', 'challenger');
 			} elseif ( $social_site == 'stumbleupon' ) {
-				$label = 'StumbleUpon';
+				$label = __('StumbleUpon', 'challenger');
 			} elseif ( $social_site == 'deviantart' ) {
-				$label = 'DeviantArt';
+				$label = __('DeviantArt', 'challenger');
 			} elseif ( $social_site == 'hacker-news' ) {
-				$label = 'Hacker News';
+				$label = __('Hacker News', 'challenger');
 			} elseif ( $social_site == 'whatsapp' ) {
-				$label = 'WhatsApp';
+				$label = __('WhatsApp', 'challenger');
 			} elseif ( $social_site == 'qq' ) {
-				$label = 'QQ';
+				$label = __('QQ', 'challenger');
 			} elseif ( $social_site == 'vk' ) {
-				$label = 'VK';
+				$label = __('VK', 'challenger');
 			} elseif ( $social_site == 'wechat' ) {
-				$label = 'WeChat';
+				$label = __('WeChat', 'challenger');
 			} elseif ( $social_site == 'tencent-weibo' ) {
-				$label = 'Tencent Weibo';
+				$label = __('Tencent Weibo', 'challenger');
 			} elseif ( $social_site == 'paypal' ) {
-				$label = 'PayPal';
+				$label = __('PayPal', 'challenger');
 			} elseif ( $social_site == 'email-form' ) {
-				$label = 'Contact Form';
+				$label = __('Contact Form', 'challenger');
 			} elseif ( $social_site == 'google-wallet' ) {
-				$label = 'Google Wallet';
+				$label = __('Google Wallet', 'challenger');
+			} elseif ( $social_site == 'ok-ru' ) {
+				$label = __('OK.ru', 'challenger');
 			}
 
 			if ( $social_site == 'skype' ) {
@@ -545,70 +359,4 @@ function ct_challenger_sanitize_text( $input ) {
 
 function ct_challenger_sanitize_skype( $input ) {
 	return esc_url_raw( $input, array( 'http', 'https', 'skype' ) );
-}
-
-function ct_challenger_sanitize_tagline_settings( $input ) {
-
-	$valid = array(
-		'header-footer' => __( 'Yes, in the header & footer', 'challenger' ),
-		'header'        => __( 'Yes, in the header', 'challenger' ),
-		'footer'        => __( 'Yes, in the footer', 'challenger' ),
-		'no'            => __( 'No', 'challenger' )
-	);
-
-	return array_key_exists( $input, $valid ) ? $input : '';
-}
-
-function ct_challenger_sanitize_sidebar_settings( $input ) {
-
-	$valid = array(
-		'after'  => __( 'Yes, after main content', 'challenger' ),
-		'before' => __( 'Yes, before main content', 'challenger' ),
-		'no'     => __( 'No', 'challenger' )
-	);
-
-	return array_key_exists( $input, $valid ) ? $input : '';
-}
-
-function ct_challenger_sanitize_slider_display( $input ) {
-
-	$valid = array(
-		'homepage'  => __( 'Homepage', 'challenger' ),
-		'blog'      => __( 'Blog', 'challenger' ),
-		'all-pages' => __( 'All Pages', 'challenger' ),
-		'no'        => __( 'Do not display', 'challenger' )
-	);
-
-	return array_key_exists( $input, $valid ) ? $input : '';
-}
-
-function ct_challenger_sanitize_post_categories( $input ) {
-
-	$categories_array = array( 'all' => 'All' );
-	foreach ( get_categories() as $category ) {
-		$categories_array[$category->term_id] = $category->name;
-	}
-
-	return array_key_exists( $input, $categories_array ) ? $input : '';
-}
-
-function ct_challenger_sanitize_layout( $input ) {
-
-	/*
-	 * Also allow layouts only included in the premium plugin.
-	 * Needs to be done this way b/c sanitize_callback cannot by updated
-	 * via get_setting()
-	 */
-	$valid = array(
-		'right-sidebar' => __( 'Right sidebar', 'challenger' ),
-		'left-sidebar'  => __( 'Left sidebar', 'challenger' ),
-		'narrow'        => __( 'No sidebar - Narrow', 'challenger' ),
-		'wide'          => __( 'No sidebar - Wide', 'challenger' ),
-		'two-right'     => __( 'Two column - Right sidebar', 'challenger' ),
-		'two-left'      => __( 'Two column - Left sidebar', 'challenger' ),
-		'two-narrow'    => __( 'Two column - No Sidebar - Narrow', 'challenger' ),
-		'two-wide'      => __( 'Two column - No Sidebar - Wide', 'challenger' )
-	);
-
-	return array_key_exists( $input, $valid ) ? $input : '';
 }

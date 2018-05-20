@@ -7,6 +7,7 @@ require_once( trailingslashit( get_template_directory() ) . 'theme-options.php' 
 require_once( trailingslashit( get_template_directory() ) . 'inc/customizer.php' );
 require_once( trailingslashit( get_template_directory() ) . 'inc/scripts.php' );
 require_once( trailingslashit( get_template_directory() ) . 'inc/review.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/user-profile.php' );
 
 //----------------------------------------------------------------------------------
 //	Include review request
@@ -76,9 +77,36 @@ if ( ! function_exists( ( 'ct_challenger_register_widget_areas' ) ) ) {
 	function ct_challenger_register_widget_areas() {
 
 		register_sidebar( array(
-			'name'          => esc_html__( 'Primary Sidebar', 'challenger' ),
-			'id'            => 'primary',
-			'description'   => esc_html__( 'Widgets in this area will be shown in the sidebar next to the main post content', 'challenger' ),
+			'name'          => esc_html__( 'After Post Content', 'challenger' ),
+			'id'            => 'after-post',
+			'description'   => esc_html__( 'Widgets in this area will be shown on post pages after the content.', 'challenger' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>'
+		) );
+		register_sidebar( array(
+			'name'          => esc_html__( 'After Page Content', 'challenger' ),
+			'id'            => 'after-page',
+			'description'   => esc_html__( 'Widgets in this area will be shown on pages after the content.', 'challenger' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>'
+		) );
+		register_sidebar( array(
+			'name'          => esc_html__( 'Before Post Content', 'challenger' ),
+			'id'            => 'before-post',
+			'description'   => esc_html__( 'Widgets in this area will be shown on post pages before the content.', 'challenger' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>'
+		) );
+		register_sidebar( array(
+			'name'          => esc_html__( 'Before Page Content', 'challenger' ),
+			'id'            => 'before-page',
+			'description'   => esc_html__( 'Widgets in this area will be shown on pages before the content.', 'challenger' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -103,22 +131,20 @@ if ( ! function_exists( ( 'ct_challenger_customize_comments' ) ) ) {
 			</div>
 			<div class="comment-content">
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em><?php esc_html_e( 'Your comment is awaiting moderation.', 'challenger' ) ?></em>
-					<br/>
+					<p class="awaiting-moderation">
+						<?php esc_html_e( 'Your comment is awaiting moderation.', 'challenger' ) ?>
+					</p>
 				<?php endif; ?>
 				<?php comment_text(); ?>
 			</div>
 			<div class="comment-footer">
-				<span class="comment-date"><?php comment_date(); ?></span>
 				<?php comment_reply_link( array_merge( $args, array(
 					'reply_text' => esc_html__( 'Reply', 'challenger' ),
 					'depth'      => $depth,
-					'max_depth'  => $args['max_depth'],
-					'before'     => '<i class="fa fa-reply" aria-hidden="true"></i>'
+					'max_depth'  => $args['max_depth']
 				) ) ); ?>
 				<?php edit_comment_link(
-					esc_html__( 'Edit', 'challenger' ),
-					'<i class="fa fa-pencil" aria-hidden="true"></i>'
+					esc_html__( 'Edit', 'challenger' )
 				); ?>
 			</div>
 		</article>
@@ -259,59 +285,61 @@ if ( ! function_exists( 'ct_challenger_social_array' ) ) {
 	function ct_challenger_social_array() {
 
 		$social_sites = array(
-			'twitter'       => 'challenger_twitter_profile',
-			'facebook'      => 'challenger_facebook_profile',
-			'instagram'     => 'challenger_instagram_profile',
-			'linkedin'      => 'challenger_linkedin_profile',
-			'pinterest'     => 'challenger_pinterest_profile',
-			'google-plus'   => 'challenger_googleplus_profile',
-			'youtube'       => 'challenger_youtube_profile',
-			'email'         => 'challenger_email_profile',
-			'email-form'    => 'challenger_email_form_profile',
-			'500px'         => 'challenger_500px_profile',
-			'amazon'        => 'challenger_amazon_profile',
-			'bandcamp'      => 'challenger_bandcamp_profile',
-			'behance'       => 'challenger_behance_profile',
-			'codepen'       => 'challenger_codepen_profile',
-			'delicious'     => 'challenger_delicious_profile',
-			'deviantart'    => 'challenger_deviantart_profile',
-			'digg'          => 'challenger_digg_profile',
-			'dribbble'      => 'challenger_dribbble_profile',
-			'etsy'          => 'challenger_etsy_profile',
-			'flickr'        => 'challenger_flickr_profile',
-			'foursquare'    => 'challenger_foursquare_profile',
-			'github'        => 'challenger_github_profile',
-			'google-wallet' => 'challenger_google_wallet_profile',
-			'hacker-news'   => 'challenger_hacker-news_profile',
-			'meetup'        => 'challenger_meetup_profile',
-			'paypal'        => 'challenger_paypal_profile',
-			'podcast'       => 'challenger_podcast_profile',
-			'quora'         => 'challenger_quora_profile',
-			'qq'            => 'challenger_qq_profile',
-			'ravelry'       => 'challenger_ravelry_profile',
-			'reddit'        => 'challenger_reddit_profile',
-			'rss'           => 'challenger_rss_profile',
-			'skype'         => 'challenger_skype_profile',
-			'slack'         => 'challenger_slack_profile',
-			'slideshare'    => 'challenger_slideshare_profile',
-			'snapchat'      => 'challenger_snapchat_profile',
-			'soundcloud'    => 'challenger_soundcloud_profile',
-			'spotify'       => 'challenger_spotify_profile',
-			'steam'         => 'challenger_steam_profile',
-			'stumbleupon'   => 'challenger_stumbleupon_profile',
-			'telegram'      => 'challenger_telegram_profile',
-			'tencent-weibo' => 'challenger_tencent_weibo_profile',
-			'tumblr'        => 'challenger_tumblr_profile',
-			'twitch'        => 'challenger_twitch_profile',
-			'vimeo'         => 'challenger_vimeo_profile',
-			'vine'          => 'challenger_vine_profile',
-			'vk'            => 'challenger_vk_profile',
-			'wechat'        => 'challenger_wechat_profile',
-			'weibo'         => 'challenger_weibo_profile',
-			'whatsapp'      => 'challenger_whatsapp_profile',
-			'xing'          => 'challenger_xing_profile',
-			'yahoo'         => 'challenger_yahoo_profile',
-			'yelp'          => 'challenger_yelp_profile'
+			'twitter'       => 'ct_challenger_twitter_profile',
+			'facebook'      => 'ct_challenger_facebook_profile',
+			'instagram'     => 'ct_challenger_instagram_profile',
+			'linkedin'      => 'ct_challenger_linkedin_profile',
+			'pinterest'     => 'ct_challenger_pinterest_profile',
+			'google-plus'   => 'ct_challenger_googleplus_profile',
+			'youtube'       => 'ct_challenger_youtube_profile',
+			'email'         => 'ct_challenger_email_profile',
+			'email-form'    => 'ct_challenger_email_form_profile',
+			'500px'         => 'ct_challenger_500px_profile',
+			'amazon'        => 'ct_challenger_amazon_profile',
+			'bandcamp'      => 'ct_challenger_bandcamp_profile',
+			'behance'       => 'ct_challenger_behance_profile',
+			'bitbucket'     => 'ct_challenger_bitbucket_profile',
+			'codepen'       => 'ct_challenger_codepen_profile',
+			'delicious'     => 'ct_challenger_delicious_profile',
+			'deviantart'    => 'ct_challenger_deviantart_profile',
+			'digg'          => 'ct_challenger_digg_profile',
+			'dribbble'      => 'ct_challenger_dribbble_profile',
+			'etsy'          => 'ct_challenger_etsy_profile',
+			'flickr'        => 'ct_challenger_flickr_profile',
+			'foursquare'    => 'ct_challenger_foursquare_profile',
+			'github'        => 'ct_challenger_github_profile',
+			'google-wallet' => 'ct_challenger_google_wallet_profile',
+			'hacker-news'   => 'ct_challenger_hacker-news_profile',
+			'meetup'        => 'ct_challenger_meetup_profile',
+			'ok-ru'         => 'ct_challenger_ok_ru_profile',
+			'paypal'        => 'ct_challenger_paypal_profile',
+			'podcast'       => 'ct_challenger_podcast_profile',
+			'quora'         => 'ct_challenger_quora_profile',
+			'qq'            => 'ct_challenger_qq_profile',
+			'ravelry'       => 'ct_challenger_ravelry_profile',
+			'reddit'        => 'ct_challenger_reddit_profile',
+			'rss'           => 'ct_challenger_rss_profile',
+			'skype'         => 'ct_challenger_skype_profile',
+			'slack'         => 'ct_challenger_slack_profile',
+			'slideshare'    => 'ct_challenger_slideshare_profile',
+			'snapchat'      => 'ct_challenger_snapchat_profile',
+			'soundcloud'    => 'ct_challenger_soundcloud_profile',
+			'spotify'       => 'ct_challenger_spotify_profile',
+			'steam'         => 'ct_challenger_steam_profile',
+			'stumbleupon'   => 'ct_challenger_stumbleupon_profile',
+			'telegram'      => 'ct_challenger_telegram_profile',
+			'tencent-weibo' => 'ct_challenger_tencent_weibo_profile',
+			'tumblr'        => 'ct_challenger_tumblr_profile',
+			'twitch'        => 'ct_challenger_twitch_profile',
+			'vimeo'         => 'ct_challenger_vimeo_profile',
+			'vine'          => 'ct_challenger_vine_profile',
+			'vk'            => 'ct_challenger_vk_profile',
+			'wechat'        => 'ct_challenger_wechat_profile',
+			'weibo'         => 'ct_challenger_weibo_profile',
+			'whatsapp'      => 'ct_challenger_whatsapp_profile',
+			'xing'          => 'ct_challenger_xing_profile',
+			'yahoo'         => 'ct_challenger_yahoo_profile',
+			'yelp'          => 'ct_challenger_yelp_profile'
 		);
 
 		return apply_filters( 'ct_challenger_social_array_filter', $social_sites );

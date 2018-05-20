@@ -23,6 +23,40 @@
   @extend %fourteen-pixels;
   margin: 6px 0 0;
 }
+.social-media-icons {
+  @extend %twenty-one-pixels;
+  list-style: none;
+  margin: $baseline-height 0;
+  padding: 0 $column;
+
+  li {
+    display: inline-block;
+
+    &:last-child {
+
+      a {
+        margin-right: 0;
+      }
+    }
+  }
+  a {
+    display: inline-block;
+    padding: 12px;
+    margin-right: 12px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border: solid 1px $color-gray-88;
+    border-radius: 50%;
+    transition: color 0.2s, border-color 0.2s;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $color-gray-15;
+    }
+  }
+}
 
 @media all and (min-width: $eight-hundred) {
 
@@ -33,6 +67,7 @@
   }
   .title-container {
     flex-shrink: 0;
+    align-self: flex-start;
   }
   .site-title {
     font-size: 1.5em; /* 24px / 16px */
@@ -41,5 +76,18 @@
   .tagline {
     font-size: 1em;
     line-height: 1.5;
+  }
+  .social-media-icons {
+    padding: 0;
+    text-align: right;
+    margin: 18px 0 0;
+
+    a {
+      font-size: 16px;
+      line-height: 1;
+      width: 36px;
+      height: 36px;
+      padding: 8px;
+    }
   }
 }

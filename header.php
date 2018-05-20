@@ -21,7 +21,7 @@
 				</div>
 				<div id="menu-primary-container" class="menu-primary-container">
 					<?php get_template_part( 'menu', 'primary' ); ?>
-					<?php ct_challenger_social_icons_output(); ?>
+					<?php ct_challenger_social_icons_output( 'header' ); ?>
 				</div>
 				<button id="toggle-navigation" class="toggle-navigation" name="toggle-navigation" aria-expanded="false">
 					<span class="screen-reader-text"><?php esc_html_e( 'open menu', 'challenger' ); ?></span>

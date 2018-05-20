@@ -1,0 +1,15 @@
+.comment-respond {
+  margin-top: $baseline-height;
+}
+.comment-reply-title {
+  @extend h2;
+}
+#cancel-comment-reply-link {
+  margin-left: 8px;
+}
+.comment-form-cookies-consent {
+
+  input {
+    margin: 0 8px 0 0;
+  }
+}

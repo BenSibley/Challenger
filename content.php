@@ -13,11 +13,11 @@
 				'after'  => '</p>',
 			) ); ?>
 			<?php do_action( 'challenger_post_after' ); ?>
+			<?php get_template_part( 'content/author-box' ); ?>
 		</div>
 		<div class="post-meta">
 			<?php get_template_part( 'content/post-categories' ); ?>
 			<?php get_template_part( 'content/post-tags' ); ?>
-			<?php get_template_part( 'content/post-nav' ); ?>
 		</div>
 	</article>
 	<?php comments_template(); ?>

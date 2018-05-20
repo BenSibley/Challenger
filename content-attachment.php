@@ -6,7 +6,6 @@
 		</div>
 		<div class="post-content">
 			<?php the_content(); ?>
-			<?php get_template_part( 'content/post-nav-attachment' ); ?>
 		</div>
 	</article>
 	<?php do_action( 'challenger_attachment_after' ); ?>

@@ -12,16 +12,15 @@ if ( empty( $author ) ) {
 	global $post;
 	$author = get_the_author_meta( 'display_name', $post->post_author );
 }
+$author = '<a href="' . esc_url(get_author_posts_url( get_the_author_meta('ID') )) . '">' . esc_html($author) . '</a>';
 $date = date_i18n( get_option( 'date_format' ), strtotime( get_the_date() ) );
 
 echo '<div class="post-byline">';
 if ( $author_display == 'no' ) {
 	echo $date;
 } elseif ( $date_display == 'no' ) {
-	echo get_avatar( get_the_author_meta( 'ID' ), 36, '', get_the_author() );
-	echo $author;
+	echo get_avatar( get_the_author_meta( 'ID' ), 36, '', get_the_author() ) . $author;
 } else {
-	echo get_avatar( get_the_author_meta( 'ID' ), 36, '', get_the_author() );
-	echo $author . ' - ' . $date;
+	echo get_avatar( get_the_author_meta( 'ID' ), 36, '', get_the_author() ) . $author . ' - ' . $date;
 }
 echo '</div>';

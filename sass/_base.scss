@@ -134,6 +134,7 @@ th {
   display: block;
 }
 .alignnone {
+  display: block;
   margin: $baseline-height 0;
 }
 img,
@@ -165,17 +166,20 @@ input[type="tel"],
 input[type="url"],
 textarea  {
   width: 100%;
+  font-size: 1em;
   font-family: $primary-font-stack;
   padding: 8px 12px;
   color: $color-gray-15;
   border: solid 1px $color-gray-88;
   border-radius: 4px;
+  background: $color-gray-97;
   -webkit-appearance: none;
-  transition: border-color 0.15s;
+  transition: border-color 0.2s, background 0.2s;
 
   &:focus {
     outline: none;
     border-color: $color-gray-15;
+    background: #fff;
   }
 }
 textarea { 

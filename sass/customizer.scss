@@ -1,36 +1,10 @@
 @import "variables";
 
-.upgrades-ad {
-  text-align: center;
-  border-bottom: solid 1px #eee;
+#sub-accordion-section-ct_challenger_social_media_icons {
 
-  a {
-    display: block;
-    padding: 9px 0;
-    color: white;
-    background: #43b3c4;
-    transition: background 0.15s ease-in-out;
-
-    &:link,
-    &:visited,
-    &:hover,
-    &:active,
-    &:focus  {
-      color: white;
-    }
-    &:hover,
-    &:active,
-    &:focus {
-      background: #3ea5b3;
-
-      span {
-        right: -3px;
-      }
-    }
-  }
-  span {
-    position: relative;
-    right: 0;
-    transition: right 0.15s ease-in-out;
+  #customize-control-email-form {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: solid 1px #d5d5d5;
   }
 }

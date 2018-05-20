@@ -6,6 +6,13 @@ if ( post_password_required() || ( ! have_comments() && ! comments_open() && ! p
 
 if ( comments_open() ) { ?>
     <section id="comments" class="comments">
+        <div class="comments-number">
+            <?php if ( wp_count_comments($post->ID)->approved > 0 ) : ?>
+                <h2>
+                    <?php comments_number( __( 'Be First to Comment', 'challenger' ), __( 'One Comment', 'challenger' ), _x( '% Comments', 'noun: 5 comments', 'challenger' ) ); ?>
+                </h2>
+            <?php endif; ?>
+        </div>
         <ol class="comment-list">
             <?php wp_list_comments( array( 'callback' => 'ct_challenger_customize_comments' ) ); ?>
         </ol>
@@ -21,6 +28,13 @@ if ( comments_open() ) { ?>
     <?php
 } elseif ( ! comments_open() && have_comments() && pings_open() ) { ?>
     <section id="comments" class="comments">
+        <?php if ( wp_count_comments($post->ID)->approved > 0 ) : ?>
+            <div class="comments-number">
+                <h2>
+                    <?php comments_number( __( 'Be First to Comment', 'challenger' ), __( 'One Comment', 'challenger' ), _x( '% Comments', 'noun: 5 comments', 'challenger' ) ); ?>
+                </h2>
+            </div>
+        <?php endif; ?>
         <ol class="comment-list">
             <?php wp_list_comments( array( 'callback' => 'ct_challenger_customize_comments' ) ); ?>
         </ol>
@@ -41,6 +55,13 @@ if ( comments_open() ) { ?>
     <?php
 } elseif ( ! comments_open() && have_comments() ) { ?>
     <section id="comments" class="comments">
+        <?php if ( wp_count_comments($post->ID)->approved > 0 ) : ?>
+            <div class="comments-number">
+                <h2>
+                    <?php comments_number( __( 'Be First to Comment', 'challenger' ), __( 'One Comment', 'challenger' ), _x( '% Comments', 'noun: 5 comments', 'challenger' ) ); ?>
+                </h2>
+            </div>
+        <?php endif; ?>
         <ol class="comment-list">
             <?php wp_list_comments( array( 'callback' => 'ct_challenger_customize_comments' ) ); ?>
         </ol>
