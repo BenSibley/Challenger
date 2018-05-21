@@ -1,5 +1,6 @@
 jQuery(document).ready(function($){
 
+  /* === Toggle visibility of post comments link control === */
   const fullPostControl = $('#customize-control-full_post');
   toggleCommentLink();
   fullPostControl.on('click', toggleCommentLink);
@@ -14,4 +15,16 @@ jQuery(document).ready(function($){
       }
     }
   }
+
+  /* === Header box display options === */
+
+  jQuery( '.customize-control-checkbox-multiple input[type="checkbox"]' ).on( 'change', function() {
+    checkbox_values = jQuery( this ).parents( '.customize-control' ).find( 'input[type="checkbox"]:checked' ).map(
+      function() {
+        return this.value;
+      }
+    ).get().join( ',' );
+    jQuery( this ).parents( '.customize-control' ).find( 'input[type="hidden"]' ).val( checkbox_values ).trigger( 'change' );
+  }
+);
 });

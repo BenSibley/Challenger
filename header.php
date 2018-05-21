@@ -27,6 +27,7 @@
 					<span class="screen-reader-text"><?php esc_html_e( 'open menu', 'challenger' ); ?></span>
 					<?php echo ct_challenger_svg_output( 'toggle-navigation' ); ?>
 				</button>
+				<?php get_template_part( 'content/header-box' ); ?>
 			</header>
 			<?php do_action( 'challenger_after_header' ); ?>
 			<section id="main" class="main" role="main">

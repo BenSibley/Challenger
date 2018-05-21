@@ -1,6 +1,6 @@
 .toggle-navigation {
   position: relative;
-  z-index: 19;
+  z-index: 10;
   align-self: center;
   border: none;
   background: none;
@@ -36,8 +36,8 @@
 }
 .menu-primary-container {
   position: fixed;
-  z-index: 19;
-  top: 67px;
+  z-index: 9;
+  top: 0;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -54,9 +54,6 @@
     position: absolute;
   }
 }
-.admin-bar .menu-primary-container {
-  top: 113px;
-}
 .menu-primary {
   padding: $baseline-height/2 $column 0;
   transition: transform 0.25s;
@@ -72,7 +69,7 @@
   li {
     position: relative;
     opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity 0.3s;
 
     &.visible {
       opacity: 1;
@@ -110,6 +107,7 @@
     &.open {
       opacity: 1;
       visibility: visible;
+      top: 0;
     }
   }
 }

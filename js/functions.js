@@ -25,6 +25,14 @@ jQuery(document).ready(function($){
 
     $(window).resize(function(){
         objectFitAdjustment();
+        
+        if ( window.innerWidth > 799 ) {
+            if ( menuPrimaryContainer.hasClass('open') ) {
+                menuPrimaryContainer.css('padding-top', 0);
+                menuPrimaryContainer.removeClass('open');
+                toggleNavigation.removeClass('open');
+            }
+        }
     });
 
     // Jetpack infinite scroll event that reloads posts.
@@ -35,6 +43,7 @@ jQuery(document).ready(function($){
     function openPrimaryMenu() {
 
         if( menuPrimaryContainer.hasClass('open') ) {
+            siteHeader.removeClass('open');
             menuPrimaryContainer.removeClass('open');
             $(this).removeClass('open');
 
@@ -45,8 +54,13 @@ jQuery(document).ready(function($){
             $(this).attr('aria-expanded', 'false');
 
             menuPrimaryItems.find('li').removeClass('visible');
+            
+            setTimeout( function(){ 
+                menuPrimaryContainer.css('padding-top', 0);
+            }, 500)
 
         } else {
+            siteHeader.addClass('open');
             menuPrimaryContainer.addClass('open');
             $(this).addClass('open');
 
@@ -56,20 +70,22 @@ jQuery(document).ready(function($){
             // change aria text
             $(this).attr('aria-expanded', 'true');
 
-            var top = siteHeader.outerHeight();
+            var paddingTop = siteHeader.outerHeight();
             if ( body.hasClass('admin-bar') ) {
                 if ( window.innerWidth < 783 ) {
-                    top = top + 46;
+                    paddingTop += 46;
                 } else {
-                    top = top + 32;
-                }
-                
+                    paddingTop += 32;
+                }   
             }
-            menuPrimaryContainer.css('top', top + 'px');
+            if ( body.hasClass('has-header-box') ) {
+                paddingTop -= $('#header-box').outerHeight(true);
+            }
+            menuPrimaryContainer.css('padding-top', paddingTop + 'px');
 
             // var menuItemCount = menuPrimaryItems.children().length;
             var delay = 300/menuPrimaryItems.children().length;;
-            var currentDelay = 100
+            var currentDelay = 75
             menuPrimaryItems.find('li').each(function() {
                 const li = $(this);
                 setTimeout( function(){ 

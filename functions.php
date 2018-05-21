@@ -523,6 +523,9 @@ if ( ! function_exists( ( 'ct_challenger_body_class' ) ) ) {
 		if ( get_bloginfo( 'description' ) ) {
 			$classes[] = 'has-tagline';
 		}
+		if ( get_theme_mod( 'header_box' ) != 'no' ) {
+			$classes[] = 'has-header-box';
+		}
 
 		return $classes;
 	}
@@ -652,7 +655,7 @@ add_filter( 'get_the_archive_title', 'ct_challenger_modify_archive_titles' );
 //----------------------------------------------------------------------------------
 // Sanitize CSS and convert HTML character codes back into ">" character 
 // so direct descendant CSS selectors work
-//----------------------------------------------------------------------------------s
+//----------------------------------------------------------------------------------
 if ( ! function_exists( 'ct_challenger_sanitize_css' ) ) {
 	function ct_challenger_sanitize_css( $css ) {
 		$css = wp_kses( $css, '' );
@@ -660,4 +663,76 @@ if ( ! function_exists( 'ct_challenger_sanitize_css' ) ) {
 
 		return $css;
 	}
+}
+
+//----------------------------------------------------------------------------------
+// Header box styles
+//----------------------------------------------------------------------------------
+function ct_challenger_output_header_styles() {
+	if ( get_theme_mod( 'header_box' ) == 'no' ) return; 
+	if ( ct_challenger_header_box_output_rules() == false ) return;
+
+	$css = '';
+	$header_box_image = get_theme_mod( 'header_box_image' ) ? get_theme_mod( 'header_box_image' ) : trailingslashit( get_template_directory_uri() ) . 'assets/img/header.jpg';
+	$overlay_color = get_theme_mod( 'header_box_overlay' ) ? get_theme_mod( 'header_box_overlay' ) : '#05b0e7';
+	if ( get_theme_mod( 'header_box_overlay_opacity' ) == 0.00 ) {
+		$overlay_opacity = 0.00;
+	} else {
+		$overlay_opacity = get_theme_mod( 'header_box_overlay_opacity' ) ? get_theme_mod( 'header_box_overlay_opacity' ) : '0.8';
+	}
+	$button_color = get_theme_mod( 'header_box_button_color' ) ? get_theme_mod( 'header_box_button_color' ) : '#fff';
+	$button_bg_color = get_theme_mod( 'header_box_button_bg_color' ) ? get_theme_mod( 'header_box_button_bg_color' ) : '#ff9900';
+	$title_color = get_theme_mod( 'header_box_title_color' ) ? get_theme_mod( 'header_box_title_color' ) : '#fff';
+	$color = get_theme_mod( 'header_box_color' ) ? get_theme_mod( 'header_box_color' ) : '#fff';
+
+	// don't even add the background image if the opacity is 1
+	if ( $overlay_opacity!= 1 ) {
+		$css .= '.site-header { background-image: url("'. esc_url( $header_box_image ) .'"); }';
+	}
+	$css .= " .site-header .overlay { 
+		background: $overlay_color;
+		opacity: $overlay_opacity;
+	}";
+	$css .= ".header-box .button { 
+		color: $button_color;
+		background: $button_bg_color;
+	}";
+	$css .= ".header-box .title { color: $title_color; }";
+	$css .= ".site-title a, .tagline { color: $color; }";
+	$css .= ".site-title a, .tagline { color: $color; }";
+	$css .= "@media all and (min-width: 800px) {
+		.social-media-icons a, #menu-primary a { color: $color; }
+	}";
+
+	if ( !empty( $css ) ) {
+		$css = ct_challenger_sanitize_css($css);
+		wp_add_inline_style( 'ct-challenger-style', $css );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'ct_challenger_output_header_styles', 99 );
+
+function ct_challenger_header_box_output_rules() {
+	$display = get_theme_mod( 'header_box_display' ) ? get_theme_mod( 'header_box_display' ) : 'homepage';
+	$output = false;
+
+	if ( is_front_page() && in_array( 'homepage', $display) ) {
+		$output = true;
+	}
+	if ( is_home() && in_array( 'blog', $display) ) {
+		$output = true;
+	}
+	if ( is_singular('post') && in_array( 'posts', $display) ) {
+		$output = true;
+	}
+	if ( is_singular('page') && !is_front_page() && in_array( 'pages', $display) ) {
+		$output = true;
+	}
+	if ( is_archive() && in_array( 'archives', $display) ) {
+		$output = true;
+	}
+	if ( is_search() && in_array( 'search', $display) ) {
+		$output = true;
+	}
+
+	return $output;
 }

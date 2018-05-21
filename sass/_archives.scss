@@ -13,22 +13,19 @@
 .search-header {
   margin-bottom: $baseline-height * 2;
 }
-.search {
+.search-form {
+  display: flex;
+  margin: $baseline-height auto;
+  max-width: 540px;
 
-  .search-form {
-    display: flex;
-    margin: $baseline-height auto;
-    max-width: 540px;
-
-    label {
-      flex-grow: 1;
-    }
-    .search-field {
-      border-radius: 4px 0 0 4px;
-    }
-    .search-submit {
-      border-radius: 0 4px 4px 0;
-    }
+  label {
+    flex-grow: 1;
+  }
+  .search-field {
+    border-radius: 4px 0 0 4px;
+  }
+  .search-submit {
+    border-radius: 0 4px 4px 0;
   }
 }
 .search-bottom {
@@ -75,7 +72,6 @@
 }
 
 @media all and (min-width: $nine-hundred) {
-
 
   .more-link-wrapper {
     font-size: 18px;

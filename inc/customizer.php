@@ -38,6 +38,35 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 		}
 	}
 
+	class CT_Challenger_Control_Checkbox_Multiple extends WP_Customize_Control {
+
+		public $type = 'checkbox-multiple';
+		
+    public function render_content() {
+        if ( empty( $this->choices ) ) {
+					return;
+				}
+				if ( !empty( $this->label ) ) : ?>
+					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+        <?php endif; ?>
+        <?php if ( !empty( $this->description ) ) : ?>
+					<span class="description customize-control-description"><?php echo $this->description; ?></span>
+        <?php endif; ?>
+        <?php $multi_values = !is_array( $this->value() ) ? explode( ',', $this->value() ) : $this->value(); ?>
+        <ul>
+					<?php foreach ( $this->choices as $value => $label ) : ?>
+						<li>
+							<label>
+								<input type="checkbox" value="<?php echo esc_attr( $value ); ?>" <?php checked( in_array( $value, $multi_values ) ); ?> /> 
+								<?php echo esc_html( $label ); ?>
+							</label>
+						</li>
+					<?php endforeach; ?>
+        </ul>
+        <input type="hidden" <?php $this->link(); ?> value="<?php echo esc_attr( implode( ',', $multi_values ) ); ?>" />
+    <?php }
+	}
+
 	/***** Challenger Pro Section *****/
 
 	// don't add if Challenger Pro is active
@@ -59,6 +88,209 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 			)
 		) );
 	}
+
+	/***** Header *****/
+
+	// section
+	$wp_customize->add_section( 'challenger_header', array(
+		'title'    => __( 'Header', 'challenger' ),
+		'priority' => 5
+	) );
+	// setting
+	$wp_customize->add_setting( 'header_box', array(
+		'default'           => 'yes',
+		'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
+	) );
+	// control
+	$wp_customize->add_control( 'header_box', array(
+		'label'    => __( 'Show the lead generation header?', 'challenger' ),
+		'section'  => 'challenger_header',
+		'settings' => 'header_box',
+		'type'     => 'radio',
+		'choices'  => array(
+			'yes' => __( 'Yes', 'challenger' ),
+			'no'  => __( 'No', 'challenger' )
+		)
+	) );
+	// setting
+	$wp_customize->add_setting( 'header_box_display', array(
+		'default'           => 'homepage',
+		'sanitize_callback' => 'ct_challenger_sanitize_header_box_display'
+	) );
+	// control
+	$wp_customize->add_control(
+		new CT_Challenger_Control_Checkbox_Multiple( 
+			$wp_customize, 'header_box_display', array(
+			'label'    => __( 'Which pages should it display on?', 'challenger' ),
+			'section'  => 'challenger_header',
+			'settings' => 'header_box_display',
+			'choices'  => array(
+				'homepage' => __( 'Homepage', 'challenger' ),
+				'blog'  	 => __( 'Blog', 'challenger' ),
+				'posts'  	 => __( 'Posts', 'challenger' ),
+				'pages'  	 => __( 'Pages', 'challenger' ),
+				'archives' => __( 'Archives', 'challenger' ),
+				'search'   => __( 'Search results', 'challenger' )
+			) )
+	) );
+	// setting
+	$wp_customize->add_setting( 'header_box_title', array(
+		'default'           => __('Learn how to do something awesome with our new email course', 'challenger'),
+		'sanitize_callback' => 'ct_challenger_sanitize_text'
+	) );
+	// control
+	$wp_customize->add_control( 'header_box_title', array(
+		'label'    => __( 'Title text', 'challenger' ),
+		'section'  => 'challenger_header',
+		'settings' => 'header_box_title',
+		'type'     => 'textarea'
+	) );
+	// setting
+	$wp_customize->add_setting( 'header_box_title_color', array(
+		'default' => '#fff',
+		'sanitize_callback' => 'sanitize_hex_color'
+	) );
+	// control
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize, 'header_box_title_color', array(
+			'label'    => __( 'Title text color', 'challenger' ),
+			'section'  => 'challenger_header',
+			'settings' => 'header_box_title_color'
+		)
+	) );
+	// setting
+	$wp_customize->add_setting( 'header_box_color', array(
+		'default' => '#fff',
+		'sanitize_callback' => 'sanitize_hex_color'
+	) );
+	// control
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize, 'header_box_color', array(
+			'label'    => __( 'Site title, tagline, & menu color', 'challenger' ),
+			'section'  => 'challenger_header',
+			'settings' => 'header_box_color'
+		)
+	) );
+	// setting
+	$wp_customize->add_setting( 'header_box_button_text', array(
+		'default'           => __('Signup Now', 'challenger'),
+		'sanitize_callback' => 'ct_challenger_sanitize_text'
+	) );
+	// control
+	$wp_customize->add_control( 'header_box_button_text', array(
+		'label'    => __( 'Button text', 'challenger' ),
+		'section'  => 'challenger_header',
+		'settings' => 'header_box_button_text',
+		'type'     => 'text'
+	) );
+	// setting
+	$wp_customize->add_setting( 'header_box_button_url', array(
+		'default'           => '#',
+		'sanitize_callback' => 'ct_challenger_sanitize_text'
+	) );
+	// control
+	$wp_customize->add_control( 'header_box_button_url', array(
+		'label'    => __( 'Button URL', 'challenger' ),
+		'section'  => 'challenger_header',
+		'settings' => 'header_box_button_url',
+		'type'     => 'text'
+	) );
+	// setting
+	$wp_customize->add_setting( 'header_box_button_target', array(
+		'default'           => 'no',
+		'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
+	) );
+	// control
+	$wp_customize->add_control( 'header_box_button_target', array(
+		'label'    => __( 'Open the button link in a new tab?', 'challenger' ),
+		'section'  => 'challenger_header',
+		'settings' => 'header_box_button_target',
+		'type'     => 'radio',
+		'choices'  => array(
+			'yes' => __( 'Yes', 'challenger' ),
+			'no'  => __( 'No', 'challenger' )
+		)
+	) );
+	// setting
+	$wp_customize->add_setting( 'header_box_button_color', array(
+		'default' => '#fff',
+		'sanitize_callback' => 'sanitize_hex_color'
+	) );
+	// control
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize, 'header_box_button_color', array(
+			'label'    => __( 'Button text color', 'challenger' ),
+			'section'  => 'challenger_header',
+			'settings' => 'header_box_button_color'
+		)
+	) );
+	// setting
+	$wp_customize->add_setting( 'header_box_button_bg_color', array(
+		'default' => '#ff9900',
+		'sanitize_callback' => 'sanitize_hex_color'
+	) );
+	// control
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize, 'header_box_button_bg_color', array(
+			'label'    => __( 'Button background color', 'challenger' ),
+			'section'  => 'challenger_header',
+			'settings' => 'header_box_button_bg_color'
+		)
+	) );
+	// setting
+	$wp_customize->add_setting( 'header_box_overlay', array(
+		'default' => '#05b0e7',
+		'sanitize_callback' => 'sanitize_hex_color'
+	) );
+	// control
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize, 'header_box_overlay', array(
+			'label'    => __( 'Background overlay color', 'challenger' ),
+			'section'  => 'challenger_header',
+			'settings' => 'header_box_overlay'
+		)
+	) );
+	// setting
+	$wp_customize->add_setting( 'header_box_overlay_opacity', array(
+		'default' => '0.8'
+	) );
+	// control
+	$wp_customize->add_control( 'header_box_overlay_opacity', array(
+		'label'    => __( 'Overlay opacity', 'challenger' ),
+		'section'  => 'challenger_header',
+		'settings' => 'header_box_overlay_opacity',
+		'type'     => 'range',
+		'input_attrs' => array(
+			'min'  => 0,
+			'max'  => 1,
+			'step' => 0.01
+		)
+	) );
+	// Upload - setting
+	$wp_customize->add_setting( 'header_box_image', array(
+		'sanitize_callback' => 'esc_url_raw'
+	) );
+	// Upload - control
+	$wp_customize->add_control( new WP_Customize_Image_Control(
+		$wp_customize, 'header_box_image', array(
+			'label'    => __( 'Background image', 'challenger' ),
+			'section'  => 'challenger_header',
+			'settings' => 'header_box_image'
+		)
+	) );	
+	// Upload - setting
+	$wp_customize->add_setting( 'header_box_alt_logo', array(
+		'sanitize_callback' => 'esc_url_raw'
+	) );
+	// Upload - control
+	$wp_customize->add_control( new WP_Customize_Image_Control(
+		$wp_customize, 'header_box_alt_logo', array(
+			'label'    		=> __( 'Alternate logo', 'challenger' ),
+			'description' => __( 'Upload a light variation of your logo to better match the background overlay.', 'challenger' ),
+			'section'  		=> 'challenger_header',
+			'settings' 		=> 'header_box_alt_logo'
+		)
+	) );	
 
 	/***** Social Media Icons *****/
 
@@ -227,6 +459,18 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 		'settings' => 'excerpt_length',
 		'type'     => 'number'
 	) );
+	// Read More text - setting
+	$wp_customize->add_setting( 'read_more_text', array(
+		'default'           => __( 'Continue reading', 'challenger' ),
+		'sanitize_callback' => 'ct_challenger_sanitize_text'
+	) );
+	// Read More text - control
+	$wp_customize->add_control( 'read_more_text', array(
+		'label'    => __( 'Read More button text', 'challenger' ),
+		'section'  => 'challenger_blog',
+		'settings' => 'read_more_text',
+		'type'     => 'text'
+	) );
 
 	/***** Show/Hide *****/
 
@@ -371,4 +615,11 @@ function ct_challenger_sanitize_text( $input ) {
 
 function ct_challenger_sanitize_skype( $input ) {
 	return esc_url_raw( $input, array( 'http', 'https', 'skype' ) );
+}
+
+function ct_challenger_sanitize_header_box_display( $values ) {
+
+	$multi_values = !is_array( $values ) ? explode( ',', $values ) : $values;
+
+	return !empty( $multi_values ) ? array_map( 'sanitize_text_field', $multi_values ) : array();
 }
