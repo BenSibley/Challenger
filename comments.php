@@ -23,7 +23,10 @@ if ( comments_open() ) { ?>
                 <p class="next-comment"><?php next_comments_link(); ?></p>
             </nav>
         <?php } ?>
-        <?php comment_form(); ?>
+        <?php comment_form( array(
+            'title_reply_before' => '<div id="reply-title" class="comment-reply-title">',
+            'title_reply_after'  => '</div>'
+        ) ); ?>
     </section>
     <?php
 } elseif ( ! comments_open() && have_comments() && pings_open() ) { ?>

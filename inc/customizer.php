@@ -71,7 +71,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	// section
 	$wp_customize->add_section( 'ct_challenger_social_media_icons', array(
 		'title'       => __( 'Social Media Icons', 'challenger' ),
-		'priority'    => 30,
+		'priority'    => 10,
 		'description' => __( 'Add the URL for each of your social profiles.', 'challenger' )
 	) );
 
@@ -160,6 +160,74 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 		$priority = $priority + 5;
 	}
 
+	/***** Blog *****/
+
+	// section
+	$wp_customize->add_section( 'challenger_blog', array(
+		'title'    => __( 'Blog', 'challenger' ),
+		'priority' => 20
+	) );
+	// setting
+	$wp_customize->add_setting( 'full_post', array(
+		'default'           => 'no',
+		'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
+	) );
+	// control
+	$wp_customize->add_control( 'full_post', array(
+		'label'    => __( 'Show full posts on blog?', 'challenger' ),
+		'section'  => 'challenger_blog',
+		'settings' => 'full_post',
+		'type'     => 'radio',
+		'choices'  => array(
+			'yes' => __( 'Yes', 'challenger' ),
+			'no'  => __( 'No', 'challenger' )
+		)
+	) );
+	// setting
+	$wp_customize->add_setting( 'comment_link', array(
+		'default'           => 'yes',
+		'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
+	) );
+	// control
+	$wp_customize->add_control( 'comment_link', array(
+		'label'    => __( 'Show link to comments after each post?', 'challenger' ),
+		'section'  => 'challenger_blog',
+		'settings' => 'comment_link',
+		'type'     => 'radio',
+		'choices'  => array(
+			'yes' => __( 'Yes', 'challenger' ),
+			'no'  => __( 'No', 'challenger' )
+		)
+	) );
+	// setting
+	$wp_customize->add_setting( 'author_link', array(
+		'default'           => 'yes',
+		'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
+	) );
+	// control
+	$wp_customize->add_control( 'author_link', array(
+		'label'    => __( 'Link author name to post archive?', 'challenger' ),
+		'section'  => 'challenger_blog',
+		'settings' => 'author_link',
+		'type'     => 'radio',
+		'choices'  => array(
+			'yes' => __( 'Yes', 'challenger' ),
+			'no'  => __( 'No', 'challenger' )
+		)
+	) );
+	// setting
+	$wp_customize->add_setting( 'excerpt_length', array(
+		'default'           => '45',
+		'sanitize_callback' => 'absint'
+	) );
+	// control
+	$wp_customize->add_control( 'excerpt_length', array(
+		'label'    => __( 'Excerpt word count', 'challenger' ),
+		'section'  => 'challenger_blog',
+		'settings' => 'excerpt_length',
+		'type'     => 'number'
+	) );
+
 	/***** Show/Hide *****/
 
 	// section
@@ -168,33 +236,15 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 		'priority' => 25
 	) );
 	// setting
-	$wp_customize->add_setting( 'tagline', array(
-		'default'           => 'header-footer',
-		'sanitize_callback' => 'ct_challenger_sanitize_tagline_settings'
-	) );
-	// control
-	$wp_customize->add_control( 'tagline', array(
-		'label'    => __( 'Show the tagline?', 'challenger' ),
-		'section'  => 'challenger_show_hide',
-		'settings' => 'tagline',
-		'type'     => 'radio',
-		'choices'  => array(
-			'header-footer' => __( 'Yes, in the header & footer', 'challenger' ),
-			'header'        => __( 'Yes, in the header', 'challenger' ),
-			'footer'        => __( 'Yes, in the footer', 'challenger' ),
-			'no'            => __( 'No', 'challenger' )
-		)
-	) );
-	// setting
-	$wp_customize->add_setting( 'post_byline_date', array(
+	$wp_customize->add_setting( 'post_byline_avatar', array(
 		'default'           => 'yes',
 		'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
 	) );
 	// control
-	$wp_customize->add_control( 'post_byline_date', array(
-		'label'    => __( 'Show date in post byline?', 'challenger' ),
+	$wp_customize->add_control( 'post_byline_avatar', array(
+		'label'    => __( 'Show author avatar in post byline?', 'challenger' ),
 		'section'  => 'challenger_show_hide',
-		'settings' => 'post_byline_date',
+		'settings' => 'post_byline_avatar',
 		'type'     => 'radio',
 		'choices'  => array(
 			'yes' => __( 'Yes', 'challenger' ),
@@ -218,15 +268,15 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 		)
 	) );
 	// setting
-	$wp_customize->add_setting( 'author_avatars', array(
+	$wp_customize->add_setting( 'post_byline_date', array(
 		'default'           => 'yes',
 		'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
 	) );
 	// control
-	$wp_customize->add_control( 'author_avatars', array(
-		'label'    => __( 'Show post author avatars?', 'challenger' ),
+	$wp_customize->add_control( 'post_byline_date', array(
+		'label'    => __( 'Show date in post byline?', 'challenger' ),
 		'section'  => 'challenger_show_hide',
-		'settings' => 'author_avatars',
+		'settings' => 'post_byline_date',
 		'type'     => 'radio',
 		'choices'  => array(
 			'yes' => __( 'Yes', 'challenger' ),
@@ -282,60 +332,22 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 		)
 	) );
 	// setting
-	$wp_customize->add_setting( 'sidebar', array(
-		'default'           => 'after',
-		'sanitize_callback' => 'ct_challenger_sanitize_sidebar_settings'
-	) );
-	// control
-	$wp_customize->add_control( 'sidebar', array(
-		'label'    => __( 'Show sidebar on mobile devices?', 'challenger' ),
-		'section'  => 'challenger_show_hide',
-		'settings' => 'sidebar',
-		'type'     => 'radio',
-		'choices'  => array(
-			'after'  => __( 'Yes, after main content', 'challenger' ),
-			'before' => __( 'Yes, before main content', 'challenger' ),
-			'no'     => __( 'No', 'challenger' )
-		)
-	) );
-
-	/***** Blog *****/
-
-	// section
-	$wp_customize->add_section( 'challenger_blog', array(
-		'title'    => __( 'Blog', 'challenger' ),
-		'priority' => 50
-	) );
-	// setting
-	$wp_customize->add_setting( 'full_post', array(
-		'default'           => 'no',
+	$wp_customize->add_setting( 'archive_header', array(
+		'default'           => 'yes',
 		'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
 	) );
 	// control
-	$wp_customize->add_control( 'full_post', array(
-		'label'    => __( 'Show full posts on blog?', 'challenger' ),
-		'section'  => 'challenger_blog',
-		'settings' => 'full_post',
+	$wp_customize->add_control( 'archive_header', array(
+		'label'    => __( 'Show archive page titles?', 'challenger' ),
+		'section'  => 'challenger_show_hide',
+		'settings' => 'archive_header',
 		'type'     => 'radio',
 		'choices'  => array(
 			'yes' => __( 'Yes', 'challenger' ),
 			'no'  => __( 'No', 'challenger' )
 		)
 	) );
-	// setting
-	$wp_customize->add_setting( 'excerpt_length', array(
-		'default'           => '30',
-		'sanitize_callback' => 'absint'
-	) );
-	// control
-	$wp_customize->add_control( 'excerpt_length', array(
-		'label'    => __( 'Excerpt word count', 'challenger' ),
-		'section'  => 'challenger_blog',
-		'settings' => 'excerpt_length',
-		'type'     => 'number'
-	) );
 }
-
 /***** Custom Sanitization Functions *****/
 
 function ct_challenger_sanitize_email( $input ) {

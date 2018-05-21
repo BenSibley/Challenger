@@ -216,6 +216,11 @@ if ( ! function_exists( 'ct_challenger_excerpt' ) ) {
 
 		if ( $show_full_post === 'yes' || $ismore ) {
 			the_content();
+			if ( get_theme_mod('comment_link') != 'no' ) {
+				echo '<div class="comment-link">';
+				echo '<i class="fa fa-comment"></i><a href="'. esc_url( get_permalink() ) .'#respond">'. esc_html( __('Comment on this post', 'challenger' ) ) .'</a>';
+				echo '</div>';
+			}
 		} else {
 			the_excerpt();
 		}
@@ -230,12 +235,12 @@ if ( ! function_exists( 'ct_challenger_custom_excerpt_length' ) ) {
 
 		$new_excerpt_length = get_theme_mod( 'excerpt_length' );
 
-		if ( ! empty( $new_excerpt_length ) && $new_excerpt_length != 25 ) {
+		if ( ! empty( $new_excerpt_length ) && $new_excerpt_length != 45 ) {
 			return $new_excerpt_length;
 		} elseif ( $new_excerpt_length === 0 ) {
 			return 0;
 		} else {
-			return 25;
+			return 45;
 		}
 	}
 }

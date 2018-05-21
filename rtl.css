@@ -402,6 +402,10 @@ a img {
   border-color: #262626;
 }
 
+.comment-link i {
+  margin-left: 8px;
+}
+
 @media all and (min-width: 50em) {
   .archive-header {
     margin: 0 0 3em;

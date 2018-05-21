@@ -1,6 +1,5 @@
 <?php
-
-if ( ! is_archive() ) {
+if ( ! is_archive() || get_theme_mod( 'archive_header' ) == 'no' ) {
 	return;
 }
 
