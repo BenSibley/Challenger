@@ -252,7 +252,8 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	) );
 	// setting
 	$wp_customize->add_setting( 'header_box_overlay_opacity', array(
-		'default' => '0.8'
+		'default' 					=> 0.8,
+		'sanitize_callback' => 'ct_challenger_sanitize_header_box_overlay_opacity'
 	) );
 	// control
 	$wp_customize->add_control( 'header_box_overlay_opacity', array(
@@ -274,7 +275,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize, 'header_box_image', array(
 			'label'    		=> __( 'Background image', 'challenger' ),
-			'description' => __( 'Use an image that is 2,000px wide for best results', 'challenger' ),
+			'description' => __( 'Use an image that is 2,000px wide for best results.', 'challenger' ),
 			'section'  		=> 'challenger_header',
 			'settings' 		=> 'header_box_image'
 		)
@@ -664,6 +665,14 @@ function ct_challenger_sanitize_header_box_display( $values ) {
 	$multi_values = !is_array( $values ) ? explode( ',', $values ) : $values;
 
 	return !empty( $multi_values ) ? array_map( 'sanitize_text_field', $multi_values ) : array();
+}
+
+function ct_challenger_sanitize_header_box_overlay_opacity( $input ) {
+	if ( is_float( floatval( $input ) ) ) {
+		return $input;
+	} else {
+		return 0.8;
+	}
 }
 
 function ct_challenger_sanitize_fi_size_type( $input ) {
