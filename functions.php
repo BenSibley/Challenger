@@ -711,6 +711,33 @@ function ct_challenger_output_header_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'ct_challenger_output_header_styles', 99 );
 
+function ct_challenger_output_fi_styles() {
+
+	$css = '';
+	$fi_size_type = get_theme_mod( 'fi_size_type' );
+
+	if ( $fi_size_type == 'no' ) {
+		$css .= ".featured-image { 
+			padding-bottom: 0; 
+			height: auto;
+		}";
+		$css .= ".featured-image > a, .featured-image > a > img, .featured-image > img { 
+			position: static;
+		}";
+	} else {
+		$fi_size = get_theme_mod( 'fi_size' );
+		if ( !empty($fi_size) && $fi_size != 40 ) {
+			$css .= ".featured-image { padding-bottom: $fi_size%; }";
+		}
+	}
+
+	if ( !empty( $css ) ) {
+		$css = ct_challenger_sanitize_css($css);
+		wp_add_inline_style( 'ct-challenger-style', $css );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'ct_challenger_output_fi_styles', 99 );
+
 function ct_challenger_header_box_output_rules() {
 	$display = get_theme_mod( 'header_box_display' ) ? get_theme_mod( 'header_box_display' ) : 'homepage';
 	$output = false;

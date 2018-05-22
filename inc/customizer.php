@@ -266,11 +266,11 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 			'step' => 0.01
 		)
 	) );
-	// Upload - setting
+	// setting
 	$wp_customize->add_setting( 'header_box_image', array(
 		'sanitize_callback' => 'esc_url_raw'
 	) );
-	// Upload - control
+	// control
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize, 'header_box_image', array(
 			'label'    => __( 'Background image', 'challenger' ),
@@ -278,11 +278,11 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 			'settings' => 'header_box_image'
 		)
 	) );	
-	// Upload - setting
+	// setting
 	$wp_customize->add_setting( 'header_box_alt_logo', array(
 		'sanitize_callback' => 'esc_url_raw'
 	) );
-	// Upload - control
+	// control
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize, 'header_box_alt_logo', array(
 			'label'    		=> __( 'Alternate logo', 'challenger' ),
@@ -391,6 +391,47 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 		// increment the priority for next site
 		$priority = $priority + 5;
 	}
+
+	/***** Featured Image Size *****/
+
+	// section
+	$wp_customize->add_section( 'challenger_fi_size', array(
+		'title'    => __( 'Featured Image Size', 'challenger' ),
+		'priority' => 15
+	) );
+	// setting
+	$wp_customize->add_setting( 'fi_size_type', array(
+		'default'           => 'yes',
+		'sanitize_callback' => 'ct_challenger_sanitize_fi_size_type'
+	) );
+	// control
+	$wp_customize->add_control( 'fi_size_type', array(
+		'label'    => __( 'Lock Featured Image aspect ratio?', 'challenger' ),
+		'section'  => 'challenger_fi_size',
+		'settings' => 'fi_size_type',
+		'type'     => 'radio',
+		'choices'  => array(
+			'yes' => __( 'Yes, use the same aspect ratio for all Featured Images', 'challenger' ),
+			'no'  => __( 'No, use the natural aspect ratio of each image', 'challenger' )
+		)
+	) );
+	// setting
+	$wp_customize->add_setting( 'fi_size', array(
+		'default'           => '40',
+		'sanitize_callback' => 'absint'
+	) );
+	// control
+	$wp_customize->add_control( 'fi_size', array(
+		'label'    => __( 'Featured Image Aspect Ratio', 'challenger' ),
+		'section'  => 'challenger_fi_size',
+		'settings' => 'fi_size',
+		'type'     => 'range',
+		'input_attrs' => array(
+			'min'  => 15,
+			'max'  => 80, 
+			'step' => 1
+		)
+	) );
 
 	/***** Blog *****/
 
@@ -622,4 +663,14 @@ function ct_challenger_sanitize_header_box_display( $values ) {
 	$multi_values = !is_array( $values ) ? explode( ',', $values ) : $values;
 
 	return !empty( $multi_values ) ? array_map( 'sanitize_text_field', $multi_values ) : array();
+}
+
+function ct_challenger_sanitize_fi_size_type( $input ) {
+
+	$valid = array(
+		'yes' => __( 'Yes, keep all Featured Images the same aspect ratio', 'challenger' ),
+		'no'  => __( 'No, use the natural size of each image', 'challenger' )
+	);
+
+	return array_key_exists( $input, $valid ) ? $input : '';
 }
