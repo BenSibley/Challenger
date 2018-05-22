@@ -180,7 +180,9 @@ if ( ! function_exists( 'ct_challenger_filter_read_more_link' ) ) {
 			$output .= $excerpt_more;
 		}
 		// Because i18n text cannot be stored in a variable
-		if ( empty( $read_more_text ) ) {
+		if ( get_theme_mod( 'continue_reading' ) == 'no' ) {
+			return $output;
+		} elseif ( empty( $read_more_text ) ) {
 			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . __( 'Continue Reading', 'challenger' ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
 		} else {
 			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . esc_html( $read_more_text ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
@@ -763,3 +765,11 @@ function ct_challenger_header_box_output_rules() {
 
 	return $output;
 }
+
+//----------------------------------------------------------------------------------
+// Allows site title to display in Customize preview when logo is removed
+//----------------------------------------------------------------------------------
+function ct_challenger_logo_refresh($wp_customize) {
+  $wp_customize->get_setting( 'custom_logo' )->transport = 'refresh';
+}
+add_action( 'customize_register', 'ct_challenger_logo_refresh', 20 );

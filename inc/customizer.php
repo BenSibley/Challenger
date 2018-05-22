@@ -571,6 +571,22 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 		)
 	) );
 	// setting
+	$wp_customize->add_setting( 'continue_reading', array(
+		'default'           => 'yes',
+		'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
+	) );
+	// control
+	$wp_customize->add_control( 'continue_reading', array(
+		'label'    => __( 'Show "Continue Reading" button after posts?', 'challenger' ),
+		'section'  => 'challenger_show_hide',
+		'settings' => 'continue_reading',
+		'type'     => 'radio',
+		'choices'  => array(
+			'yes' => __( 'Yes', 'challenger' ),
+			'no'  => __( 'No', 'challenger' )
+		)
+	) );
+	// setting
 	$wp_customize->add_setting( 'author_box', array(
 		'default'           => 'yes',
 		'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
