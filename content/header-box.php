@@ -2,10 +2,10 @@
 
 if ( ct_challenger_header_box_output_rules() == false ) return;
 
-$title          = get_theme_mod( 'header_box_title' ) ? get_theme_mod( 'header_box_title' ) : __('Learn how to do something awesome with our new email course', 'challenger');
-$button_text    = get_theme_mod( 'header_box_button_text' ) ? get_theme_mod( 'header_box_button_text' ) : __('Signup Now', 'challenger');
-$button_url     = get_theme_mod( 'header_box_button_url' ) ? get_theme_mod( 'header_box_button_url' ) : '#';
-$button_target  = get_theme_mod( 'header_box_button_target' ) ? get_theme_mod( 'header_box_button_target' ) : 'no';
+$title         = get_theme_mod( 'header_box_title' ) ? get_theme_mod( 'header_box_title' ) : __('Become a professional blogger with our FREE 5-day email course', 'challenger');
+$button_text   = get_theme_mod( 'header_box_button_text' ) ? get_theme_mod( 'header_box_button_text' ) : __('Signup Now', 'challenger');
+$button_url    = get_theme_mod( 'header_box_button_url' ) ? get_theme_mod( 'header_box_button_url' ) : '#';
+$button_target = get_theme_mod( 'header_box_button_target' ) ? get_theme_mod( 'header_box_button_target' ) : 'no';
 if ( $button_target == 'yes' ) {
   $button_target = 'target="_blank"';
 } else {

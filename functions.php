@@ -433,11 +433,11 @@ if ( ! function_exists( ( 'ct_challenger_sticky_post_marker' ) ) ) {
 	function ct_challenger_sticky_post_marker() {
 
 		if ( is_sticky() && ! is_archive() ) {
-			echo '<div class="sticky-status"><span>' . esc_html__( "Featured", "challenger" ) . '</span></div>';
+			echo '<div class="sticky-status"><span>' . esc_html__( "Featured Post", "challenger" ) . '</span></div>';
 		}
 	}
 }
-add_action( 'sticky_post_status', 'ct_challenger_sticky_post_marker' );
+add_action( 'challenger_sticky_post_status', 'ct_challenger_sticky_post_marker' );
 
 //----------------------------------------------------------------------------------
 //	Reset the Customizer options added by Challenger
@@ -523,7 +523,7 @@ if ( ! function_exists( ( 'ct_challenger_body_class' ) ) ) {
 		if ( get_bloginfo( 'description' ) ) {
 			$classes[] = 'has-tagline';
 		}
-		if ( get_theme_mod( 'header_box' ) != 'no' ) {
+		if ( get_theme_mod( 'header_box' ) != 'no' && ct_challenger_header_box_output_rules() == true ) {
 			$classes[] = 'has-header-box';
 		}
 

@@ -1,12 +1,15 @@
 .site-header {
-  display: flex;
-  display: flex;
-  flex-direction: row;
-  flex-flow: row wrap;
   padding: $baseline-height/2 $column;
 
   &:after {
     @include clearfix;
+  }
+  .max-width {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    margin: 0 auto;
+    max-width: 1240px;
   }
 }
 .title-container {
@@ -66,9 +69,6 @@
 @media all and (min-width: $eight-hundred) {
 
   .site-header {
-    // display: flex;
-    // flex-direction: row;
-    // flex-flow: row wrap;
     padding: $baseline-height $column;
   }
   .title-container {

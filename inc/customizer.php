@@ -135,7 +135,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	) );
 	// setting
 	$wp_customize->add_setting( 'header_box_title', array(
-		'default'           => __('Learn how to do something awesome with our new email course', 'challenger'),
+		'default'           => __('Become a professional blogger with our FREE 5-day email course', 'challenger'),
 		'sanitize_callback' => 'ct_challenger_sanitize_text'
 	) );
 	// control
@@ -273,9 +273,10 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	// control
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize, 'header_box_image', array(
-			'label'    => __( 'Background image', 'challenger' ),
-			'section'  => 'challenger_header',
-			'settings' => 'header_box_image'
+			'label'    		=> __( 'Background image', 'challenger' ),
+			'description' => __( 'Use an image that is 2,000px wide for best results', 'challenger' ),
+			'section'  		=> 'challenger_header',
+			'settings' 		=> 'header_box_image'
 		)
 	) );	
 	// setting
