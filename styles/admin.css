@@ -1,15 +1,15 @@
-/* Back-end styles */
-/* styles for theme options page */
 #challenger-dashboard-wrap h2 {
   margin-bottom: 24px;
 }
 #challenger-dashboard-wrap .content {
+  box-sizing: border-box;
   margin-top: 12px;
   padding: 12px 24px 24px;
   border: solid 1px #e5e5e5;
   background: white;
 }
-#challenger-dashboard-wrap .content .button-primary {
+#challenger-dashboard-wrap .content .button-primary,
+#challenger-dashboard-wrap .content #delete {
   margin: 12px 0;
 }
 #challenger-dashboard-wrap .content ul {
@@ -20,36 +20,30 @@
 /* 600px */
 @media all and (min-width: 37.5em) {
   #challenger-dashboard-wrap .content {
-    width: 39%;
+    width: 49%;
     float: left;
+    margin-right: 2%;
+    min-height: 250px;
+  }
+  #challenger-dashboard-wrap .content:nth-child(2n) {
+    margin-right: 0;
   }
   #challenger-dashboard-wrap .content p {
     min-height: 57px;
-  }
-  #challenger-dashboard-wrap .content-review {
-    min-height: 192px;
-  }
-  #challenger-dashboard-wrap .content-customization,
-  #challenger-dashboard-wrap .content-premium-upgrade,
-  #challenger-dashboard-wrap .content-review {
-    margin-right: 2%;
   }
 }
 /* 1100px */
 @media all and (min-width: 68.75em) {
   #challenger-dashboard-wrap .content {
-    width: 27%;
+    width: 32%;
   }
-  #challenger-dashboard-wrap .content-resources {
-    clear: left;
+  #challenger-dashboard-wrap .content:nth-child(2n) {
+    margin-right: 2%;
   }
-  #challenger-dashboard-wrap .content-customization,
-  #challenger-dashboard-wrap .content-support,
-  #challenger-dashboard-wrap .content-resources,
-  #challenger-dashboard-wrap .content-review {
-    margin-right: 1%;
-  }
-  #challenger-dashboard-wrap .content-premium-upgrade {
+  #challenger-dashboard-wrap .content:nth-child(3n) {
     margin-right: 0;
+  }
+  #challenger-dashboard-wrap .content:nth-child(4n) {
+    clear: left;
   }
 }

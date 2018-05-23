@@ -460,14 +460,35 @@ if ( ! function_exists( ( 'ct_challenger_reset_customizer_options' ) ) ) {
 		}
 
 		$mods_array = array(
-			'logo_upload',
-			'search_bar',
+			'header_box',
+			'header_box_display',
+			'header_box_title',
+			'header_box_title_color',
+			'header_box_color',
+			'header_box_button_text',
+			'header_box_button_url',
+			'header_box_button_target',
+			'header_box_button_color',
+			'header_box_button_bg_color',
+			'header_box_overlay',
+			'header_box_overlay_opacity',
+			'header_box_image',
+			'header_box_alt_logo',
+			'fi_size_type',
+			'fi_size',
 			'full_post',
+			'comment_link',
+			'author_link',
 			'excerpt_length',
 			'read_more_text',
-			'full_width_post',
-			'author_byline',
-			'custom_css'
+			'post_byline_avatar',
+			'post_byline_author',
+			'post_byline_date',
+			'continue_reading',
+			'author_box',
+			'post_categories',
+			'post_tags',
+			'archive_header'
 		);
 
 		$social_sites = ct_challenger_social_array();
