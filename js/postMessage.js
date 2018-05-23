@@ -63,6 +63,7 @@
             $('#toggle-navigation').find('g').css( 'fill', to );
             if ( window.innerWidth > 800 ) {
                 $('.social-media-icons, #menu-primary').find('a').css( 'color', to );
+                $('.social-media-icons').find('a').css( 'border-color', to );
             }
         } );
     } );

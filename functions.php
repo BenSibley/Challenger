@@ -726,6 +726,7 @@ function ct_challenger_output_header_styles() {
 	$css .= ".has-header-box .toggle-navigation svg g { fill: $color; }";
 	$css .= "@media all and (min-width: 800px) {
 		.social-media-icons a, #menu-primary a { color: $color; }
+		.social-media-icons a, .social-media-icons a:hover { border-color: $color; }
 	}";
 
 	if ( !empty( $css ) ) {
