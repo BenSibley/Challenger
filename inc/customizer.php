@@ -114,7 +114,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	) );
 	// setting
 	$wp_customize->add_setting( 'header_box_display', array(
-		'default'           => 'homepage',
+		'default'           => array('homepage'),
 		'sanitize_callback' => 'ct_challenger_sanitize_header_box_display'
 	) );
 	// control
