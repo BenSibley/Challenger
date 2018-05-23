@@ -26,16 +26,16 @@
         a,
         a:link,
         a:visited {
-          color: $color-gray-15;
+          color: $color-gray-15 !important;
         }
       }
       .tagline {
-        color: $color-gray-15;
+        color: $color-gray-15 !important;
       }
       .toggle-navigation {
 
         svg g {
-          fill: $color-gray-15;
+          fill: $color-gray-15 !important;
         }
       }
     }

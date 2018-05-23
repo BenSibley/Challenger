@@ -647,6 +647,9 @@ a img {
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin: 0 auto;
   max-width: 1240px;
 }
@@ -1448,13 +1451,13 @@ a img {
 .has-header-box .site-header.open .site-title a,
 .has-header-box .site-header.open .site-title a:link,
 .has-header-box .site-header.open .site-title a:visited {
-  color: #262626;
+  color: #262626 !important;
 }
 .has-header-box .site-header.open .tagline {
-  color: #262626;
+  color: #262626 !important;
 }
 .has-header-box .site-header.open .toggle-navigation svg g {
-  fill: #262626;
+  fill: #262626 !important;
 }
 .has-header-box .toggle-navigation svg g {
   fill: #fff;

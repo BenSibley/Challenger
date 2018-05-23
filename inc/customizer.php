@@ -136,7 +136,8 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	// setting
 	$wp_customize->add_setting( 'header_box_title', array(
 		'default'           => __('Become a professional blogger with our FREE 5-day email course', 'challenger'),
-		'sanitize_callback' => 'ct_challenger_sanitize_text'
+		'sanitize_callback' => 'ct_challenger_sanitize_text',
+		'transport'					=> 'postMessage'
 	) );
 	// control
 	$wp_customize->add_control( 'header_box_title', array(
@@ -147,8 +148,9 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	) );
 	// setting
 	$wp_customize->add_setting( 'header_box_title_color', array(
-		'default' => '#fff',
-		'sanitize_callback' => 'sanitize_hex_color'
+		'default' 					=> '#fff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'transport'					=> 'postMessage'
 	) );
 	// control
 	$wp_customize->add_control( new WP_Customize_Color_Control(
@@ -161,12 +163,13 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	// setting
 	$wp_customize->add_setting( 'header_box_color', array(
 		'default' => '#fff',
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'sanitize_hex_color',
+		'transport'					=> 'postMessage'
 	) );
 	// control
 	$wp_customize->add_control( new WP_Customize_Color_Control(
 		$wp_customize, 'header_box_color', array(
-			'label'    => __( 'Site title, tagline, & menu color', 'challenger' ),
+			'label'    => __( 'Site title, tagline, and menu color', 'challenger' ),
 			'section'  => 'challenger_header',
 			'settings' => 'header_box_color'
 		)
@@ -174,7 +177,8 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	// setting
 	$wp_customize->add_setting( 'header_box_button_text', array(
 		'default'           => __('Signup Now', 'challenger'),
-		'sanitize_callback' => 'ct_challenger_sanitize_text'
+		'sanitize_callback' => 'ct_challenger_sanitize_text',
+		'transport'					=> 'postMessage'
 	) );
 	// control
 	$wp_customize->add_control( 'header_box_button_text', array(
@@ -186,7 +190,8 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	// setting
 	$wp_customize->add_setting( 'header_box_button_url', array(
 		'default'           => '#',
-		'sanitize_callback' => 'ct_challenger_sanitize_text'
+		'sanitize_callback' => 'ct_challenger_sanitize_text',
+		'transport'					=> 'postMessage'
 	) );
 	// control
 	$wp_customize->add_control( 'header_box_button_url', array(
@@ -213,8 +218,9 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	) );
 	// setting
 	$wp_customize->add_setting( 'header_box_button_color', array(
-		'default' => '#fff',
-		'sanitize_callback' => 'sanitize_hex_color'
+		'default' 					=> '#fff',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'transport'					=> 'postMessage'
 	) );
 	// control
 	$wp_customize->add_control( new WP_Customize_Color_Control(
@@ -226,8 +232,9 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	) );
 	// setting
 	$wp_customize->add_setting( 'header_box_button_bg_color', array(
-		'default' => '#ff9900',
-		'sanitize_callback' => 'sanitize_hex_color'
+		'default' 					=> '#ff9900',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'transport'					=> 'postMessage'
 	) );
 	// control
 	$wp_customize->add_control( new WP_Customize_Color_Control(
@@ -239,8 +246,9 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	) );
 	// setting
 	$wp_customize->add_setting( 'header_box_overlay', array(
-		'default' => '#05b0e7',
-		'sanitize_callback' => 'sanitize_hex_color'
+		'default' 					=> '#05b0e7',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'transport'					=> 'postMessage'
 	) );
 	// control
 	$wp_customize->add_control( new WP_Customize_Color_Control(
@@ -253,7 +261,8 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	// setting
 	$wp_customize->add_setting( 'header_box_overlay_opacity', array(
 		'default' 					=> 0.8,
-		'sanitize_callback' => 'ct_challenger_sanitize_header_box_overlay_opacity'
+		'sanitize_callback' => 'ct_challenger_sanitize_header_box_overlay_opacity',
+		'transport'					=> 'postMessage'
 	) );
 	// control
 	$wp_customize->add_control( 'header_box_overlay_opacity', array(
@@ -420,7 +429,8 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	// setting
 	$wp_customize->add_setting( 'fi_size', array(
 		'default'           => '40',
-		'sanitize_callback' => 'absint'
+		'sanitize_callback' => 'absint',
+		'transport'					=> 'postMessage'
 	) );
 	// control
 	$wp_customize->add_control( 'fi_size', array(
@@ -505,7 +515,8 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	// Read More text - setting
 	$wp_customize->add_setting( 'read_more_text', array(
 		'default'           => __( 'Continue reading', 'challenger' ),
-		'sanitize_callback' => 'ct_challenger_sanitize_text'
+		'sanitize_callback' => 'ct_challenger_sanitize_text',
+		'transport'					=> 'postMessage'
 	) );
 	// Read More text - control
 	$wp_customize->add_control( 'read_more_text', array(

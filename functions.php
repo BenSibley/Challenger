@@ -687,11 +687,12 @@ function ct_challenger_output_header_styles() {
 	$title_color = get_theme_mod( 'header_box_title_color' ) ? get_theme_mod( 'header_box_title_color' ) : '#fff';
 	$color = get_theme_mod( 'header_box_color' ) ? get_theme_mod( 'header_box_color' ) : '#fff';
 
-	// don't even add the background image if the opacity is 1
-	if ( $overlay_opacity!= 1 ) {
+	// Don't add the background image if the opacity is 1 unless in Customizer preview 
+	if ( is_customize_preview() || $overlay_opacity != 1 ) {
 		$css .= '.site-header { background-image: url("'. esc_url( $header_box_image ) .'"); }';
-	}
-	$css .= " .site-header .overlay { 
+	} 
+
+	$css .= ".site-header .overlay { 
 		background: $overlay_color;
 		opacity: $overlay_opacity;
 	}";
@@ -701,7 +702,7 @@ function ct_challenger_output_header_styles() {
 	}";
 	$css .= ".header-box .title { color: $title_color; }";
 	$css .= ".site-title a, .tagline { color: $color; }";
-	$css .= ".site-title a, .tagline { color: $color; }";
+	$css .= ".has-header-box .toggle-navigation svg g { fill: $color; }";
 	$css .= "@media all and (min-width: 800px) {
 		.social-media-icons a, #menu-primary a { color: $color; }
 	}";
