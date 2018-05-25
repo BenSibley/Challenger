@@ -1006,6 +1006,15 @@ a img {
     display: inline-block;
     opacity: 1;
   }
+  .menu-primary-items li.menu-open > ul,
+  .menu-unset > ul li.menu-open > ul {
+    opacity: 1;
+    visibility: visible;
+  }
+  .menu-primary-items li.menu-open > ul > li,
+  .menu-unset > ul li.menu-open > ul > li {
+    opacity: 1;
+  }
   .menu-primary-items > li,
   .menu-unset > ul > li {
     margin-left: 36px;

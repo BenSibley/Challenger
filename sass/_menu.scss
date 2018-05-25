@@ -136,6 +136,15 @@
     li {
       display: inline-block;
       opacity: 1;
+
+      &.menu-open > ul {
+        opacity: 1;
+        visibility: visible;
+
+        > li {
+          opacity: 1;
+        }
+      }
     }
     > li {
       margin-right: 36px;

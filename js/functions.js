@@ -174,6 +174,31 @@ jQuery(document).ready(function($){
             });
         }
     }
+
+    const parentMenuItems = menuPrimaryContainer.find('.menu-item-has-children, .page_item_has_children');
+    var openMenu = false;
+    if (window.innerWidth > 799) {  
+        $(window).on('touchstart', tabletSubMenus);
+    }
+    function tabletSubMenus() {
+        $(window).off('touchstart', tabletSubMenus);
+        parentMenuItems.on('click', openDropdown);
+        $(document).on('touchstart', (function(e) {
+            if ( openMenu ) {
+                if ($(e.target).parents('.menu-primary').length == 0) {
+                    parentMenuItems.removeClass('menu-open');
+                    openMenu = false
+                }
+            }
+        }));
+    }
+    function openDropdown(e){
+        if (!$(this).hasClass('menu-open')){
+            e.preventDefault();
+            $(this).addClass('menu-open');
+            openMenu = true;
+        }
+    }
 });
 
 /* fix for skip-to-content link bug in Chrome & IE9 */
