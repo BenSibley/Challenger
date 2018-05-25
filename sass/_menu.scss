@@ -221,6 +221,7 @@
         }
       }
       li {
+        display: block;
         white-space: nowrap;
         opacity: 0;
 
@@ -251,6 +252,16 @@
       }
       a {
         padding: 12px 24px;
+      }
+      ul {
+        top: 0;
+        left: 100%;
+        border: none;
+
+        &.flipped {
+          left: auto;
+          right: 100%;
+        }
       }
     }
   }
