@@ -1,7 +1,9 @@
 <?php get_header(); ?>
     <div class="post-header search-header">
         <h1 class="post-title">
-            <?php printf( esc_html__( 'Search Results for %s', 'challenger' ), '<span>&ldquo;' . get_search_query() . '&rdquo;</span>' ); ?>
+            <?php 
+            // translators: placeholder is the user's search query
+            printf( esc_html__( 'Search Results for %s', 'challenger' ), '<span>&ldquo;' . get_search_query() . '&rdquo;</span>' ); ?>
         </h1>
         <?php get_search_form(); ?>
     </div>

@@ -16,15 +16,29 @@ $avatar = get_avatar( get_the_author_meta( 'ID' ), 36, '', get_the_author() );
 
 echo '<div class="post-byline">';
 	if ( $avatar_display != 'no' ) {
-		echo $avatar;
+		echo wp_kses( $avatar, array(
+			'img' => array(
+				'src' 	 => array(),
+				'srcset' => array(),
+				'alt' 	 => array(),
+				'id' 		 => array(),
+				'class'  => array(),
+				'height' => array(),
+				'width'  => array()
+			)
+		) );
 	}
 	if ( $author_display != 'no' ) {
-		echo $author;
+		echo wp_kses( $author, array(
+			'a' 	 => array(
+				'href' 	 => array()
+			)
+		) );
 	}
 	if ( $author_display != 'no' && $date_display != 'no' ) {
 		echo ' - ';
 	}
 	if ( $date_display != 'no' ) {
-		echo $date;
+		echo esc_html( $date );
 	}
 echo '</div>';

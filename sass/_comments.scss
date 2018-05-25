@@ -18,6 +18,10 @@
     margin-bottom: $baseline-height * 1.5;
   }
 }
+// I don't want to style the post author's comments differently, but this class is required to pass the Theme Check...
+.bypostauthor {
+  margin-bottom: $baseline-height * 1.5;
+}
 .comment-author {
   display: flex;
   align-items: center;
@@ -47,6 +51,11 @@
 .comment-edit-link {
   margin-left: 8px;
 }
+.comment-notes,
+.comment-form-cookies-consent {
+  font-size: 16px;
+  line-height: 1.5;
+}
 
 @media all and (min-width: $six-hundred) {
 
@@ -63,5 +72,14 @@
     li {
       margin-bottom: $baseline-height * 2;
     }
+  }
+}
+
+@media all and (min-width: $nine-hundred) {
+
+  .comment-notes,
+  .comment-form-cookies-consent {
+    font-size: 18px;
+    line-height: 1.333; /* 24px */
   }
 }

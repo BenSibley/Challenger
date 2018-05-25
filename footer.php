@@ -7,6 +7,7 @@
     <div class="design-credit">
         <span>
             <?php
+            // translators: placeholder is a URL
             $footer_text = sprintf( __( '<a href="%s">Challenger WordPress Theme</a> by Compete Themes.', 'challenger' ), 'https://www.competethemes.com/challenger/' );
             $footer_text = apply_filters( 'ct_challenger_footer_text', $footer_text );
             echo wp_kses_post( $footer_text );

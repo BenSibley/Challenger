@@ -107,6 +107,7 @@ jQuery(document).ready(function($){
     });
 
     $(window).resize(function(){
+        keepDropdownsVisible();
         objectFitAdjustment();
         
         if ( window.innerWidth > 799 ) {
@@ -114,6 +115,8 @@ jQuery(document).ready(function($){
                 menuPrimaryContainer.css('padding-top', 0);
                 menuPrimaryContainer.removeClass('open');
                 toggleNavigation.removeClass('open');
+                body.css('overflow', 'auto');
+                siteHeader.removeClass('open');
             }
         }
     });
@@ -129,6 +132,7 @@ jQuery(document).ready(function($){
             siteHeader.removeClass('open');
             menuPrimaryContainer.removeClass('open');
             $(this).removeClass('open');
+            body.css('overflow', 'auto');
 
             // change screen reader text
             $(this).children('span').text(objectL10n.openMenu);
@@ -146,6 +150,7 @@ jQuery(document).ready(function($){
             siteHeader.addClass('open');
             menuPrimaryContainer.addClass('open');
             $(this).addClass('open');
+            body.css('overflow', 'hidden');
 
             // change screen reader text
             $(this).children('span').text(objectL10n.closeMenu);
@@ -178,6 +183,22 @@ jQuery(document).ready(function($){
             });
         }
     }
+
+    // If the right side of a dropdown menu is to the right of the menu primary container, add the flipped class
+    function keepDropdownsVisible() {
+
+        if ( window.innerWidth > 799 ) {
+            const submenus = menuPrimary.find('.sub-menu');
+            submenus.each(function () {
+                if ( $(this).offset().left + $(this).width() > window.innerWidth ) {
+                    $(this).addClass('flipped');
+                } else {
+                    $(this).removeClass('flipped');
+                }
+            });
+        }
+    }
+    keepDropdownsVisible();
 
     /* allow keyboard access/visibility for dropdown menu items */
     menuLink.focus(function(){

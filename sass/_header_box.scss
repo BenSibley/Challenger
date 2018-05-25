@@ -91,6 +91,35 @@
     }
   }
 }
+@media all and (min-width: $eight-hundred) {
+
+  .has-header-box {
+
+    #menu-primary {
+
+      .menu-primary-items,
+      .menu-unset ul {
+
+        ul {
+
+          a {
+            color: $color-gray-15;
+  
+            &:link,
+            &:visited {
+              color: $color-gray-15;
+            }
+            &:hover,
+            &:active,
+            &:focus {
+              color: $color-gray-40;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 @media all and (min-width: $nine-hundred) {
 
   .header-box {

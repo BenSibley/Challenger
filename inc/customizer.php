@@ -25,7 +25,9 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 		public function render_content() {
 			$link = 'https://www.competethemes.com/challenger-pro/';
 			echo "<a href='" . $link . "' target='_blank'><img src='" . get_template_directory_uri() . "/assets/images/challenger-pro.gif' /></a>";
+			// translators: placeholder is the name of the theme (Challenger)
 			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%1$s">%2$s Pro</a> makes advanced customization simple - and fun too!', 'challenger'), $link, wp_get_theme( get_template() ) ) . "</p>";
+			// translators: placeholder is the name of the theme (Challenger)
 			echo "<p>" . sprintf( esc_html_x('%s Pro adds the following features:', 'Challenger Pro adds the following features:', 'challenger'), wp_get_theme( get_template() ) ) . "</p>";
 			echo "<ul>
 					<li>" . esc_html__('6 new layouts', 'challenger') . "</li>
@@ -33,7 +35,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 					<li>" . esc_html__('61 advanced color controls', 'challenger') . "</li>
 					<li>" . esc_html__('+ 5 more features', 'challenger') . "</li>
 				  </ul>";
-			// translators: placeholder is "Challenger"
+			// translators: placeholder is the name of the theme (Challenger)
 			echo "<p class='button-wrapper'><a target=\"_blank\" class='challenger-pro-button' href='" . $link . "'>" . sprintf( esc_html_x('View %s Pro', 'View Challenger Pro', 'challenger'), wp_get_theme( get_template() ) ) . "</a></p>";
 		}
 	}
@@ -73,6 +75,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	if ( !defined( 'challenger_PRO_FILE' ) ) {
 		// section
 		$wp_customize->add_section( 'ct_challenger_pro', array(
+			// translators: placeholder is the name of the theme (Challenger)
 			'title'    => sprintf( __( '%s Pro', 'challenger' ), wp_get_theme( get_template() ) ),
 			'priority' => 1
 		) );
@@ -381,6 +384,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 				$wp_customize->add_control( $social_site, array(
 					'type'        => 'url',
 					'label'       => $label,
+					// translators: placeholder is a URL
 					'description' => sprintf( __( 'Accepts Skype link protocol (<a href="%s" target="_blank">learn more</a>)', 'challenger' ), 'https://www.competethemes.com/blog/skype-links-wordpress/' ),
 					'section'     => 'ct_challenger_social_media_icons',
 					'priority'    => $priority

@@ -280,7 +280,24 @@ if ( ! function_exists( 'ct_challenger_featured_image' ) ) {
 		$featured_image = apply_filters( 'ct_challenger_featured_image', $featured_image );
 
 		if ( $featured_image ) {
-			echo $featured_image;
+			echo wp_kses( $featured_image, array(
+				'div' => array(
+					'class' => array()
+				),
+				'a'   => array(
+					'href' => array()
+				),
+				'img' => array(
+					'src' 	 => array(),
+					'srcset' => array(),
+					'alt' 	 => array(),
+					'id' 		 => array(),
+					'class'  => array(),
+					'height' => array(),
+					'width'  => array(),
+					'sizes'  => array()
+				)
+			) );
 		}
 	}
 }
@@ -447,7 +464,7 @@ add_action( 'challenger_sticky_post_status', 'ct_challenger_sticky_post_marker' 
 if ( ! function_exists( ( 'ct_challenger_reset_customizer_options' ) ) ) {
 	function ct_challenger_reset_customizer_options() {
 
-		if ( empty( $_POST['challenger_reset_customizer'] ) || 'challenger_reset_customizer_settings' !== $_POST['challenger_reset_customizer'] ) {
+		if ( !isset( $_POST['challenger_reset_customizer'] ) || 'challenger_reset_customizer_settings' !== $_POST['challenger_reset_customizer'] ) {
 			return;
 		}
 
@@ -606,7 +623,14 @@ if ( ! function_exists( ( 'ct_challenger_add_meta_elements' ) ) ) {
 		$template = sprintf( '<meta name="template" content="%s %s" />' . "\n", esc_attr( $theme->get( 'Name' ) ), esc_attr( $theme->get( 'Version' ) ) );
 		$meta_elements .= $template;
 
-		echo $meta_elements;
+		echo wp_kses( $meta_elements, array(
+			'meta' => array(
+				'charset' 	 		=> array(),
+				'name' 					=> array(),
+				'content' 	 		=> array(),
+				'initial-scale' => array()
+			)
+		) );
 	}
 }
 add_action( 'wp_head', 'ct_challenger_add_meta_elements', 1 );
@@ -698,10 +722,11 @@ function ct_challenger_output_header_styles() {
 	$css = '';
 	$header_box_image = get_theme_mod( 'header_box_image' ) ? get_theme_mod( 'header_box_image' ) : trailingslashit( get_template_directory_uri() ) . 'assets/img/header.jpg';
 	$overlay_color = get_theme_mod( 'header_box_overlay' ) ? get_theme_mod( 'header_box_overlay' ) : '#05b0e7';
-	if ( (string) get_theme_mod( 'header_box_overlay_opacity' ) === '0' ) {
+	$overlay_opacity = get_theme_mod( 'header_box_overlay_opacity' );
+	if ( (string) $overlay_opacity === '0' ) {
 		$overlay_opacity = 0;
 	} else {
-		$overlay_opacity = !empty(get_theme_mod( 'header_box_overlay_opacity' )) ? get_theme_mod( 'header_box_overlay_opacity' ) : '0.8';
+		$overlay_opacity = !empty( $overlay_opacity ) ? $overlay_opacity : '0.8';
 	}
 	$button_color = get_theme_mod( 'header_box_button_color' ) ? get_theme_mod( 'header_box_button_color' ) : '#fff';
 	$button_bg_color = get_theme_mod( 'header_box_button_bg_color' ) ? get_theme_mod( 'header_box_button_bg_color' ) : '#ff9900';
