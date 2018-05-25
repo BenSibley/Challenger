@@ -119,10 +119,10 @@ module.exports = function(grunt) {
                     'rm -R /Users/bensibley/Documents/compete-themes/dist/challenger || true',
                     'rm -R /Users/bensibley/Documents/compete-themes/dist/challenger.zip || true',
                     // copy folder without any project/meta files
-                    'rsync -r /Applications/MAMP/htdocs/wordpress/wp-content/themes/challenger /Users/bensibley/Documents/compete-themes/dist/ <%= excludeFiles %>',
+                    'rsync -r "/Users/bensibley/Local Sites/challenger/app/public/wp-content/themes/challenger" /Users/bensibley/Documents/compete-themes/dist/ <%= excludeFiles %>',
                     // open dist
                     'cd /Users/bensibley/Documents/compete-themes/dist/',
-                    // zip the challenger folder
+                    // zip the ct_mission_news folder
                     'zip -r challenger.zip challenger'
                 ].join('&&')
             }
