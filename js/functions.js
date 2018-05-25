@@ -6,7 +6,7 @@ jQuery(document).ready(function($){
     var toggleNavigation = $('#toggle-navigation');
     var menuPrimaryContainer = $('#menu-primary-container');
     var menuPrimary = $('#menu-primary');
-    var menuPrimaryItems = $('#menu-primary-items');
+    var menuPrimaryItems = $('#menu-primary-items').length ? $('#menu-primary-items') : $('.menu-unset > ul');
     var toggleDropdown = $('.toggle-dropdown');
     //var toggleSidebar = $('#toggle-sidebar');
     //var sidebarPrimary = $('#sidebar-primary');

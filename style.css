@@ -741,6 +741,7 @@ a img {
     -webkit-align-self: flex-start;
     -ms-flex-item-align: start;
     align-self: flex-start;
+    margin-right: 24px;
   }
 
   .site-title {
@@ -921,12 +922,12 @@ a img {
 }
 
 .menu-primary-items,
-.menu-unset ul {
+.menu-unset > ul {
   list-style: none;
   margin: 0;
 }
 .menu-primary-items:after,
-.menu-unset ul:after {
+.menu-unset > ul:after {
   content: ".";
   display: block;
   clear: both;
@@ -935,23 +936,23 @@ a img {
   height: 0;
 }
 .menu-primary-items li,
-.menu-unset ul li {
+.menu-unset > ul li {
   position: relative;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
 .menu-primary-items li.visible,
-.menu-unset ul li.visible {
+.menu-unset > ul li.visible {
   opacity: 1;
 }
 .menu-primary-items li.current-menu-item > a, .menu-primary-items li.current-menu-ancestor > a,
-.menu-unset ul li.current-menu-item > a,
-.menu-unset ul li.current-menu-ancestor > a {
+.menu-unset > ul li.current-menu-item > a,
+.menu-unset > ul li.current-menu-ancestor > a {
   text-decoration: underline;
 }
 .menu-primary-items a,
-.menu-unset ul a {
+.menu-unset > ul a {
   display: block;
   padding: 12px 0;
   text-decoration: none;
@@ -959,13 +960,13 @@ a img {
   transition: color 0.15s;
 }
 .menu-primary-items a:hover, .menu-primary-items a:active, .menu-primary-items a:focus,
-.menu-unset ul a:hover,
-.menu-unset ul a:active,
-.menu-unset ul a:focus {
+.menu-unset > ul a:hover,
+.menu-unset > ul a:active,
+.menu-unset > ul a:focus {
   color: #666666;
 }
 .menu-primary-items ul,
-.menu-unset ul ul {
+.menu-unset > ul ul {
   list-style: none;
   margin: 0 0 0 24px;
 }
@@ -997,11 +998,22 @@ a img {
     text-align: right;
     padding: 0;
   }
-  .menu-primary li {
+
+  .menu-primary-items li,
+  .menu-unset > ul li {
     display: inline-block;
     opacity: 1;
   }
-  .menu-primary a {
+  .menu-primary-items > li,
+  .menu-unset > ul > li {
+    margin-right: 36px;
+  }
+  .menu-primary-items > li:last-child,
+  .menu-unset > ul > li:last-child {
+    margin-right: 0;
+  }
+  .menu-primary-items a,
+  .menu-unset > ul a {
     font-size: 1.125em;
     /* 18px / 16px */
     line-height: 1.333;
@@ -1009,57 +1021,47 @@ a img {
     color: #262626;
     padding: 0;
   }
-  .menu-primary a:link, .menu-primary a:visited {
+  .menu-primary-items a:link, .menu-primary-items a:visited,
+  .menu-unset > ul a:link,
+  .menu-unset > ul a:visited {
     color: #262626;
   }
-  .menu-primary a:hover, .menu-primary a:active, .menu-primary a:focus {
+  .menu-primary-items a:hover, .menu-primary-items a:active, .menu-primary-items a:focus,
+  .menu-unset > ul a:hover,
+  .menu-unset > ul a:active,
+  .menu-unset > ul a:focus {
     color: #666666;
   }
-
-  .menu-primary-items > li,
-  .menu-unset ul > li {
-    margin-right: 36px;
+  .menu-primary-items a:hover ~ ul, .menu-primary-items a:active ~ ul, .menu-primary-items a:focus ~ ul,
+  .menu-unset > ul a:hover ~ ul,
+  .menu-unset > ul a:active ~ ul,
+  .menu-unset > ul a:focus ~ ul {
+    opacity: 1;
+    visibility: visible;
   }
-  .menu-primary-items > li:last-child,
-  .menu-unset ul > li:last-child {
-    margin-right: 0;
+  .menu-primary-items a:hover ~ ul > li, .menu-primary-items a:active ~ ul > li, .menu-primary-items a:focus ~ ul > li,
+  .menu-unset > ul a:hover ~ ul > li,
+  .menu-unset > ul a:active ~ ul > li,
+  .menu-unset > ul a:focus ~ ul > li {
+    opacity: 1;
+  }
+  .menu-primary-items a:hover:after, .menu-primary-items a:active:after, .menu-primary-items a:focus:after,
+  .menu-unset > ul a:hover:after,
+  .menu-unset > ul a:active:after,
+  .menu-unset > ul a:focus:after {
+    content: '';
+    height: 24px;
   }
   .menu-primary-items a:after,
-  .menu-unset ul a:after {
+  .menu-unset > ul a:after {
     content: '';
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
   }
-  .menu-primary-items a:hover, .menu-primary-items a:active, .menu-primary-items a:focus,
-  .menu-unset ul a:hover,
-  .menu-unset ul a:active,
-  .menu-unset ul a:focus {
-    color: #666666;
-  }
-  .menu-primary-items a:hover ~ ul, .menu-primary-items a:active ~ ul, .menu-primary-items a:focus ~ ul,
-  .menu-unset ul a:hover ~ ul,
-  .menu-unset ul a:active ~ ul,
-  .menu-unset ul a:focus ~ ul {
-    opacity: 1;
-    visibility: visible;
-  }
-  .menu-primary-items a:hover ~ ul > li, .menu-primary-items a:active ~ ul > li, .menu-primary-items a:focus ~ ul > li,
-  .menu-unset ul a:hover ~ ul > li,
-  .menu-unset ul a:active ~ ul > li,
-  .menu-unset ul a:focus ~ ul > li {
-    opacity: 1;
-  }
-  .menu-primary-items a:hover:after, .menu-primary-items a:active:after, .menu-primary-items a:focus:after,
-  .menu-unset ul a:hover:after,
-  .menu-unset ul a:active:after,
-  .menu-unset ul a:focus:after {
-    content: '';
-    height: 24px;
-  }
   .menu-primary-items ul,
-  .menu-unset ul ul {
+  .menu-unset > ul ul {
     position: absolute;
     z-index: 19;
     top: 100%;
@@ -1078,7 +1080,7 @@ a img {
     transition: opacity 0.25s, visibility 0.25s, transform 0.15s;
   }
   .menu-primary-items ul.flipped,
-  .menu-unset ul ul.flipped {
+  .menu-unset > ul ul.flipped {
     left: auto;
     right: -24px;
     border-left: none;
@@ -1086,78 +1088,78 @@ a img {
     text-align: right;
   }
   .menu-primary-items ul:hover,
-  .menu-unset ul ul:hover {
+  .menu-unset > ul ul:hover {
     opacity: 1;
     visibility: visible;
   }
   .menu-primary-items ul:hover > li,
-  .menu-unset ul ul:hover > li {
+  .menu-unset > ul ul:hover > li {
     opacity: 1;
   }
   .menu-primary-items ul li,
-  .menu-unset ul ul li {
+  .menu-unset > ul ul li {
     display: block;
     white-space: nowrap;
     opacity: 0;
   }
   .menu-primary-items ul li:first-child,
-  .menu-unset ul ul li:first-child {
+  .menu-unset > ul ul li:first-child {
     -webkit-transition: opacity 0.3s;
     transition: opacity 0.3s;
   }
   .menu-primary-items ul li:nth-child(2),
-  .menu-unset ul ul li:nth-child(2) {
+  .menu-unset > ul ul li:nth-child(2) {
     -webkit-transition: opacity 0.5s;
     transition: opacity 0.5s;
   }
   .menu-primary-items ul li:nth-child(3),
-  .menu-unset ul ul li:nth-child(3) {
+  .menu-unset > ul ul li:nth-child(3) {
     -webkit-transition: opacity 0.7s;
     transition: opacity 0.7s;
   }
   .menu-primary-items ul li:nth-child(4),
-  .menu-unset ul ul li:nth-child(4) {
+  .menu-unset > ul ul li:nth-child(4) {
     -webkit-transition: opacity 0.9s;
     transition: opacity 0.9s;
   }
   .menu-primary-items ul li:nth-child(5),
-  .menu-unset ul ul li:nth-child(5) {
+  .menu-unset > ul ul li:nth-child(5) {
     -webkit-transition: opacity 1.1s;
     transition: opacity 1.1s;
   }
   .menu-primary-items ul li:nth-child(6),
-  .menu-unset ul ul li:nth-child(6) {
+  .menu-unset > ul ul li:nth-child(6) {
     -webkit-transition: opacity 1.3s;
     transition: opacity 1.3s;
   }
   .menu-primary-items ul li:nth-child(7),
-  .menu-unset ul ul li:nth-child(7) {
+  .menu-unset > ul ul li:nth-child(7) {
     -webkit-transition: opacity 1.5s;
     transition: opacity 1.5s;
   }
   .menu-primary-items ul li:nth-child(8),
-  .menu-unset ul ul li:nth-child(8) {
+  .menu-unset > ul ul li:nth-child(8) {
     -webkit-transition: opacity 1.7s;
     transition: opacity 1.7s;
   }
   .menu-primary-items ul a,
-  .menu-unset ul ul a {
+  .menu-unset > ul ul a {
     padding: 12px 24px;
   }
   .menu-primary-items ul ul,
-  .menu-unset ul ul ul {
+  .menu-unset > ul ul ul {
     top: 0;
     left: 100%;
     border: none;
   }
   .menu-primary-items ul ul.flipped,
-  .menu-unset ul ul ul.flipped {
+  .menu-unset > ul ul ul.flipped {
     left: auto;
     right: 100%;
   }
 
-  .menu-primary-items ul,
-  .menu-unset ul ul {
+  .rtl .menu-primary-items ul,
+  .rtl .menu-unset > ul ul {
     right: auto;
     border-left: solid 3px #EDEDED;
     border-right: none;
