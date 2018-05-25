@@ -265,4 +265,13 @@
       }
     }
   }
+  .menu-primary-items,
+  .menu-unset ul {
+
+    ul {
+      right: auto;
+      border-left: solid 3px $color-gray-93;
+      border-right: none;
+    }
+  }
 }

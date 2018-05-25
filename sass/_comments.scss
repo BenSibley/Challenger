@@ -57,6 +57,17 @@
   line-height: 1.5;
 }
 
+.rtl {
+
+  .comment-list {
+    
+    ul {
+      border-left: solid 2px $color-gray-93;
+      border-right: none;
+    }
+  }
+}
+
 @media all and (min-width: $six-hundred) {
 
   .comments-number {

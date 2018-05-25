@@ -526,6 +526,11 @@ a img {
   line-height: 1.5;
 }
 
+.rtl .comment-list ul {
+  border-right: solid 2px #EDEDED;
+  border-left: none;
+}
+
 @media all and (min-width: 37.5em) {
   .comments-number {
     margin-bottom: 3em;
@@ -717,6 +722,11 @@ a img {
 }
 .social-media-icons a:hover, .social-media-icons a:active, .social-media-icons a:focus {
   border-color: #262626;
+}
+
+.rtl .social-media-icons li:last-child a {
+  margin-right: 12px;
+  margin-left: 0;
 }
 
 @media all and (min-width: 50em) {
@@ -1144,6 +1154,13 @@ a img {
   .menu-unset ul ul ul.flipped {
     right: auto;
     left: 100%;
+  }
+
+  .menu-primary-items ul,
+  .menu-unset ul ul {
+    left: auto;
+    border-right: solid 3px #EDEDED;
+    border-left: none;
   }
 }
 .featured-image {
