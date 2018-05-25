@@ -1,12 +1,13 @@
 .toggle-navigation {
   position: relative;
   z-index: 10;
-  align-self: center;
+  align-self: start;
   border: none;
   background: none;
   margin: 0;
   padding: 8px 5px;
   margin-left: -36px;
+  backface-visibility: hidden;
 
   &:hover {
     cursor: pointer;

@@ -50,6 +50,7 @@ jQuery(document).ready(function($){
             menuPrimaryContainer.removeClass('open');
             $(this).removeClass('open');
             body.css('overflow', 'auto');
+            $('.overflow-container').css('position', 'static');
 
             // change screen reader text
             $(this).children('span').text(objectL10n.openMenu);
@@ -60,7 +61,7 @@ jQuery(document).ready(function($){
             menuPrimaryItems.find('li').removeClass('visible');
             
             setTimeout( function(){ 
-                menuPrimaryContainer.css('padding-top', 0);
+                menuPrimaryContainer.css('margin-top', 0);
             }, 500)
 
         } else {
@@ -68,6 +69,8 @@ jQuery(document).ready(function($){
             menuPrimaryContainer.addClass('open');
             $(this).addClass('open');
             body.css('overflow', 'hidden');
+            $('.overflow-container').css('position', 'fixed');
+            $('#menu-overflow-cover').css('height', parseInt($('#title-container').offset().top + $('#title-container').height() + 12) + 'px' );
 
             // change screen reader text
             $(this).children('span').text(objectL10n.closeMenu);
@@ -75,21 +78,20 @@ jQuery(document).ready(function($){
             // change aria text
             $(this).attr('aria-expanded', 'true');
 
-            var paddingTop = siteHeader.outerHeight();
+            var marginTop = siteHeader.outerHeight();
             if ( body.hasClass('admin-bar') ) {
                 if ( window.innerWidth < 783 ) {
-                    paddingTop += 46;
+                    marginTop += 46;
                 } else {
-                    paddingTop += 32;
+                    marginTop += 32;
                 }   
             }
             if ( body.hasClass('has-header-box') ) {
-                paddingTop -= $('#header-box').outerHeight(true);
+                marginTop -= $('#header-box').outerHeight(true);
             }
-            menuPrimaryContainer.css('padding-top', paddingTop + 'px');
+            menuPrimaryContainer.css('margin-top', marginTop + 'px');
 
-            // var menuItemCount = menuPrimaryItems.children().length;
-            var delay = 300/menuPrimaryItems.children().length;;
+            var delay = 200/menuPrimaryItems.children().length;;
             var currentDelay = 75
             menuPrimaryItems.find('li').each(function() {
                 const li = $(this);

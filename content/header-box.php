@@ -19,3 +19,4 @@ if ( $button_target == 'yes' ) {
   </div>
 </div>
 <div class="overlay"></div>
+<div id="menu-overflow-cover" class="menu-overflow-cover"></div>

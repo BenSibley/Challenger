@@ -6,6 +6,17 @@
     background-position: 50% 50%;
     margin-bottom: $baseline-height * 1.5;
 
+    .menu-overflow-cover {
+      position: absolute;
+      z-index: 9;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.97);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
     .overlay {
       position: absolute;
       top: 0;
@@ -21,6 +32,12 @@
     }
     &.open {
 
+      .menu-overflow-cover {
+        content: '';
+        height: 76px;
+        opacity: 1;
+        visibility: visible;
+      }
       .site-title {
 
         a,

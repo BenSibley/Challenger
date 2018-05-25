@@ -855,14 +855,16 @@ a img {
 .toggle-navigation {
   position: relative;
   z-index: 10;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
+  -webkit-align-self: start;
+  -ms-flex-item-align: start;
+  align-self: start;
   border: none;
   background: none;
   margin: 0;
   padding: 8px 5px;
   margin-left: -36px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .toggle-navigation:hover {
   cursor: pointer;
@@ -1599,6 +1601,18 @@ a img {
   background-position: 50% 50%;
   margin-bottom: 2.25em;
 }
+.has-header-box .site-header .menu-overflow-cover {
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.97);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s, visibility 0.3s;
+  transition: opacity 0.3s, visibility 0.3s;
+}
 .has-header-box .site-header .overlay {
   position: absolute;
   top: 0;
@@ -1612,6 +1626,12 @@ a img {
 .has-header-box .site-header .toggle-navigation svg g {
   -webkit-transition: color 0.2s;
   transition: color 0.2s;
+}
+.has-header-box .site-header.open .menu-overflow-cover {
+  content: '';
+  height: 76px;
+  opacity: 1;
+  visibility: visible;
 }
 .has-header-box .site-header.open .site-title a,
 .has-header-box .site-header.open .site-title a:link,
