@@ -1,0 +1,610 @@
+# Copyright (C) 2018 Compete Themes
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Challenger 0.2\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2018-06-02 19:12:30+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
+
+#: 404.php:6
+msgid "404: Page Not Found"
+msgstr ""
+
+#: 404.php:9
+msgid "Sorry, we couldn't find a page at this URL"
+msgstr ""
+
+#: 404.php:10
+msgid ""
+"Please double-check that the URL is correct or try searching our site with "
+"the form below."
+msgstr ""
+
+#: comments.php:12 comments.php:37 comments.php:64
+msgid "Be First to Comment"
+msgstr ""
+
+#: comments.php:12 comments.php:37 comments.php:64
+msgid "One Comment"
+msgstr ""
+
+#: comments.php:54
+#. translators: placeholder is link to the trackback URL
+msgid ""
+"Comments are closed, but <a href=\"%s\" title=\"Trackback URL for this "
+"post\">trackbacks</a> and pingbacks are open."
+msgstr ""
+
+#: comments.php:79 comments.php:86
+msgid "Comments are closed."
+msgstr ""
+
+#: content/archive-header.php:14
+msgid "Posts tagged as"
+msgstr ""
+
+#: content/header-box.php:5 inc/customizer.php:141
+msgid "Become a professional blogger with our FREE 5-day email course"
+msgstr ""
+
+#: content/header-box.php:6 inc/customizer.php:182
+msgid "Signup Now"
+msgstr ""
+
+#: content/post-categories.php:10
+msgid "Category"
+msgstr ""
+
+#: content/post-tags.php:11
+#. translators: placeholder is the name of the post tag
+msgid "View all posts tagged %s"
+msgstr ""
+
+#: content-page.php:12 content.php:13 templates/full-width.php:22
+msgid "Pages:"
+msgstr ""
+
+#: footer.php:11
+#. translators: placeholder is a URL
+msgid "<a href=\"%s\">Challenger WordPress Theme</a> by Compete Themes."
+msgstr ""
+
+#: functions.php:20
+msgid ""
+"Hey! Sorry to interrupt, but you've been using Challenger for a little "
+"while now. If you're happy with this theme, could you take a minute to "
+"leave a review? <i>You won't see this notice again after closing it.</i>"
+msgstr ""
+
+#: functions.php:65
+msgid "Primary"
+msgstr ""
+
+#: functions.php:80
+msgid "After Post Content"
+msgstr ""
+
+#: functions.php:82
+msgid "Widgets in this area will be shown on post pages after the content."
+msgstr ""
+
+#: functions.php:89
+msgid "After Page Content"
+msgstr ""
+
+#: functions.php:91
+msgid "Widgets in this area will be shown on pages after the content."
+msgstr ""
+
+#: functions.php:98
+msgid "Before Post Content"
+msgstr ""
+
+#: functions.php:100
+msgid "Widgets in this area will be shown on post pages before the content."
+msgstr ""
+
+#: functions.php:107
+msgid "Before Page Content"
+msgstr ""
+
+#: functions.php:109
+msgid "Widgets in this area will be shown on pages before the content."
+msgstr ""
+
+#: functions.php:135
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:142
+msgid "Reply"
+msgstr ""
+
+#: functions.php:147
+msgid "Edit"
+msgstr ""
+
+#: functions.php:186
+msgid "Continue Reading"
+msgstr ""
+
+#: functions.php:223
+msgid "Comment on this post"
+msgstr ""
+
+#: functions.php:411
+msgid "email"
+msgstr ""
+
+#: functions.php:455
+msgid "Featured Post"
+msgstr ""
+
+#: functions.php:543
+msgid "Customizer settings deleted"
+msgstr ""
+
+#: header.php:11
+msgid "Press \"Enter\" to skip to content"
+msgstr ""
+
+#: header.php:28 inc/scripts.php:8
+msgid "open menu"
+msgstr ""
+
+#: inc/customizer.php:29
+#. translators: placeholder is the name of the theme (Challenger)
+msgid ""
+"<a target=\"_blank\" href=\"%1$s\">%2$s Pro</a> makes advanced "
+"customization simple - and fun too!"
+msgstr ""
+
+#: inc/customizer.php:33
+msgid "6 new layouts"
+msgstr ""
+
+#: inc/customizer.php:34
+msgid "4 post templates"
+msgstr ""
+
+#: inc/customizer.php:35
+msgid "61 advanced color controls"
+msgstr ""
+
+#: inc/customizer.php:36
+msgid "+ 5 more features"
+msgstr ""
+
+#: inc/customizer.php:79
+#. translators: placeholder is the name of the theme (Challenger)
+msgid "%s Pro"
+msgstr ""
+
+#: inc/customizer.php:99
+msgid "Header"
+msgstr ""
+
+#: inc/customizer.php:109
+msgid "Show the lead generation header?"
+msgstr ""
+
+#: inc/customizer.php:114 inc/customizer.php:218 inc/customizer.php:471
+#: inc/customizer.php:487 inc/customizer.php:503 inc/customizer.php:552
+#: inc/customizer.php:568 inc/customizer.php:584 inc/customizer.php:600
+#: inc/customizer.php:616 inc/customizer.php:632 inc/customizer.php:648
+#: inc/customizer.php:664 inc/customizer.php:679
+msgid "Yes"
+msgstr ""
+
+#: inc/customizer.php:115 inc/customizer.php:219 inc/customizer.php:472
+#: inc/customizer.php:488 inc/customizer.php:504 inc/customizer.php:553
+#: inc/customizer.php:569 inc/customizer.php:585 inc/customizer.php:601
+#: inc/customizer.php:617 inc/customizer.php:633 inc/customizer.php:649
+#: inc/customizer.php:665 inc/customizer.php:680
+msgid "No"
+msgstr ""
+
+#: inc/customizer.php:127
+msgid "Which pages should it display on?"
+msgstr ""
+
+#: inc/customizer.php:131
+msgid "Homepage"
+msgstr ""
+
+#: inc/customizer.php:132 inc/customizer.php:456
+msgid "Blog"
+msgstr ""
+
+#: inc/customizer.php:133
+msgid "Posts"
+msgstr ""
+
+#: inc/customizer.php:134
+msgid "Pages"
+msgstr ""
+
+#: inc/customizer.php:135
+msgid "Archives"
+msgstr ""
+
+#: inc/customizer.php:136
+msgid "Search results"
+msgstr ""
+
+#: inc/customizer.php:147
+msgid "Title text"
+msgstr ""
+
+#: inc/customizer.php:161
+msgid "Title text color"
+msgstr ""
+
+#: inc/customizer.php:175
+msgid "Site title, tagline, and menu color"
+msgstr ""
+
+#: inc/customizer.php:188
+msgid "Button text"
+msgstr ""
+
+#: inc/customizer.php:201
+msgid "Button URL"
+msgstr ""
+
+#: inc/customizer.php:213
+msgid "Open the button link in a new tab?"
+msgstr ""
+
+#: inc/customizer.php:231
+msgid "Button text color"
+msgstr ""
+
+#: inc/customizer.php:245
+msgid "Button background color"
+msgstr ""
+
+#: inc/customizer.php:259
+msgid "Background overlay color"
+msgstr ""
+
+#: inc/customizer.php:272
+msgid "Overlay opacity"
+msgstr ""
+
+#: inc/customizer.php:289
+msgid "Background image"
+msgstr ""
+
+#: inc/customizer.php:290
+msgid "Use an image that is 2,000px wide for best results."
+msgstr ""
+
+#: inc/customizer.php:302
+msgid "Alternate logo"
+msgstr ""
+
+#: inc/customizer.php:303
+msgid ""
+"Upload a light variation of your logo to better match the background "
+"overlay."
+msgstr ""
+
+#: inc/customizer.php:319
+msgid "Social Media Icons"
+msgstr ""
+
+#: inc/customizer.php:321
+msgid "Add the URL for each of your social profiles."
+msgstr ""
+
+#: inc/customizer.php:334 inc/user-profile.php:66
+msgid "Email Address"
+msgstr ""
+
+#: inc/customizer.php:343 inc/user-profile.php:27
+msgid "Google Plus"
+msgstr ""
+
+#: inc/customizer.php:345 inc/user-profile.php:29
+msgid "RSS"
+msgstr ""
+
+#: inc/customizer.php:347 inc/user-profile.php:31
+msgid "SoundCloud"
+msgstr ""
+
+#: inc/customizer.php:349 inc/user-profile.php:33
+msgid "SlideShare"
+msgstr ""
+
+#: inc/customizer.php:351 inc/user-profile.php:35
+msgid "CodePen"
+msgstr ""
+
+#: inc/customizer.php:353 inc/user-profile.php:37
+msgid "StumbleUpon"
+msgstr ""
+
+#: inc/customizer.php:355 inc/user-profile.php:39
+msgid "DeviantArt"
+msgstr ""
+
+#: inc/customizer.php:357 inc/user-profile.php:41
+msgid "Hacker News"
+msgstr ""
+
+#: inc/customizer.php:359 inc/user-profile.php:43
+msgid "WhatsApp"
+msgstr ""
+
+#: inc/customizer.php:361 inc/user-profile.php:45
+msgid "QQ"
+msgstr ""
+
+#: inc/customizer.php:363 inc/user-profile.php:47
+msgid "VK"
+msgstr ""
+
+#: inc/customizer.php:365 inc/user-profile.php:49
+msgid "WeChat"
+msgstr ""
+
+#: inc/customizer.php:367 inc/user-profile.php:51
+msgid "Tencent Weibo"
+msgstr ""
+
+#: inc/customizer.php:369 inc/user-profile.php:53
+msgid "PayPal"
+msgstr ""
+
+#: inc/customizer.php:371 inc/user-profile.php:55
+msgid "Contact Form"
+msgstr ""
+
+#: inc/customizer.php:373 inc/user-profile.php:57
+msgid "Google Wallet"
+msgstr ""
+
+#: inc/customizer.php:375 inc/user-profile.php:59
+msgid "OK.ru"
+msgstr ""
+
+#: inc/customizer.php:388
+#. translators: placeholder is a URL
+msgid ""
+"Accepts Skype link protocol (<a href=\"%s\" target=\"_blank\">learn "
+"more</a>)"
+msgstr ""
+
+#: inc/customizer.php:414
+msgid "Featured Image Size"
+msgstr ""
+
+#: inc/customizer.php:424
+msgid "Lock Featured Image aspect ratio?"
+msgstr ""
+
+#: inc/customizer.php:429
+msgid "Yes, use the same aspect ratio for all Featured Images"
+msgstr ""
+
+#: inc/customizer.php:430
+msgid "No, use the natural aspect ratio of each image"
+msgstr ""
+
+#: inc/customizer.php:441
+msgid "Featured Image Aspect Ratio"
+msgstr ""
+
+#: inc/customizer.php:466
+msgid "Show full posts on blog?"
+msgstr ""
+
+#: inc/customizer.php:482
+msgid "Show link to comments after each post?"
+msgstr ""
+
+#: inc/customizer.php:498
+msgid "Link author name to post archive?"
+msgstr ""
+
+#: inc/customizer.php:514
+msgid "Excerpt word count"
+msgstr ""
+
+#: inc/customizer.php:521
+msgid "Continue reading"
+msgstr ""
+
+#: inc/customizer.php:527
+msgid "Read More button text"
+msgstr ""
+
+#: inc/customizer.php:537
+msgid "Show/Hide Elements"
+msgstr ""
+
+#: inc/customizer.php:547
+msgid "Show author avatar in post byline?"
+msgstr ""
+
+#: inc/customizer.php:563
+msgid "Show author name in post byline?"
+msgstr ""
+
+#: inc/customizer.php:579
+msgid "Show date in post byline?"
+msgstr ""
+
+#: inc/customizer.php:595
+msgid "Show \"Continue Reading\" button after posts?"
+msgstr ""
+
+#: inc/customizer.php:611
+msgid "Show author box after posts?"
+msgstr ""
+
+#: inc/customizer.php:627
+msgid "Show categories after the post?"
+msgstr ""
+
+#: inc/customizer.php:643
+msgid "Show tags after the post?"
+msgstr ""
+
+#: inc/customizer.php:659
+msgid "Show archive page titles?"
+msgstr ""
+
+#: inc/customizer.php:712
+msgid "Yes, keep all Featured Images the same aspect ratio"
+msgstr ""
+
+#: inc/customizer.php:713
+msgid "No, use the natural size of each image"
+msgstr ""
+
+#: inc/review.php:113
+msgid "Click here to leave your review"
+msgstr ""
+
+#: inc/scripts.php:9
+msgid "close menu"
+msgstr ""
+
+#: inc/scripts.php:10
+msgid "open dropdown menu"
+msgstr ""
+
+#: inc/scripts.php:11
+msgid "close dropdown menu"
+msgstr ""
+
+#: inc/user-profile.php:18
+msgid "Social Profiles"
+msgstr ""
+
+#: search.php:6
+#. translators: placeholder is the user's search query
+msgid "Search Results for %s"
+msgstr ""
+
+#: search.php:24
+msgid "Can't find what you're looking for?  Try refining your search:"
+msgstr ""
+
+#: theme-options.php:5 theme-options.php:23
+#. translators: placeholder is the name of the theme (Challenger)
+msgid "%s Dashboard"
+msgstr ""
+
+#: theme-options.php:28
+msgid "Get Started"
+msgstr ""
+
+#: theme-options.php:31
+#. translators: placeholder is the name of the theme (Challenger)
+msgid ""
+"Not sure where to start? The %1$s Support Center is filled with tutorials "
+"that will take you step-by-step through every feature in %1$s."
+msgstr ""
+
+#: theme-options.php:34
+msgid "Visit Support Center"
+msgstr ""
+
+#: theme-options.php:39
+msgid "Challenger Pro"
+msgstr ""
+
+#: theme-options.php:42
+#. translators: placeholder is the name of the theme (Challenger)
+msgid ""
+"Download the %s Pro plugin and unlock six new layouts, four post templates, "
+"advanced color controls, and more."
+msgstr ""
+
+#: theme-options.php:46
+msgid "See Full Feature List"
+msgstr ""
+
+#: theme-options.php:51 theme-options.php:56
+msgid "Leave a Review"
+msgstr ""
+
+#: theme-options.php:54
+#. translators: placeholder is the name of the theme (Challenger)
+msgid "Help others find %s by leaving a review on wordpress.org."
+msgstr ""
+
+#: theme-options.php:59 theme-options.php:68
+msgid "Reset Customizer Settings"
+msgstr ""
+
+#: theme-options.php:62
+#. translators: placeholder is the name of the theme (Challenger)
+msgid ""
+"<strong>Warning:</strong> Clicking this button will erase the %2$s theme's "
+"current settings in the <a href=\"%1$s\">Customizer</a>."
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Challenger is a premium-quality blogging theme for the modern blogger. As a "
+"fully responsive theme, it looks awesome on laptops, tablets, and mobile "
+"devices. The design is clean and friendly with special attention paid to "
+"the typography for maximum readability. Challenger includes a diverse "
+"feature set including 4 widget areas, 50+ social media icons, and a "
+"completely customizable header section for lead generation. View the fully "
+"setup live demo here: https://www.competethemes.com/demos/?theme=challenger"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Full-width"
+msgstr ""
+
+#: comments.php:12 comments.php:37 comments.php:64
+msgctxt "noun: 5 comments"
+msgid "% Comments"
+msgstr ""
+
+#: content/archive-header.php:10
+msgctxt "Posts published in CATEGORY"
+msgid "Posts published in"
+msgstr ""
+
+#: content/archive-header.php:17
+msgctxt "Posts published by AUTHOR"
+msgid "Posts published by"
+msgstr ""
+
+#: content/archive-header.php:21
+msgctxt "Posts published in MONTH"
+msgid "Posts published in"
+msgstr ""
+
+#: content/post-categories.php:13
+#. translators: placeholder is the name of the post category
+msgctxt "View all posts in post category"
+msgid "View all posts in %s"
+msgstr ""
+
+#: inc/customizer.php:31
+#. translators: placeholder is the name of the theme (Challenger)
+msgctxt "Challenger Pro adds the following features:"
+msgid "%s Pro adds the following features:"
+msgstr ""
+
+#: inc/customizer.php:39
+#. translators: placeholder is the name of the theme (Challenger)
+msgctxt "View Challenger Pro"
+msgid "View %s Pro"
+msgstr ""
