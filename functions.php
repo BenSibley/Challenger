@@ -296,6 +296,17 @@ if ( ! function_exists( 'ct_challenger_featured_image' ) ) {
 					'height' => array(),
 					'width'  => array(),
 					'sizes'  => array()
+				),
+				// for Featured Videos in Challenger Pro
+				'iframe' => array(
+					'src' => array(),
+					'id' => array(),
+					'title' => array(),
+					'frameborder' => array(),
+					'allow' => array(),
+					'allowfullscreen' => array(),
+					'webkitallowfullscreen' => array(),
+					'mozallowfullscreen' => array()
 				)
 			) );
 		}
