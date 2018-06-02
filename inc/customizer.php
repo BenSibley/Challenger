@@ -506,7 +506,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	) );
 	// setting
 	$wp_customize->add_setting( 'excerpt_length', array(
-		'default'           => '45',
+		'default'           => '35',
 		'sanitize_callback' => 'absint'
 	) );
 	// control

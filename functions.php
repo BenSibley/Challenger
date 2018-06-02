@@ -237,12 +237,12 @@ if ( ! function_exists( 'ct_challenger_custom_excerpt_length' ) ) {
 
 		$new_excerpt_length = get_theme_mod( 'excerpt_length' );
 
-		if ( ! empty( $new_excerpt_length ) && $new_excerpt_length != 45 ) {
+		if ( ! empty( $new_excerpt_length ) && $new_excerpt_length != 35 ) {
 			return $new_excerpt_length;
 		} elseif ( $new_excerpt_length === 0 ) {
 			return 0;
 		} else {
-			return 45;
+			return 35;
 		}
 	}
 }
