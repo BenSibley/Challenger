@@ -1440,8 +1440,8 @@ a img {
   .widget-area-after-post {
     font-size: 1.3125em;
     /* 21px / 16px */
-    line-height: 1.714;
-    /* 36px */
+    line-height: 1.81;
+    /* 38px */
   }
 
   .post-categories {
@@ -1746,6 +1746,6 @@ Please do not edit this. Your changes will be overwritten when you update Challe
 
 If you want to make CSS edits, use the "Additional CSS" section in the Customizer instead (Appearance > Customize).
 
-If you want more information about customizing challenger with CSS, check out this guide: https://www.competethemes.com/help/custom-css-challenger/
+If you want more information about customizing Challenger with CSS, check out this guide: https://www.competethemes.com/help/custom-css-challenger/
 
 */
