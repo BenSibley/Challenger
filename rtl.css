@@ -41,7 +41,7 @@ h2, .comment-reply-title, .site-title, .social-media-icons, .header-box .title {
   /* 24px */
 }
 
-input[type="submit"], .tagline {
+input[type="submit"], .design-credit, .tagline {
   font-size: 0.875em;
   /* 14px / 16px */
   line-height: 1.714;
@@ -568,6 +568,12 @@ a img {
   font-weight: 700;
 }
 
+@media all and (min-width: 56.25em) {
+  .design-credit {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+}
 /**
  * 14.2 Galleries
  */
