@@ -25,20 +25,21 @@ Challenger includes the following features:
     * Show full posts or excerpts
     * Custom excerpt length
     * Custom Read More button text
-    * Make first post on blog extra wide
     * Hide/Show display controls
-    * Custom CSS
+    * 4 widget areas
+    * Customizable header
+    * Featured Image size control
 
 Challenger also has a premium plugin upgrade called Challenger Pro that includes the following features:
 
-    * Custom colors
-    * Featured sliders
-    * Featured videos
-    * Additional layouts
-    * Flexible header image
+    * New layouts
+    * Featured Videos
     * Google fonts
+    * Color
+    * Font sizes
+    * Top-of-site ad bar
+    * Sticky header
     * More widget areas
-    * Display controls
     * Custom footer text
 
 Challenger Pro: https://www.competethemes.com/challenger-pro/
@@ -48,24 +49,6 @@ Challenger Pro: https://www.competethemes.com/challenger-pro/
 -------------------------------------------------------
 
     * All menus in Challenger can have 1-3 tiers
-    * Featured Images have a 2x1 ratio at all screen sizes
+    * Featured Images have a 2.5:1 ratio at all screen sizes
     * Challenger is child theme compatible. Download a starter child theme here:
         https://www.competethemes.com/help/child-theme-challenger/
-
-
--------------------------------------------------------
-    Licenses:
--------------------------------------------------------
-
-Challenger WordPress Theme, Copyright 2016 Compete Themes
-Challenger is distributed under the terms of the GNU GPL
-
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-Challenger also uses:
-
-* Fitvids, by Chris Coyier & Dave Rupert, https://github.com/davatron5000/FitVids.js/, licensed under the WTFPL license.
-* Google Fonts, http://google.com/fonts, licensed under open source licenses, see: https://developers.google.com/fonts/faq#Any_Page_OK.
-* Font Awesome by Dave Gandy, licensed under open source licenses, see: http://fortawesome.github.io/Font-Awesome/license/.
-* New York city image in screenshot.png by Anthony Indraus, http://unsplash.com, licensed under Public Domain
