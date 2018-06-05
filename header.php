@@ -32,8 +32,9 @@
 				</div>
 			</header>
 			<?php do_action( 'challenger_after_header' ); ?>
-			<section id="main" class="main" role="main">
-				<?php do_action( 'challenger_main_top' );
-				if ( function_exists( 'yoast_breadcrumb' ) ) {
-					yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
-				}
+			<div class="layout-container">
+				<section id="main" class="main" role="main">
+					<?php do_action( 'challenger_main_top' );
+					if ( function_exists( 'yoast_breadcrumb' ) ) {
+						yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
+					}

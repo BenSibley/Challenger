@@ -1,7 +1,15 @@
 .main {
   padding: 0 $column;
+  // max-width: 1240px;
+  margin: 0 auto;
+}
+.layout-container {
   max-width: 1240px;
   margin: 0 auto;
+
+  &:after {
+    @include clearfix;
+  }
 }
 .loop-container {
   margin-top: $baseline-height;

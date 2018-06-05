@@ -1,6 +1,12 @@
 .site-footer {
   clear: both;
-  margin-top: $baseline-height * 3;
+  margin: $baseline-height * 3 auto 0;
+  padding: 0 $column;
+
+  .max-width {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
 }
 .design-credit {
   @extend %fourteen-pixels;

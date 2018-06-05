@@ -22,6 +22,7 @@
 .site-title {
   @extend %twenty-one-pixels;
   font-weight: 700;
+  font-family: $primary-font-stack; // for compatibility with Challenger Pro
 
   a {
     text-decoration: none;

@@ -71,6 +71,7 @@
   color: $color-gray-58;
   background: $color-gray-93;
   border-radius: 4px;
+  font-family: $primary-font-stack; // for compatibility with Challenger Pro
 }
 
 @media all and (min-width: $six-hundred) {

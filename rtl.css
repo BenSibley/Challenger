@@ -411,6 +411,7 @@ a img {
   color: #949494;
   background: #EDEDED;
   border-radius: 4px;
+  font-family: "Poppins", sans-serif;
 }
 
 @media all and (min-width: 37.5em) {
@@ -555,7 +556,12 @@ a img {
 }
 .site-footer {
   clear: both;
-  margin-top: 4.5em;
+  margin: 4.5em auto 0;
+  padding: 0 4.1667%;
+}
+.site-footer .max-width {
+  max-width: 1240px;
+  margin: 0 auto;
 }
 
 .design-credit {
@@ -694,6 +700,7 @@ a img {
 
 .site-title {
   font-weight: 700;
+  font-family: "Poppins", sans-serif;
 }
 .site-title a {
   text-decoration: none;
@@ -803,8 +810,20 @@ a img {
 
 .main {
   padding: 0 4.1667%;
+  margin: 0 auto;
+}
+
+.layout-container {
   max-width: 1240px;
   margin: 0 auto;
+}
+.layout-container:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 
 .loop-container {
@@ -1676,6 +1695,7 @@ a img {
   margin: 0 auto 24px;
   max-width: 800px;
   font-weight: 700;
+  font-family: "Poppins", sans-serif;
 }
 .header-box .button {
   display: inline-block;
@@ -1684,6 +1704,7 @@ a img {
   text-decoration: none;
   border-radius: 4px;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
   -webkit-transition: -webkit-transform 0.15s ease-in-out;
   transition: transform 0.15s ease-in-out;
 }
