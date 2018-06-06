@@ -72,7 +72,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	/***** Challenger Pro Section *****/
 
 	// don't add if Challenger Pro is active
-	if ( !defined( 'CHALLENGER_PRO_FILE' ) ) {
+	if ( !defined( 'ct_challenger_pro_activation_notice' ) ) {
 		// section
 		$wp_customize->add_section( 'ct_challenger_pro', array(
 			// translators: placeholder is the name of the theme (Challenger)
@@ -97,7 +97,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	// section
 	$wp_customize->add_section( 'challenger_header', array(
 		'title'    => __( 'Header', 'challenger' ),
-		'priority' => 5
+		'priority' => 7
 	) );
 	// setting
 	$wp_customize->add_setting( 'header_box', array(
