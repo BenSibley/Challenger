@@ -39,7 +39,7 @@ function ct_challenger_options_content() {
 					<h3><?php printf( esc_html__( 'Challenger Pro', 'challenger' ), wp_get_theme( get_template() ) ); ?></h3>
 					<p><?php 
 						// translators: placeholder is the name of the theme (Challenger)
-						printf( esc_html__( 'Download the %s Pro plugin and unlock six new layouts, four post templates, advanced color controls, and more.', 'challenger' ), wp_get_theme( get_template() ) ); ?>
+						printf( esc_html__( 'Download the %s Pro plugin and unlock 8 new layouts, 700+ of fonts, Featured Videos, and more.', 'challenger' ), wp_get_theme( get_template() ) ); ?>
 					</p>
 					<p>
 						<a target="_blank" class="button-primary"
