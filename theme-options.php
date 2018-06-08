@@ -34,7 +34,7 @@ function ct_challenger_options_content() {
 					   href="https://www.competethemes.com/documentation/challenger-support-center/"><?php esc_html_e( 'Visit Support Center', 'challenger' ); ?></a>
 				</p>
 			</div>
-			<?php if ( !function_exists( 'ct_challenger_pro_init' ) ) : ?>
+			<?php if ( !defined( 'CHALLENGER_PRO_FILE' ) ) : ?>
 				<div class="content content-premium-upgrade">
 					<h3><?php printf( esc_html__( 'Challenger Pro', 'challenger' ), wp_get_theme( get_template() ) ); ?></h3>
 					<p><?php 
