@@ -24,16 +24,16 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	class ct_challenger_pro_ad extends WP_Customize_Control {
 		public function render_content() {
 			$link = 'https://www.competethemes.com/challenger-pro/';
-			echo "<a href='" . $link . "' target='_blank'><img src='" . get_template_directory_uri() . "/assets/images/challenger-pro.gif' /></a>";
+			echo "<a href='" . $link . "' target='_blank'><img src='" . get_template_directory_uri() . "/assets/img/challenger-pro.gif' /></a>";
 			// translators: placeholder is the name of the theme (Challenger)
 			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%1$s">%2$s Pro</a> makes advanced customization simple - and fun too!', 'challenger'), $link, wp_get_theme( get_template() ) ) . "</p>";
 			// translators: placeholder is the name of the theme (Challenger)
 			echo "<p>" . sprintf( esc_html_x('%s Pro adds the following features:', 'Challenger Pro adds the following features:', 'challenger'), wp_get_theme( get_template() ) ) . "</p>";
 			echo "<ul>
-					<li>" . esc_html__('6 new layouts', 'challenger') . "</li>
-					<li>" . esc_html__('4 post templates', 'challenger') . "</li>
-					<li>" . esc_html__('61 advanced color controls', 'challenger') . "</li>
-					<li>" . esc_html__('+ 5 more features', 'challenger') . "</li>
+					<li>" . esc_html__('8 new layouts', 'challenger') . "</li>
+					<li>" . esc_html__('700+ fonts', 'challenger') . "</li>
+					<li>" . esc_html__('Featured Videos', 'challenger') . "</li>
+					<li>" . esc_html__('+ 4 more features', 'challenger') . "</li>
 				  </ul>";
 			// translators: placeholder is the name of the theme (Challenger)
 			echo "<p class='button-wrapper'><a target=\"_blank\" class='challenger-pro-button' href='" . $link . "'>" . sprintf( esc_html_x('View %s Pro', 'View Challenger Pro', 'challenger'), wp_get_theme( get_template() ) ) . "</a></p>";
