@@ -28,10 +28,10 @@ function ct_challenger_options_content() {
 				<h3><?php esc_html_e( 'Get Started', 'challenger' ); ?></h3>
 				<p><?php 
 					// translators: placeholder is the name of the theme (Challenger)
-					printf( esc_html__( 'Not sure where to start? The %1$s Support Center is filled with tutorials that will take you step-by-step through every feature in %1$s.', 'challenger' ), wp_get_theme( get_template() ) ); ?></p>
+					printf( esc_html__( 'Not sure where to start? The %1$s Getting Started Guide will take you step-by-step through every feature in %1$s.', 'challenger' ), wp_get_theme( get_template() ) ); ?></p>
 				<p>
 					<a target="_blank" class="button-primary"
-					   href="https://www.competethemes.com/documentation/challenger-support-center/"><?php esc_html_e( 'Visit Support Center', 'challenger' ); ?></a>
+					   href="https://www.competethemes.com/help/getting-started-challenger/"><?php esc_html_e( 'View Guide', 'challenger' ); ?></a>
 				</p>
 			</div>
 			<?php if ( !defined( 'CHALLENGER_PRO_FILE' ) ) : ?>
