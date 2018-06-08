@@ -1,54 +1,40 @@
+=== Challenger ===
+Contributors: bensibley
+Tags: one-column, custom-logo, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
+Requires at least: 4.5
+Tested up to: 4.9
+Stable tag: 1.0
 
-Thanks for downloading Challenger!
+Challenger is a premium-quality blogging theme for the modern blogger
 
--------------------------------------------------------
-    Support
--------------------------------------------------------
+== Description ==
 
-You can find tutorials and other support resources for Challenger in the Challenger Support Center:
-https://www.competethemes.com/documentation/challenger-support-center/
+Challenger is a premium-quality blogging theme for the modern blogger. As a fully responsive theme, it looks awesome on laptops, tablets, and mobile devices. The design is clean and friendly with special attention paid to the typography for maximum readability. Challenger includes a diverse feature set including 4 widget areas, 50+ social media icons, and a completely customizable header section for lead generation.
 
-Additional support resources:
+**Live Demo**
 
-Support forum: http://wordpress.org/support/theme/challenger
-Changelog: https://www.competethemes.com/challenger-changelog/
-Challenger on Github: https://github.com/BenSibley/challenger
+View a fully-setup live demo of Mission News here: [Live demo](https://www.competethemes.com/demos/?theme=challenger)
 
--------------------------------------------------------
-    Features
--------------------------------------------------------
+**Features**
 
 Challenger includes the following features:
 
     * Custom logo
     * Social media icons
+    * Customizable header
+    * Featured Image size control
     * Show full posts or excerpts
     * Custom excerpt length
     * Custom Read More button text
     * Hide/Show display controls
     * 4 widget areas
-    * Customizable header
-    * Featured Image size control
 
-Challenger also has a premium plugin upgrade called Challenger Pro that includes the following features:
+Challenger also has a premium plugin upgrade called [Challenger Pro](https://www.competethemes.com/challenger-pro/) that includes the following features:
 
-    * New layouts
+    * 8 new layouts
+    * 728 fonts
+    * Font size controls
     * Featured Videos
-    * Google fonts
-    * Color
-    * Font sizes
-    * Top-of-site ad bar
     * Sticky header
-    * More widget areas
+    * 3 new widget areas
     * Custom footer text
-
-Challenger Pro: https://www.competethemes.com/challenger-pro/
-
--------------------------------------------------------
-    Additional Info:
--------------------------------------------------------
-
-    * All menus in Challenger can have 1-3 tiers
-    * Featured Images have a 2.5:1 ratio at all screen sizes
-    * Challenger is child theme compatible. Download a starter child theme here:
-        https://www.competethemes.com/help/child-theme-challenger/
