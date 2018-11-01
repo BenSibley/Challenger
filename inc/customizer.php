@@ -338,8 +338,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 		} else if ( $social_site == 'phone' ) {
 			// setting
 			$wp_customize->add_setting( $social_site, array(
-				'sanitize_callback' => 'ct_challenger_sanitize_phone',
-				'transport'         => 'postMessage'
+				'sanitize_callback' => 'ct_challenger_sanitize_phone'
 			) );
 			// control
 			$wp_customize->add_control( $social_site, array(
