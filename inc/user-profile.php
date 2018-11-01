@@ -82,7 +82,7 @@ if ( ! function_exists( ( 'challenger_add_social_profile_settings' ) ) ) {
 								       'https',
 								       'skype'
 							       ) ); ?>'/>
-						<?php elseif ( $key == 'phone' ) : ?>
+						<?php } elseif ( $key == 'phone' ) { ?>
 							<input type='url' id='<?php echo esc_attr( $key ); ?>-profile' class='regular-text'
 						       name='<?php echo esc_attr( $key ); ?>-profile'
 						       value='<?php echo esc_url( get_the_author_meta( $social_site, $user->ID ), array( 'tel' ) ); ?>'/>
