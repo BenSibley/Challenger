@@ -328,6 +328,7 @@ if ( ! function_exists( 'ct_challenger_social_array' ) ) {
 			'youtube'       => 'ct_challenger_youtube_profile',
 			'rss'           => 'ct_challenger_rss_profile',
 			'email'         => 'ct_challenger_email_profile',
+			'phone'         => 'ct_challenger_phone_profile',
 			'email-form'    => 'ct_challenger_email_form_profile',
 			'amazon'        => 'ct_challenger_amazon_profile',
 			'bandcamp'      => 'ct_challenger_bandcamp_profile',
@@ -411,6 +412,8 @@ if ( ! function_exists( 'ct_challenger_social_icons_output' ) ) {
 
 				if ( $active_site == 'email-form' ) {
 					$class = 'fa fa-envelope-o';
+				} elseif ( $active_site == 'phone' ) {
+					$class = 'fa fa-phone';
 				} else {
 					$class = 'fa fa-' . $active_site;
 				}
@@ -431,6 +434,12 @@ if ( ! function_exists( 'ct_challenger_social_icons_output' ) ) {
 					   href="<?php echo esc_url( $url, array( 'http', 'https', 'skype' ) ); ?>">
 						<i class="<?php echo esc_attr( $class ); ?>"
 						   title="<?php echo esc_attr( $active_site ); ?>"></i>
+					</a>
+				<?php } elseif ( $active_site == 'phone' ) { ?>
+					<a class="<?php echo esc_attr( $active_site ); ?>" target="_blank"
+							href="<?php echo esc_url( get_theme_mod( $active_site ), array( 'tel' ) ); ?>">
+						<i class="<?php echo esc_attr( $class ); ?>"></i>
+						<span class="screen-reader-text"><?php echo esc_html( $active_site );  ?></span>
 					</a>
 				<?php } else { ?>
 					<a class="<?php echo esc_attr( $active_site ); ?>" target="_blank"
