@@ -220,7 +220,7 @@ if ( ! function_exists( 'ct_challenger_excerpt' ) ) {
 			the_content();
 			if ( get_theme_mod('comment_link') != 'no' ) {
 				echo '<div class="comment-link">';
-				echo '<i class="fa fa-comment"></i><a href="'. esc_url( get_permalink() ) .'#respond">'. esc_html( __('Comment on this post', 'challenger' ) ) .'</a>';
+				echo '<i class="fas fa-comment"></i><a href="'. esc_url( get_permalink() ) .'#respond">'. esc_html( __('Comment on this post', 'challenger' ) ) .'</a>';
 				echo '</div>';
 			}
 		} else {
@@ -410,12 +410,20 @@ if ( ! function_exists( 'ct_challenger_social_icons_output' ) ) {
 
 			foreach ( $active_sites as $key => $active_site ) {
 
-				if ( $active_site == 'email-form' ) {
-					$class = 'fa fa-envelope-o';
+				if ( $active_site == 'rss' ) {
+					$class = 'fas fa-rss';
+				} elseif ( $active_site == 'email-form' ) {
+					$class = 'far fa-envelope';
+				} elseif ( $active_site == 'podcast' ) {
+					$class = 'fas fa-podcast';
+				} elseif ( $active_site == 'ok-ru' ) {
+					$class = 'fab fa-odnoklassniki';
+				} elseif ( $active_site == 'wechat' ) {
+					$class = 'fab fa-weixin';
 				} elseif ( $active_site == 'phone' ) {
-					$class = 'fa fa-phone';
+					$class = 'fas fa-phone';
 				} else {
-					$class = 'fa fa-' . $active_site;
+					$class = 'fab fa-' . $active_site;
 				}
 				if ( $source == 'header' ) {
 					$url = get_theme_mod( $key );
@@ -427,7 +435,7 @@ if ( ! function_exists( 'ct_challenger_social_icons_output' ) ) {
 				if ( $active_site == 'email' ) { ?>
 					<a class="email" target="_blank"
 					   href="mailto:<?php echo antispambot( is_email( $url ) ); ?>">
-						<i class="fa fa-envelope" title="<?php esc_attr_e( 'email', 'challenger' ); ?>"></i>
+						<i class="fas fa-envelope" title="<?php esc_attr_e( 'email', 'challenger' ); ?>"></i>
 					</a>
 				<?php } elseif ( $active_site == 'skype' ) { ?>
 					<a class="<?php echo esc_attr( $active_site ); ?>" target="_blank"

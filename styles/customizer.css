@@ -75,7 +75,8 @@
 }
 #customize-control-challenger_pro .challenger-pro-button:before {
   content: '\f06e';
-  font-family: 'FontAwesome';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   margin-right: 6px;
 }
 #customize-control-challenger_pro .challenger-pro-button:hover, #customize-control-challenger_pro .challenger-pro-button:active, #customize-control-challenger_pro .challenger-pro-button:focus {
