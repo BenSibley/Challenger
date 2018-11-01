@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Challenger 1.02\n"
+"Project-Id-Version: Challenger 1.04\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2018-07-17 15:16:32+00:00\n"
+"POT-Creation-Date: 2018-11-01 19:22:45+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -42,7 +42,7 @@ msgid ""
 "post\">trackbacks</a> and pingbacks are open."
 msgstr ""
 
-#: comments.php:79 comments.php:86
+#: comments.php:79 comments.php:96
 msgid "Comments are closed."
 msgstr ""
 
@@ -87,67 +87,67 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: functions.php:80
+#: functions.php:87
 msgid "After Post Content"
 msgstr ""
 
-#: functions.php:82
+#: functions.php:89
 msgid "Widgets in this area will be shown on post pages after the content."
 msgstr ""
 
-#: functions.php:89
+#: functions.php:96
 msgid "After Page Content"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:98
 msgid "Widgets in this area will be shown on pages after the content."
 msgstr ""
 
-#: functions.php:98
+#: functions.php:105
 msgid "Before Post Content"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:107
 msgid "Widgets in this area will be shown on post pages before the content."
 msgstr ""
 
-#: functions.php:107
+#: functions.php:114
 msgid "Before Page Content"
 msgstr ""
 
-#: functions.php:109
+#: functions.php:116
 msgid "Widgets in this area will be shown on pages before the content."
 msgstr ""
 
-#: functions.php:135
+#: functions.php:142
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:142
+#: functions.php:149
 msgid "Reply"
 msgstr ""
 
-#: functions.php:147
+#: functions.php:154
 msgid "Edit"
 msgstr ""
 
-#: functions.php:186
+#: functions.php:193
 msgid "Continue Reading"
 msgstr ""
 
-#: functions.php:223
+#: functions.php:230
 msgid "Comment on this post"
 msgstr ""
 
-#: functions.php:422
+#: functions.php:450
 msgid "email"
 msgstr ""
 
-#: functions.php:466
+#: functions.php:500
 msgid "Featured Post"
 msgstr ""
 
-#: functions.php:554
+#: functions.php:588
 msgid "Customizer settings deleted"
 msgstr ""
 
@@ -195,19 +195,19 @@ msgstr ""
 msgid "Show the lead generation header?"
 msgstr ""
 
-#: inc/customizer.php:114 inc/customizer.php:218 inc/customizer.php:471
-#: inc/customizer.php:487 inc/customizer.php:503 inc/customizer.php:552
-#: inc/customizer.php:568 inc/customizer.php:584 inc/customizer.php:600
-#: inc/customizer.php:616 inc/customizer.php:632 inc/customizer.php:648
-#: inc/customizer.php:664 inc/customizer.php:679
+#: inc/customizer.php:114 inc/customizer.php:218 inc/customizer.php:485
+#: inc/customizer.php:501 inc/customizer.php:517 inc/customizer.php:566
+#: inc/customizer.php:582 inc/customizer.php:598 inc/customizer.php:614
+#: inc/customizer.php:630 inc/customizer.php:646 inc/customizer.php:662
+#: inc/customizer.php:678 inc/customizer.php:693
 msgid "Yes"
 msgstr ""
 
-#: inc/customizer.php:115 inc/customizer.php:219 inc/customizer.php:472
-#: inc/customizer.php:488 inc/customizer.php:504 inc/customizer.php:553
-#: inc/customizer.php:569 inc/customizer.php:585 inc/customizer.php:601
-#: inc/customizer.php:617 inc/customizer.php:633 inc/customizer.php:649
-#: inc/customizer.php:665 inc/customizer.php:680
+#: inc/customizer.php:115 inc/customizer.php:219 inc/customizer.php:486
+#: inc/customizer.php:502 inc/customizer.php:518 inc/customizer.php:567
+#: inc/customizer.php:583 inc/customizer.php:599 inc/customizer.php:615
+#: inc/customizer.php:631 inc/customizer.php:647 inc/customizer.php:663
+#: inc/customizer.php:679 inc/customizer.php:694
 msgid "No"
 msgstr ""
 
@@ -219,7 +219,7 @@ msgstr ""
 msgid "Homepage"
 msgstr ""
 
-#: inc/customizer.php:132 inc/customizer.php:456
+#: inc/customizer.php:132 inc/customizer.php:470
 msgid "Blog"
 msgstr ""
 
@@ -305,170 +305,178 @@ msgstr ""
 msgid "Add the URL for each of your social profiles."
 msgstr ""
 
-#: inc/customizer.php:334 inc/user-profile.php:66
+#: inc/customizer.php:334 inc/user-profile.php:68
 msgid "Email Address"
 msgstr ""
 
-#: inc/customizer.php:343 inc/user-profile.php:27
+#: inc/customizer.php:345
+msgid "Phone"
+msgstr ""
+
+#: inc/customizer.php:355 inc/user-profile.php:27
 msgid "Google Plus"
 msgstr ""
 
-#: inc/customizer.php:345 inc/user-profile.php:29
+#: inc/customizer.php:357 inc/user-profile.php:29
 msgid "RSS"
 msgstr ""
 
-#: inc/customizer.php:347 inc/user-profile.php:31
+#: inc/customizer.php:359 inc/user-profile.php:31
 msgid "SoundCloud"
 msgstr ""
 
-#: inc/customizer.php:349 inc/user-profile.php:33
+#: inc/customizer.php:361 inc/user-profile.php:33
 msgid "SlideShare"
 msgstr ""
 
-#: inc/customizer.php:351 inc/user-profile.php:35
+#: inc/customizer.php:363 inc/user-profile.php:35
 msgid "CodePen"
 msgstr ""
 
-#: inc/customizer.php:353 inc/user-profile.php:37
+#: inc/customizer.php:365 inc/user-profile.php:37
 msgid "StumbleUpon"
 msgstr ""
 
-#: inc/customizer.php:355 inc/user-profile.php:39
+#: inc/customizer.php:367 inc/user-profile.php:39
 msgid "DeviantArt"
 msgstr ""
 
-#: inc/customizer.php:357 inc/user-profile.php:41
+#: inc/customizer.php:369 inc/user-profile.php:41
 msgid "Hacker News"
 msgstr ""
 
-#: inc/customizer.php:359 inc/user-profile.php:43
+#: inc/customizer.php:371 inc/user-profile.php:43
 msgid "WhatsApp"
 msgstr ""
 
-#: inc/customizer.php:361 inc/user-profile.php:45
+#: inc/customizer.php:373 inc/user-profile.php:45
 msgid "QQ"
 msgstr ""
 
-#: inc/customizer.php:363 inc/user-profile.php:47
+#: inc/customizer.php:375 inc/user-profile.php:47
 msgid "VK"
 msgstr ""
 
-#: inc/customizer.php:365 inc/user-profile.php:49
+#: inc/customizer.php:377 inc/user-profile.php:49
 msgid "WeChat"
 msgstr ""
 
-#: inc/customizer.php:367 inc/user-profile.php:51
+#: inc/customizer.php:379 inc/user-profile.php:51
 msgid "Tencent Weibo"
 msgstr ""
 
-#: inc/customizer.php:369 inc/user-profile.php:53
+#: inc/customizer.php:381 inc/user-profile.php:53
 msgid "PayPal"
 msgstr ""
 
-#: inc/customizer.php:371 inc/user-profile.php:55
+#: inc/customizer.php:383 inc/user-profile.php:55
 msgid "Contact Form"
 msgstr ""
 
-#: inc/customizer.php:373 inc/user-profile.php:57
+#: inc/customizer.php:385 inc/user-profile.php:57
 msgid "Google Wallet"
 msgstr ""
 
-#: inc/customizer.php:375 inc/user-profile.php:59
+#: inc/customizer.php:387 inc/user-profile.php:59
+msgid "Stack Overflow"
+msgstr ""
+
+#: inc/customizer.php:389 inc/user-profile.php:61
 msgid "OK.ru"
 msgstr ""
 
-#: inc/customizer.php:388
+#: inc/customizer.php:402
 #. translators: placeholder is a URL
 msgid ""
 "Accepts Skype link protocol (<a href=\"%s\" target=\"_blank\">learn "
 "more</a>)"
 msgstr ""
 
-#: inc/customizer.php:414
+#: inc/customizer.php:428
 msgid "Featured Image Size"
 msgstr ""
 
-#: inc/customizer.php:424
+#: inc/customizer.php:438
 msgid "Lock Featured Image aspect ratio?"
 msgstr ""
 
-#: inc/customizer.php:429
+#: inc/customizer.php:443
 msgid "Yes, use the same aspect ratio for all Featured Images"
 msgstr ""
 
-#: inc/customizer.php:430
+#: inc/customizer.php:444
 msgid "No, use the natural aspect ratio of each image"
 msgstr ""
 
-#: inc/customizer.php:441
+#: inc/customizer.php:455
 msgid "Featured Image Aspect Ratio"
 msgstr ""
 
-#: inc/customizer.php:466
+#: inc/customizer.php:480
 msgid "Show full posts on blog?"
 msgstr ""
 
-#: inc/customizer.php:482
+#: inc/customizer.php:496
 msgid "Show link to comments after each post?"
 msgstr ""
 
-#: inc/customizer.php:498
+#: inc/customizer.php:512
 msgid "Link author name to post archive?"
 msgstr ""
 
-#: inc/customizer.php:514
+#: inc/customizer.php:528
 msgid "Excerpt word count"
 msgstr ""
 
-#: inc/customizer.php:521
+#: inc/customizer.php:535
 msgid "Continue reading"
 msgstr ""
 
-#: inc/customizer.php:527
+#: inc/customizer.php:541
 msgid "Read More button text"
 msgstr ""
 
-#: inc/customizer.php:537
+#: inc/customizer.php:551
 msgid "Show/Hide Elements"
 msgstr ""
 
-#: inc/customizer.php:547
+#: inc/customizer.php:561
 msgid "Show author avatar in post byline?"
 msgstr ""
 
-#: inc/customizer.php:563
+#: inc/customizer.php:577
 msgid "Show author name in post byline?"
 msgstr ""
 
-#: inc/customizer.php:579
+#: inc/customizer.php:593
 msgid "Show date in post byline?"
 msgstr ""
 
-#: inc/customizer.php:595
+#: inc/customizer.php:609
 msgid "Show \"Continue Reading\" button after posts?"
 msgstr ""
 
-#: inc/customizer.php:611
+#: inc/customizer.php:625
 msgid "Show author box after posts?"
 msgstr ""
 
-#: inc/customizer.php:627
+#: inc/customizer.php:641
 msgid "Show categories after the post?"
 msgstr ""
 
-#: inc/customizer.php:643
+#: inc/customizer.php:657
 msgid "Show tags after the post?"
 msgstr ""
 
-#: inc/customizer.php:659
+#: inc/customizer.php:673
 msgid "Show archive page titles?"
 msgstr ""
 
-#: inc/customizer.php:712
+#: inc/customizer.php:726
 msgid "Yes, keep all Featured Images the same aspect ratio"
 msgstr ""
 
-#: inc/customizer.php:713
+#: inc/customizer.php:727
 msgid "No, use the natural size of each image"
 msgstr ""
 
