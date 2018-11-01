@@ -360,6 +360,7 @@ if ( ! function_exists( 'ct_challenger_social_array' ) ) {
 			'snapchat'      => 'ct_challenger_snapchat_profile',
 			'soundcloud'    => 'ct_challenger_soundcloud_profile',
 			'spotify'       => 'ct_challenger_spotify_profile',
+			'stack-overflow' => 'ct_challenger_stack_overflow_profile',
 			'steam'         => 'ct_challenger_steam_profile',
 			'stumbleupon'   => 'ct_challenger_stumbleupon_profile',
 			'telegram'      => 'ct_challenger_telegram_profile',

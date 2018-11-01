@@ -384,6 +384,8 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 				$label = __('Contact Form', 'challenger');
 			} elseif ( $social_site == 'google-wallet' ) {
 				$label = __('Google Wallet', 'challenger');
+			} elseif ( $social_site == 'stack-overflow' ) {
+				$label = __('Stack Overflow', 'challenger');
 			} elseif ( $social_site == 'ok-ru' ) {
 				$label = __('OK.ru', 'challenger');
 			}
