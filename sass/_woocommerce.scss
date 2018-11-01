@@ -79,7 +79,13 @@
 
   .main {
     float: none;
-    margin: $baseline-height * 1.5 auto;
+  }
+  .post-header {
+    margin-bottom: $baseline-height;
+  }
+  .post-content {
+    font-size: 1em;
+    line-height: 1.5;
   }
 }
 .woocommerce-cart {
@@ -91,12 +97,12 @@
   }
   .coupon input {
     max-width: none !important;
-    width: 49% !important;
+    width: 48% !important;
     padding: 10px 12px;
   }
   .coupon input[type="text"] {
     font-size: 14px !important;
-    padding: 7px 12px 8px !important;;
+    padding: 11px 12px 12px !important;;
   }
   table.shop_table td.product-name {
     padding: 24px 12px;
