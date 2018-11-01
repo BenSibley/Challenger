@@ -65,6 +65,13 @@ if ( ! function_exists( ( 'ct_challenger_theme_setup' ) ) ) {
 			'primary' => esc_html__( 'Primary', 'challenger' )
 		) );
 
+		// Add WooCommerce support
+		add_theme_support( 'woocommerce' );
+		// Add support for WooCommerce image gallery features
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
+
 		load_theme_textdomain( 'challenger', get_template_directory() . '/languages' );
 	}
 }
