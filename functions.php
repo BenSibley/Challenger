@@ -325,11 +325,10 @@ if ( ! function_exists( 'ct_challenger_social_array' ) ) {
 			'instagram'     => 'ct_challenger_instagram_profile',
 			'linkedin'      => 'ct_challenger_linkedin_profile',
 			'pinterest'     => 'ct_challenger_pinterest_profile',
-			'google-plus'   => 'ct_challenger_googleplus_profile',
 			'youtube'       => 'ct_challenger_youtube_profile',
+			'rss'           => 'ct_challenger_rss_profile',
 			'email'         => 'ct_challenger_email_profile',
 			'email-form'    => 'ct_challenger_email_form_profile',
-			'500px'         => 'ct_challenger_500px_profile',
 			'amazon'        => 'ct_challenger_amazon_profile',
 			'bandcamp'      => 'ct_challenger_bandcamp_profile',
 			'behance'       => 'ct_challenger_behance_profile',
@@ -343,6 +342,7 @@ if ( ! function_exists( 'ct_challenger_social_array' ) ) {
 			'flickr'        => 'ct_challenger_flickr_profile',
 			'foursquare'    => 'ct_challenger_foursquare_profile',
 			'github'        => 'ct_challenger_github_profile',
+			'google-plus'   => 'ct_challenger_googleplus_profile',
 			'google-wallet' => 'ct_challenger_google_wallet_profile',
 			'hacker-news'   => 'ct_challenger_hacker-news_profile',
 			'meetup'        => 'ct_challenger_meetup_profile',
@@ -353,7 +353,6 @@ if ( ! function_exists( 'ct_challenger_social_array' ) ) {
 			'qq'            => 'ct_challenger_qq_profile',
 			'ravelry'       => 'ct_challenger_ravelry_profile',
 			'reddit'        => 'ct_challenger_reddit_profile',
-			'rss'           => 'ct_challenger_rss_profile',
 			'skype'         => 'ct_challenger_skype_profile',
 			'slack'         => 'ct_challenger_slack_profile',
 			'slideshare'    => 'ct_challenger_slideshare_profile',
@@ -374,7 +373,8 @@ if ( ! function_exists( 'ct_challenger_social_array' ) ) {
 			'whatsapp'      => 'ct_challenger_whatsapp_profile',
 			'xing'          => 'ct_challenger_xing_profile',
 			'yahoo'         => 'ct_challenger_yahoo_profile',
-			'yelp'          => 'ct_challenger_yelp_profile'
+			'yelp'          => 'ct_challenger_yelp_profile',
+			'500px'         => 'ct_challenger_500px_profile'
 		);
 
 		return apply_filters( 'ct_challenger_social_array_filter', $social_sites );
