@@ -1871,7 +1871,7 @@ a img {
 .woocommerce-cart .post-header,
 .woocommerce-checkout .post-header,
 .woocommerce-account .post-header {
-  margin-bottom: 1.5em;
+  margin-bottom: 2.25em;
 }
 .woocommerce-cart .post-content,
 .woocommerce-checkout .post-content,
@@ -1931,7 +1931,7 @@ a img {
 
 .woocommerce-account .woocommerce {
   position: relative;
-  border: solid 1px #F8F8F8;
+  border: solid 1px #EDEDED;
   border-radius: 6px;
   min-height: 260px;
   margin-bottom: 1.5em;

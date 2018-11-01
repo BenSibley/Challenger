@@ -81,7 +81,7 @@
     float: none;
   }
   .post-header {
-    margin-bottom: $baseline-height;
+    margin-bottom: $baseline-height * 1.5;
   }
   .post-content {
     font-size: 1em;
@@ -143,7 +143,7 @@
 
   .woocommerce {
     position: relative;
-    border: solid 1px $color-gray-97;
+    border: solid 1px $color-gray-93;
     border-radius: 6px;
     min-height: 260px;
     margin-bottom: $baseline-height;
