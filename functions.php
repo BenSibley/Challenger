@@ -347,6 +347,7 @@ if ( ! function_exists( 'ct_challenger_social_array' ) ) {
 			'google-plus'   => 'ct_challenger_googleplus_profile',
 			'google-wallet' => 'ct_challenger_google_wallet_profile',
 			'hacker-news'   => 'ct_challenger_hacker-news_profile',
+			'medium'        => 'ct_challenger_medium_profile',
 			'meetup'        => 'ct_challenger_meetup_profile',
 			'ok-ru'         => 'ct_challenger_ok_ru_profile',
 			'paypal'        => 'ct_challenger_paypal_profile',
