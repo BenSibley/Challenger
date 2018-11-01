@@ -338,6 +338,7 @@ if ( ! function_exists( 'ct_challenger_social_array' ) ) {
 			'delicious'     => 'ct_challenger_delicious_profile',
 			'deviantart'    => 'ct_challenger_deviantart_profile',
 			'digg'          => 'ct_challenger_digg_profile',
+			'discord'       => 'ct_challenger_discord_profile',
 			'dribbble'      => 'ct_challenger_dribbble_profile',
 			'etsy'          => 'ct_challenger_etsy_profile',
 			'flickr'        => 'ct_challenger_flickr_profile',
