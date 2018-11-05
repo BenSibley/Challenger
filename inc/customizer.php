@@ -19,27 +19,6 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-	/***** Custom Controls *****/
-
-	class ct_challenger_pro_ad extends WP_Customize_Control {
-		public function render_content() {
-			$link = 'https://www.competethemes.com/challenger-pro/';
-			echo "<a href='" . $link . "' target='_blank'><img src='" . get_template_directory_uri() . "/assets/img/challenger-pro.gif' /></a>";
-			// translators: placeholder is the name of the theme (Challenger)
-			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%1$s">%2$s Pro</a> makes advanced customization simple - and fun too!', 'challenger'), $link, wp_get_theme( get_template() ) ) . "</p>";
-			// translators: placeholder is the name of the theme (Challenger)
-			echo "<p>" . sprintf( esc_html_x('%s Pro adds the following features:', 'Challenger Pro adds the following features:', 'challenger'), wp_get_theme( get_template() ) ) . "</p>";
-			echo "<ul>
-					<li>" . esc_html__('8 new layouts', 'challenger') . "</li>
-					<li>" . esc_html__('700+ fonts', 'challenger') . "</li>
-					<li>" . esc_html__('Featured Videos', 'challenger') . "</li>
-					<li>" . esc_html__('+ 4 more features', 'challenger') . "</li>
-				  </ul>";
-			// translators: placeholder is the name of the theme (Challenger)
-			echo "<p class='button-wrapper'><a target=\"_blank\" class='challenger-pro-button' href='" . $link . "'>" . sprintf( esc_html_x('View %s Pro', 'View Challenger Pro', 'challenger'), wp_get_theme( get_template() ) ) . "</a></p>";
-		}
-	}
-
 	class CT_Challenger_Control_Checkbox_Multiple extends WP_Customize_Control {
 
 		public $type = 'checkbox-multiple';
@@ -67,29 +46,6 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
         </ul>
         <input type="hidden" <?php $this->link(); ?> value="<?php echo esc_attr( implode( ',', $multi_values ) ); ?>" />
     <?php }
-	}
-
-	/***** Challenger Pro Section *****/
-
-	// don't add if Challenger Pro is active
-	if ( !defined( 'CHALLENGER_PRO_FILE' ) ) {
-		// section
-		$wp_customize->add_section( 'ct_challenger_pro', array(
-			// translators: placeholder is the name of the theme (Challenger)
-			'title'    => sprintf( __( '%s Pro', 'challenger' ), wp_get_theme( get_template() ) ),
-			'priority' => 1
-		) );
-		// setting
-		$wp_customize->add_setting( 'challenger_pro', array(
-			'sanitize_callback' => 'absint'
-		) );
-		// control
-		$wp_customize->add_control( new ct_challenger_pro_ad(
-			$wp_customize, 'challenger_pro', array(
-				'section'  => 'ct_challenger_pro',
-				'settings' => 'challenger_pro'
-			)
-		) );
 	}
 
 	/***** Header *****/
@@ -737,3 +693,12 @@ function ct_challenger_sanitize_phone( $input ) {
 		return '';
 	}
 }
+
+function ct_challenger_customize_preview_js() {
+	if ( !defined( 'CHALLENGER_PRO_FILE' ) ) {
+		$url = 'https://www.competethemes.com/challenger-pro/?utm_source=wp-dashboard&utm_medium=Customizer&utm_campaign=Challenger%20Pro%20-%20Customizer';
+		$content = "<script>jQuery('#customize-info').prepend('<div class=\"upgrades-ad\"><a href=\"". $url ."\" target=\"_blank\">Get New Layouts with Challenger Pro <span>&rarr;</span></a></div>')</script>";
+		echo apply_filters('ct_challenger_customizer_ad', $content);
+	}
+}
+add_action('customize_controls_print_footer_scripts', 'ct_challenger_customize_preview_js');
