@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Challenger 1.04\n"
+"Project-Id-Version: Challenger 1.05\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2018-11-01 19:22:45+00:00\n"
+"POT-Creation-Date: 2018-11-06 11:27:18+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -50,11 +50,11 @@ msgstr ""
 msgid "Posts tagged as"
 msgstr ""
 
-#: content/header-box.php:5 inc/customizer.php:141
+#: content/header-box.php:5 inc/customizer.php:97
 msgid "Become a professional blogger with our FREE 5-day email course"
 msgstr ""
 
-#: content/header-box.php:6 inc/customizer.php:182
+#: content/header-box.php:6 inc/customizer.php:138
 msgid "Signup Now"
 msgstr ""
 
@@ -159,324 +159,296 @@ msgstr ""
 msgid "open menu"
 msgstr ""
 
-#: inc/customizer.php:29
-#. translators: placeholder is the name of the theme (Challenger)
-msgid ""
-"<a target=\"_blank\" href=\"%1$s\">%2$s Pro</a> makes advanced "
-"customization simple - and fun too!"
-msgstr ""
-
-#: inc/customizer.php:33
-msgid "8 new layouts"
-msgstr ""
-
-#: inc/customizer.php:34
-msgid "700+ fonts"
-msgstr ""
-
-#: inc/customizer.php:35
-msgid "Featured Videos"
-msgstr ""
-
-#: inc/customizer.php:36
-msgid "+ 4 more features"
-msgstr ""
-
-#: inc/customizer.php:79
-#. translators: placeholder is the name of the theme (Challenger)
-msgid "%s Pro"
-msgstr ""
-
-#: inc/customizer.php:99
+#: inc/customizer.php:55
 msgid "Header"
 msgstr ""
 
-#: inc/customizer.php:109
+#: inc/customizer.php:65
 msgid "Show the lead generation header?"
 msgstr ""
 
-#: inc/customizer.php:114 inc/customizer.php:218 inc/customizer.php:485
-#: inc/customizer.php:501 inc/customizer.php:517 inc/customizer.php:566
-#: inc/customizer.php:582 inc/customizer.php:598 inc/customizer.php:614
-#: inc/customizer.php:630 inc/customizer.php:646 inc/customizer.php:662
-#: inc/customizer.php:678 inc/customizer.php:693
+#: inc/customizer.php:70 inc/customizer.php:174 inc/customizer.php:441
+#: inc/customizer.php:457 inc/customizer.php:473 inc/customizer.php:522
+#: inc/customizer.php:538 inc/customizer.php:554 inc/customizer.php:570
+#: inc/customizer.php:586 inc/customizer.php:602 inc/customizer.php:618
+#: inc/customizer.php:634 inc/customizer.php:649
 msgid "Yes"
 msgstr ""
 
-#: inc/customizer.php:115 inc/customizer.php:219 inc/customizer.php:486
-#: inc/customizer.php:502 inc/customizer.php:518 inc/customizer.php:567
-#: inc/customizer.php:583 inc/customizer.php:599 inc/customizer.php:615
-#: inc/customizer.php:631 inc/customizer.php:647 inc/customizer.php:663
-#: inc/customizer.php:679 inc/customizer.php:694
+#: inc/customizer.php:71 inc/customizer.php:175 inc/customizer.php:442
+#: inc/customizer.php:458 inc/customizer.php:474 inc/customizer.php:523
+#: inc/customizer.php:539 inc/customizer.php:555 inc/customizer.php:571
+#: inc/customizer.php:587 inc/customizer.php:603 inc/customizer.php:619
+#: inc/customizer.php:635 inc/customizer.php:650
 msgid "No"
 msgstr ""
 
-#: inc/customizer.php:127
+#: inc/customizer.php:83
 msgid "Which pages should it display on?"
 msgstr ""
 
-#: inc/customizer.php:131
+#: inc/customizer.php:87
 msgid "Homepage"
 msgstr ""
 
-#: inc/customizer.php:132 inc/customizer.php:470
+#: inc/customizer.php:88 inc/customizer.php:426
 msgid "Blog"
 msgstr ""
 
-#: inc/customizer.php:133
+#: inc/customizer.php:89
 msgid "Posts"
 msgstr ""
 
-#: inc/customizer.php:134
+#: inc/customizer.php:90
 msgid "Pages"
 msgstr ""
 
-#: inc/customizer.php:135
+#: inc/customizer.php:91
 msgid "Archives"
 msgstr ""
 
-#: inc/customizer.php:136
+#: inc/customizer.php:92
 msgid "Search results"
 msgstr ""
 
-#: inc/customizer.php:147
+#: inc/customizer.php:103
 msgid "Title text"
 msgstr ""
 
-#: inc/customizer.php:161
+#: inc/customizer.php:117
 msgid "Title text color"
 msgstr ""
 
-#: inc/customizer.php:175
+#: inc/customizer.php:131
 msgid "Site title, tagline, and menu color"
 msgstr ""
 
-#: inc/customizer.php:188
+#: inc/customizer.php:144
 msgid "Button text"
 msgstr ""
 
-#: inc/customizer.php:201
+#: inc/customizer.php:157
 msgid "Button URL"
 msgstr ""
 
-#: inc/customizer.php:213
+#: inc/customizer.php:169
 msgid "Open the button link in a new tab?"
 msgstr ""
 
-#: inc/customizer.php:231
+#: inc/customizer.php:187
 msgid "Button text color"
 msgstr ""
 
-#: inc/customizer.php:245
+#: inc/customizer.php:201
 msgid "Button background color"
 msgstr ""
 
-#: inc/customizer.php:259
+#: inc/customizer.php:215
 msgid "Background overlay color"
 msgstr ""
 
-#: inc/customizer.php:272
+#: inc/customizer.php:228
 msgid "Overlay opacity"
 msgstr ""
 
-#: inc/customizer.php:289
+#: inc/customizer.php:245
 msgid "Background image"
 msgstr ""
 
-#: inc/customizer.php:290
+#: inc/customizer.php:246
 msgid "Use an image that is 2,000px wide for best results."
 msgstr ""
 
-#: inc/customizer.php:302
+#: inc/customizer.php:258
 msgid "Alternate logo"
 msgstr ""
 
-#: inc/customizer.php:303
+#: inc/customizer.php:259
 msgid ""
 "Upload a light variation of your logo to better match the background "
 "overlay."
 msgstr ""
 
-#: inc/customizer.php:319
+#: inc/customizer.php:275
 msgid "Social Media Icons"
 msgstr ""
 
-#: inc/customizer.php:321
+#: inc/customizer.php:277
 msgid "Add the URL for each of your social profiles."
 msgstr ""
 
-#: inc/customizer.php:334 inc/user-profile.php:68
+#: inc/customizer.php:290 inc/user-profile.php:68
 msgid "Email Address"
 msgstr ""
 
-#: inc/customizer.php:345
+#: inc/customizer.php:301
 msgid "Phone"
 msgstr ""
 
-#: inc/customizer.php:355 inc/user-profile.php:27
+#: inc/customizer.php:311 inc/user-profile.php:27
 msgid "Google Plus"
 msgstr ""
 
-#: inc/customizer.php:357 inc/user-profile.php:29
+#: inc/customizer.php:313 inc/user-profile.php:29
 msgid "RSS"
 msgstr ""
 
-#: inc/customizer.php:359 inc/user-profile.php:31
+#: inc/customizer.php:315 inc/user-profile.php:31
 msgid "SoundCloud"
 msgstr ""
 
-#: inc/customizer.php:361 inc/user-profile.php:33
+#: inc/customizer.php:317 inc/user-profile.php:33
 msgid "SlideShare"
 msgstr ""
 
-#: inc/customizer.php:363 inc/user-profile.php:35
+#: inc/customizer.php:319 inc/user-profile.php:35
 msgid "CodePen"
 msgstr ""
 
-#: inc/customizer.php:365 inc/user-profile.php:37
+#: inc/customizer.php:321 inc/user-profile.php:37
 msgid "StumbleUpon"
 msgstr ""
 
-#: inc/customizer.php:367 inc/user-profile.php:39
+#: inc/customizer.php:323 inc/user-profile.php:39
 msgid "DeviantArt"
 msgstr ""
 
-#: inc/customizer.php:369 inc/user-profile.php:41
+#: inc/customizer.php:325 inc/user-profile.php:41
 msgid "Hacker News"
 msgstr ""
 
-#: inc/customizer.php:371 inc/user-profile.php:43
+#: inc/customizer.php:327 inc/user-profile.php:43
 msgid "WhatsApp"
 msgstr ""
 
-#: inc/customizer.php:373 inc/user-profile.php:45
+#: inc/customizer.php:329 inc/user-profile.php:45
 msgid "QQ"
 msgstr ""
 
-#: inc/customizer.php:375 inc/user-profile.php:47
+#: inc/customizer.php:331 inc/user-profile.php:47
 msgid "VK"
 msgstr ""
 
-#: inc/customizer.php:377 inc/user-profile.php:49
+#: inc/customizer.php:333 inc/user-profile.php:49
 msgid "WeChat"
 msgstr ""
 
-#: inc/customizer.php:379 inc/user-profile.php:51
+#: inc/customizer.php:335 inc/user-profile.php:51
 msgid "Tencent Weibo"
 msgstr ""
 
-#: inc/customizer.php:381 inc/user-profile.php:53
+#: inc/customizer.php:337 inc/user-profile.php:53
 msgid "PayPal"
 msgstr ""
 
-#: inc/customizer.php:383 inc/user-profile.php:55
+#: inc/customizer.php:339 inc/user-profile.php:55
 msgid "Contact Form"
 msgstr ""
 
-#: inc/customizer.php:385 inc/user-profile.php:57
+#: inc/customizer.php:341 inc/user-profile.php:57
 msgid "Google Wallet"
 msgstr ""
 
-#: inc/customizer.php:387 inc/user-profile.php:59
+#: inc/customizer.php:343 inc/user-profile.php:59
 msgid "Stack Overflow"
 msgstr ""
 
-#: inc/customizer.php:389 inc/user-profile.php:61
+#: inc/customizer.php:345 inc/user-profile.php:61
 msgid "OK.ru"
 msgstr ""
 
-#: inc/customizer.php:402
+#: inc/customizer.php:358
 #. translators: placeholder is a URL
 msgid ""
 "Accepts Skype link protocol (<a href=\"%s\" target=\"_blank\">learn "
 "more</a>)"
 msgstr ""
 
-#: inc/customizer.php:428
+#: inc/customizer.php:384
 msgid "Featured Image Size"
 msgstr ""
 
-#: inc/customizer.php:438
+#: inc/customizer.php:394
 msgid "Lock Featured Image aspect ratio?"
 msgstr ""
 
-#: inc/customizer.php:443
+#: inc/customizer.php:399
 msgid "Yes, use the same aspect ratio for all Featured Images"
 msgstr ""
 
-#: inc/customizer.php:444
+#: inc/customizer.php:400
 msgid "No, use the natural aspect ratio of each image"
 msgstr ""
 
-#: inc/customizer.php:455
+#: inc/customizer.php:411
 msgid "Featured Image Aspect Ratio"
 msgstr ""
 
-#: inc/customizer.php:480
+#: inc/customizer.php:436
 msgid "Show full posts on blog?"
 msgstr ""
 
-#: inc/customizer.php:496
+#: inc/customizer.php:452
 msgid "Show link to comments after each post?"
 msgstr ""
 
-#: inc/customizer.php:512
+#: inc/customizer.php:468
 msgid "Link author name to post archive?"
 msgstr ""
 
-#: inc/customizer.php:528
+#: inc/customizer.php:484
 msgid "Excerpt word count"
 msgstr ""
 
-#: inc/customizer.php:535
+#: inc/customizer.php:491
 msgid "Continue reading"
 msgstr ""
 
-#: inc/customizer.php:541
+#: inc/customizer.php:497
 msgid "Read More button text"
 msgstr ""
 
-#: inc/customizer.php:551
+#: inc/customizer.php:507
 msgid "Show/Hide Elements"
 msgstr ""
 
-#: inc/customizer.php:561
+#: inc/customizer.php:517
 msgid "Show author avatar in post byline?"
 msgstr ""
 
-#: inc/customizer.php:577
+#: inc/customizer.php:533
 msgid "Show author name in post byline?"
 msgstr ""
 
-#: inc/customizer.php:593
+#: inc/customizer.php:549
 msgid "Show date in post byline?"
 msgstr ""
 
-#: inc/customizer.php:609
+#: inc/customizer.php:565
 msgid "Show \"Continue Reading\" button after posts?"
 msgstr ""
 
-#: inc/customizer.php:625
+#: inc/customizer.php:581
 msgid "Show author box after posts?"
 msgstr ""
 
-#: inc/customizer.php:641
+#: inc/customizer.php:597
 msgid "Show categories after the post?"
 msgstr ""
 
-#: inc/customizer.php:657
+#: inc/customizer.php:613
 msgid "Show tags after the post?"
 msgstr ""
 
-#: inc/customizer.php:673
+#: inc/customizer.php:629
 msgid "Show archive page titles?"
 msgstr ""
 
-#: inc/customizer.php:726
+#: inc/customizer.php:682
 msgid "Yes, keep all Featured Images the same aspect ratio"
 msgstr ""
 
-#: inc/customizer.php:727
+#: inc/customizer.php:683
 msgid "No, use the natural size of each image"
 msgstr ""
 
@@ -509,59 +481,8 @@ msgstr ""
 msgid "Can't find what you're looking for?  Try refining your search:"
 msgstr ""
 
-#: theme-options.php:5 theme-options.php:23
-#. translators: placeholder is the name of the theme (Challenger)
+#: theme-options.php:4 theme-options.php:20
 msgid "%s Dashboard"
-msgstr ""
-
-#: theme-options.php:28
-msgid "Get Started"
-msgstr ""
-
-#: theme-options.php:31
-#. translators: placeholder is the name of the theme (Challenger)
-msgid ""
-"Not sure where to start? The %1$s Getting Started Guide will take you "
-"step-by-step through every feature in %1$s."
-msgstr ""
-
-#: theme-options.php:34
-msgid "View Guide"
-msgstr ""
-
-#: theme-options.php:39
-msgid "Challenger Pro"
-msgstr ""
-
-#: theme-options.php:42
-#. translators: placeholder is the name of the theme (Challenger)
-msgid ""
-"Download the %s Pro plugin and unlock 8 new layouts, 700+ of fonts, "
-"Featured Videos, and more."
-msgstr ""
-
-#: theme-options.php:46
-msgid "See Full Feature List"
-msgstr ""
-
-#: theme-options.php:51 theme-options.php:56
-msgid "Leave a Review"
-msgstr ""
-
-#: theme-options.php:54
-#. translators: placeholder is the name of the theme (Challenger)
-msgid "Help others find %s by leaving a review on wordpress.org."
-msgstr ""
-
-#: theme-options.php:59 theme-options.php:68
-msgid "Reset Customizer Settings"
-msgstr ""
-
-#: theme-options.php:62
-#. translators: placeholder is the name of the theme (Challenger)
-msgid ""
-"<strong>Warning:</strong> Clicking this button will erase the %2$s theme's "
-"current settings in the <a href=\"%1$s\">Customizer</a>."
 msgstr ""
 
 #. Description of the plugin/theme
@@ -605,16 +526,4 @@ msgstr ""
 #. translators: placeholder is the name of the post category
 msgctxt "View all posts in post category"
 msgid "View all posts in %s"
-msgstr ""
-
-#: inc/customizer.php:31
-#. translators: placeholder is the name of the theme (Challenger)
-msgctxt "Challenger Pro adds the following features:"
-msgid "%s Pro adds the following features:"
-msgstr ""
-
-#: inc/customizer.php:39
-#. translators: placeholder is the name of the theme (Challenger)
-msgctxt "View Challenger Pro"
-msgid "View %s Pro"
 msgstr ""
