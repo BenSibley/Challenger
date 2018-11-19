@@ -1405,6 +1405,35 @@ a img {
   padding: 8px;
 }
 
+.wp-block-image.alignfull,
+.wp-block-cover {
+  position: relative;
+  right: -10%;
+  width: 120%;
+  max-width: none;
+}
+
+.wp-block-image.alignwide {
+  position: relative;
+  right: -5%;
+  width: 110%;
+  max-width: none;
+}
+
+.wp-block-quote.is-large {
+  padding-right: 0;
+  border-right: none;
+  margin: 1.5em;
+}
+
+.wp-block-embed {
+  margin: 1.5em 0;
+}
+
+.wp-block-code code {
+  background: none;
+}
+
 @media all and (min-width: 37.5em) {
   .post-title {
     font-size: 1.75em;
@@ -1422,6 +1451,17 @@ a img {
     /* 18px / 16px */
     line-height: 1.555;
     /* 28px */
+  }
+
+  .wp-block-image.alignfull,
+  .wp-block-cover {
+    right: -17%;
+    width: 134%;
+  }
+
+  .wp-block-image.alignwide {
+    right: -10%;
+    width: 120%;
   }
 }
 @media all and (min-width: 50em) {
@@ -1442,6 +1482,17 @@ a img {
     left: 24px;
     text-align: left;
     margin: 0;
+  }
+
+  .wp-block-image.alignfull,
+  .wp-block-cover {
+    right: -25%;
+    width: 150%;
+  }
+
+  .wp-block-image.alignwide {
+    right: -18%;
+    width: 136%;
   }
 }
 @media all and (min-width: 56.25em) {
@@ -1489,6 +1540,18 @@ a img {
   .comments,
   .widget-area-after-post {
     padding: 0 6.25005%;
+  }
+}
+@media all and (min-width: 75em) {
+  .wp-block-image.alignfull,
+  .wp-block-cover {
+    right: -36%;
+    width: 172%;
+  }
+
+  .wp-block-image.alignwide {
+    right: -25%;
+    width: 150%;
   }
 }
 .widget {
