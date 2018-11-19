@@ -203,6 +203,12 @@ th {
   margin: 1.5em 0;
 }
 
+.wp-block-gallery.alignnone {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 img,
 .alignright,
 .alignleft,

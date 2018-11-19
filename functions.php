@@ -72,6 +72,13 @@ if ( ! function_exists( ( 'ct_challenger_theme_setup' ) ) ) {
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-slider' );
 
+		// Gutenberg - wide & full images
+		add_theme_support( 'align-wide' );
+		add_theme_support( 'align-full' );
+
+		// Gutenberg - add support for editor styles
+		add_theme_support('editor-styles');
+
 		load_theme_textdomain( 'challenger', get_template_directory() . '/languages' );
 	}
 }

@@ -136,6 +136,9 @@ th {
   display: block;
   margin: $baseline-height 0;
 }
+.wp-block-gallery.alignnone {
+  display: flex;
+}
 img,
 .alignright,
 .alignleft,
