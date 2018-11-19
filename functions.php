@@ -77,6 +77,16 @@ if ( ! function_exists( ( 'ct_challenger_theme_setup' ) ) ) {
 }
 add_action( 'after_setup_theme', 'ct_challenger_theme_setup' );
 
+//-----------------------------------------------------------------------------
+// Load custom stylesheet for the post editor
+//-----------------------------------------------------------------------------
+if ( ! function_exists( 'ct_challenger_add_editor_styles' ) ) {
+	function ct_challenger_add_editor_styles() {
+		add_editor_style( 'styles/editor-style.css' );
+	}
+}
+add_action( 'admin_init', 'ct_challenger_add_editor_styles' );
+
 //----------------------------------------------------------------------------------
 //	Register widget areas
 //----------------------------------------------------------------------------------

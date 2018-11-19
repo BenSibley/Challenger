@@ -26,6 +26,16 @@ function ct_challenger_enqueue_admin_styles( $hook ) {
 	if ( $hook == 'appearance_page_challenger-options' ) {
 		wp_enqueue_style( 'ct-challenger-admin-styles', get_template_directory_uri() . '/styles/admin.min.css' );
 	}
+	if ( $hook == 'post.php' || $hook == 'post-new.php' ) {
+
+		$font_args = array(
+			'family' => urlencode( 'Poppins:300,300i,700' ),
+			'subset' => urlencode( 'latin,latin-ext' )
+		);
+		$fonts_url = add_query_arg( $font_args, '//fonts.googleapis.com/css' );
+	
+		wp_enqueue_style( 'ct-challenger-google-fonts', $fonts_url );
+	}
 }
 add_action( 'admin_enqueue_scripts', 'ct_challenger_enqueue_admin_styles' );
 
