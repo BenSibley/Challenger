@@ -79,6 +79,34 @@ if ( ! function_exists( ( 'ct_challenger_theme_setup' ) ) ) {
 		// Gutenberg - add support for editor styles
 		add_theme_support('editor-styles');
 
+		// Gutenberg - modify the font sizes
+		add_theme_support( 'editor-font-sizes', array(
+			array(
+					'name' => __( 'small', 'challenger' ),
+					'shortName' => __( 'S', 'challenger' ),
+					'size' => 14,
+					'slug' => 'small'
+			),
+			array(
+					'name' => __( 'regular', 'challenger' ),
+					'shortName' => __( 'M', 'challenger' ),
+					'size' => 21,
+					'slug' => 'regular'
+			),
+			array(
+					'name' => __( 'large', 'challenger' ),
+					'shortName' => __( 'L', 'challenger' ),
+					'size' => 38,
+					'slug' => 'large'
+			),
+			array(
+					'name' => __( 'larger', 'challenger' ),
+					'shortName' => __( 'XL', 'challenger' ),
+					'size' => 51,
+					'slug' => 'larger'
+			)
+		) );
+
 		load_theme_textdomain( 'challenger', get_template_directory() . '/languages' );
 	}
 }
