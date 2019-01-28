@@ -629,15 +629,36 @@ if ( ! function_exists( ( 'ct_challenger_delete_settings_notice' ) ) ) {
 	function ct_challenger_delete_settings_notice() {
 
 		if ( isset( $_GET['challenger_status'] ) ) {
-			?>
-			<div class="updated">
-				<p><?php esc_html_e( 'Customizer settings deleted', 'challenger' ); ?>.</p>
-			</div>
-			<?php
+			if ( $_GET['challenger_status'] == 'deleted' ) { ?>
+				<div class="updated">
+					<p><?php esc_html_e( 'Customizer settings deleted', 'challenger' ); ?>.</p>
+				</div><?php
+			} elseif ( $_GET['challenger_status'] == 'activated' ) { ?>
+				<div class="updated">
+					<p><?php printf( esc_html__( '%s successfully activated!', 'challenger' ), wp_get_theme( get_template() ) ); ?></p>
+				</div><?php
+			}
 		}
 	}
 }
 add_action( 'admin_notices', 'ct_challenger_delete_settings_notice' );
+
+//----------------------------------------------------------------------------------
+// Redirect to dashboard upon theme activation
+//----------------------------------------------------------------------------------
+function ct_challenger_welcome_redirect() {
+
+	$welcome_url = add_query_arg(
+		array(
+			'page'          		=> 'challenger-options',
+			'challenger_status' => 'activated'
+		),
+		admin_url( 'themes.php' )
+	);
+	wp_safe_redirect( esc_url_raw( $welcome_url ) );
+}
+add_action( 'after_switch_theme', 'ct_challenger_welcome_redirect' );
+
 
 //----------------------------------------------------------------------------------
 //	Update body classes for styling
