@@ -1300,7 +1300,7 @@ a img {
 }
 .post-byline img {
   border-radius: 50%;
-  margin-left: 8px;
+  margin: 0 0 0 8px;
   height: 24px;
   width: 24px;
 }
@@ -1511,8 +1511,8 @@ a img {
     margin: 24px 0;
   }
   .post-byline img {
-    height: auto;
-    width: auto;
+    height: 36px;
+    width: 36px;
     margin-left: 12px;
   }
 

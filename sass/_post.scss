@@ -88,7 +88,7 @@
 
   img {
     border-radius: 50%;
-    margin-right: 8px;
+    margin: 0 8px 0 0;
     height: 24px;
     width: 24px;
   }
@@ -283,8 +283,8 @@
     margin: 24px 0;
 
     img {
-      height: auto;
-      width: auto;
+      height: 36px;
+      width: 36px;
       margin-right: 12px;
     }
   }
