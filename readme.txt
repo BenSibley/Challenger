@@ -3,7 +3,7 @@ Contributors: bensibley
 Tags: one-column, custom-logo, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
 Requires at least: 4.5
 Tested up to: 4.9
-Stable tag: 1.03
+Stable tag: 1.09
 
 Challenger is a premium-quality blogging theme for the modern blogger
 
