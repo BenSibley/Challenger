@@ -596,7 +596,8 @@ if ( ! function_exists( ( 'ct_challenger_reset_customizer_options' ) ) ) {
 			'author_box',
 			'post_categories',
 			'post_tags',
-			'archive_header'
+			'archive_header',
+			'last_updated'
 		);
 
 		$social_sites = ct_challenger_social_array();
@@ -933,3 +934,22 @@ function ct_challenger_logo_refresh($wp_customize) {
   $wp_customize->get_setting( 'custom_logo' )->transport = 'refresh';
 }
 add_action( 'customize_register', 'ct_challenger_logo_refresh', 20 );
+
+//----------------------------------------------------------------------------------
+// Output the "Last Updated" date on posts
+//----------------------------------------------------------------------------------
+function ct_challenger_output_last_updated_date() {
+	
+	global $post;
+
+	if ( get_the_modified_date() != get_the_date() ) {
+		$updated_post = get_post_meta( $post->ID, 'ct_challenger_last_updated', true );
+		$updated_customizer = get_theme_mod( 'last_updated' );
+		if ( 
+			( $updated_customizer == 'yes' && ($updated_post != 'no') )
+			|| $updated_post == 'yes' 
+			) {
+				echo '<p class="last-updated">'. esc_html__("Last updated on", "challenger") . ' ' . get_the_modified_date() . ' </p>';
+			}
+	}
+}

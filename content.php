@@ -8,6 +8,7 @@
 		<?php ct_challenger_featured_image(); ?>
 		<div class="post-content">
 			<?php get_sidebar( 'before-post' ); ?>
+			<?php ct_challenger_output_last_updated_date(); ?>
 			<?php the_content(); ?>
 			<?php wp_link_pages( array(
 				'before' => '<p class="singular-pagination">' . esc_html__( 'Pages:', 'challenger' ),

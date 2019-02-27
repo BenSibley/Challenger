@@ -635,6 +635,30 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 			'no'  => __( 'No', 'challenger' )
 		)
 	) );
+
+	/***** Additional Options  *****/
+
+	// section
+	$wp_customize->add_section( 'ct_challenger_additional_options', array(
+		'title'    => __( 'Additional Options', 'challenger' ),
+		'priority' => 75
+	) );
+	// setting - last updated
+	$wp_customize->add_setting( 'last_updated', array(
+		'default'           => 'no',
+		'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
+	) );
+	// control - last updated
+	$wp_customize->add_control( 'last_updated', array(
+		'label'    => __( 'Display the date each post was last updated?', 'challenger' ),
+		'section'  => 'ct_challenger_additional_options',
+		'settings' => 'last_updated',
+		'type'     => 'radio',
+		'choices'  => array(
+			'yes' => __( 'Yes', 'challenger' ),
+			'no'  => __( 'No', 'challenger' )
+		)
+	) );
 }
 /***** Custom Sanitization Functions *****/
 
