@@ -11,7 +11,7 @@ $author = get_the_author();
 if ( get_theme_mod( 'author_link' ) != 'no' ) {
 	$author = '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( $author ) . '</a>';
 }
-$date = date_i18n( get_option( 'date_format' ), strtotime( get_the_date('r') ) );
+$date = date_i18n( get_option( 'date_format' ), strtotime( get_the_date('c') ) );
 $avatar = get_avatar( get_the_author_meta( 'ID' ), 36, '', get_the_author() );
 
 echo '<div class="post-byline">';
