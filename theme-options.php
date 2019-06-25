@@ -1,7 +1,7 @@
 <?php
 
 function ct_challenger_register_theme_page() {
-	add_theme_page( sprintf( esc_html__( '%s Dashboard', 'challenger' ), wp_get_theme() ), sprintf( esc_html__( '%s Dashboard', 'challenger' ), wp_get_theme() ), 'edit_theme_options', 'challenger-options', 'ct_challenger_options_content', 'ct_challenger_options_content' );
+	add_theme_page( sprintf( esc_html__( '%s Dashboard', 'challenger'  ), wp_get_theme() ), sprintf( esc_html__( '%s Dashboard', 'challenger'  ), wp_get_theme() ), 'edit_theme_options', 'challenger-options', 'ct_challenger_options_content', 'ct_challenger_options_content' );
 }
 add_action( 'admin_menu', 'ct_challenger_register_theme_page' );
 
@@ -17,7 +17,7 @@ function ct_challenger_options_content() {
 	$pro_url = 'https://www.competethemes.com/challenger-pro/?utm_source=wp-dashboard&utm_medium=Dashboard&utm_campaign=Challenger%20Pro%20-%20Dashboard';
 	?>
 	<div id="challenger-dashboard-wrap" class="wrap challenger-dashboard-wrap">
-		<h2><?php printf( esc_html__( '%s Dashboard', 'challenger' ), wp_get_theme() ); ?></h2>
+		<h2><?php printf( esc_html__( '%s Dashboard', 'challenger'  ), wp_get_theme() ); ?></h2>
 		<?php do_action( 'ct_challenger_theme_options_before' ); ?>
 		<div class="main">
 			<?php if ( defined( 'CHALLENGER_PRO_FILE' ) ) : ?>
@@ -30,7 +30,7 @@ function ct_challenger_options_content() {
 			<div class="getting-started">
 				<h3>Get Started with Challenger</h3>
 				<p>Follow this step-by-step guide to customize your website with Challenger:</p>
-				<a href="https://www.competethemes.com/help/getting-started-challenger/" target="_blank">Read the Getting Started Guide</a>
+				<a href="https://www.competethemes.com/help/getting-started-challenger-/" target="_blank">Read the Getting Started Guide</a>
 			</div>
 			<div class="pro">
 				<h3>Customize More with Challenger Pro</h3>
@@ -122,10 +122,10 @@ function ct_challenger_options_content() {
 				<h4>More Amazing Resources</h4>
 				<ul>
 					<li><a href="https://www.competethemes.com/documentation/challenger-support-center/" target="_blank">Challenger Support Center</a></li>
-					<li><a href="https://wordpress.org/support/theme/challenger" target="_blank">Support Forum</a></li>
+					<li><a href="https://wordpress.org/support/theme/challenger-/" target="_blank">Support Forum</a></li>
 					<li><a href="https://www.competethemes.com/help/challenger-changelog/" target="_blank">Changelog</a></li>
 					<li><a href="https://www.competethemes.com/help/challenger-css-snippets/" target="_blank">CSS Snippets</a></li>
-					<li><a href="https://www.competethemes.com/help/child-theme-challenger/" target="_blank">Starter child theme</a></li>
+					<li><a href="https://www.competethemes.com/help/child-theme-challenger-/" target="_blank">Starter child theme</a></li>
 					<li><a href="https://www.competethemes.com/help/challenger-demo-data/" target="_blank">Challenger demo data</a></li>
 					<li><a href="<?php echo $pro_url; ?>" target="_blank">Challenger Pro</a></li>
 				</ul>
@@ -133,7 +133,7 @@ function ct_challenger_options_content() {
 			<div class="dashboard-widget">
 				<h4>User Reviews</h4>
 				<img src="<?php echo trailingslashit(get_template_directory_uri()) . 'assets/img/reviews.png'; ?>" />
-				<p>Users are loving Challenger! <a href="https://wordpress.org/support/theme/challenger/reviews/?filter=5#new-post" target="_blank">Click here</a> to leave your own review</p>
+				<p>Users are loving Challenger! <a href="https://wordpress.org/support/theme/challenger-/reviews/?filter=5#new-post" target="_blank">Click here</a> to leave your own review</p>
 			</div>
 			<div class="dashboard-widget">
 				<h4>Reset Customizer Settings</h4>

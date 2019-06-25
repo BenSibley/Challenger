@@ -10,7 +10,7 @@
 		<?php the_author_meta('description'); ?>
 	</p>
 	<p class="view-posts">
-		<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta('ID') ) ); ?>">View all posts</a>
+		<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta('ID') ) ); ?>"><?php esc_html_e( 'View all posts', 'challenger' ); ?></a>
 	</p>
-	<?php ct_challenger_social_icons_output( 'author' ) ?>
+	<?php ct_challenger_output_social_icons( 'author' ) ?>
 </div>

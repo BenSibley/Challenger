@@ -2,7 +2,7 @@
 	<?php do_action( 'challenger_archive_post_before' ); ?>
 	<article>
 		<div class='post-header'>
-			<?php do_action( 'challenger_sticky_post_status' ); ?>
+			<?php ct_challenger_sticky_post_label(); ?>
 			<h2 class='post-title'>
 				<a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a>
 			</h2>

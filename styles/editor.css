@@ -1,8 +1,30 @@
-@import "variables";
+/*===== Variables =====*/
+/* Theme Colors */
+/* Media Query widths */
+/* Social Media Brand Colors */
+/*===== Mixins =====*/
+/***** Silent Classes *****/
+h1, .editor-post-title textarea {
+  font-size: 1.75em;
+  /* 28px / 16px */
+  line-height: 1.357;
+  /* 38px */
+}
 
-//------------------------------------------------------
-// Classic editor styles
-//------------------------------------------------------
+h2 {
+  font-size: 1.3125em;
+  /* 21px / 16px */
+  line-height: 1.143;
+  /* 24px */
+}
+
+.wp-caption-text,
+.gallery-caption {
+  font-size: 0.75em;
+  /* 12px / 16px */
+  line-height: 1.5;
+  /* 18px */
+}
 
 .mce-content-body.wp-editor {
   margin: 0 auto;
@@ -11,65 +33,58 @@
   line-height: 1.81;
   -webkit-font-smoothing: subpixel-antialiased !important;
   background: #fff;
-  font-family: $primary-font-stack;
+  font-family: "Poppins", sans-serif;
   max-width: 770px;
   font-weight: 300;
 }
 
-//------------------------------------------------------
-// Basic styles for Gutenberg
-//------------------------------------------------------
-
 body {
   font-size: 21px;
   line-height: 1.5;
-  font-family: $primary-font-stack;
-  color: $color-gray-15;
+  font-family: "Poppins", sans-serif;
+  color: #262626;
 }
+
 p {
   font-size: 21px;
   line-height: 1.81;
-  margin: $baseline-height 0;
+  margin: 1.5em 0;
 }
-a {
- color: $color-gray-15;
 
-  &:link,
-  &:visited {
-   color: $color-gray-15;
-  }
-  &:hover,
-  &:active,
-  &:focus {
-   color: $color-gray-40;
-  }
+a {
+  color: #262626;
 }
-h1,h2,h3,h4,h5,h6 {
-  font-family: $primary-font-stack;
+a:link, a:visited {
+  color: #262626;
+}
+a:hover, a:active, a:focus {
+  color: #666666;
+}
+
+h1, .editor-post-title textarea, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   font-weight: 700;
 }
-h1 {
-  @extend %twenty-eight-pixels;
-}
-h2 {
-  @extend %twenty-one-pixels;
-}
+
 h3, h4, h5, h6 {
   font-size: 1em;
   line-height: 1.5;
 }
+
 ul,
 ol {
   font-size: 1em;
   padding: 0;
-  margin: $baseline-height;
-
-  ul,ol {
-    margin: 0 $baseline-height;
-  }
+  margin: 1.5em;
 }
+ul ul, ul ol,
+ol ul,
+ol ol {
+  margin: 0 1.5em;
+}
+
 ul ul,
 ol ol,
 ul ol,
@@ -79,64 +94,73 @@ li li {
 }
 
 /* Markup styles */
-
 pre {
   word-wrap: break-word;
-  background: $color-gray-93;
+  background: #EDEDED;
   white-space: pre-wrap;
-  padding: $baseline-height / 2;
+  padding: 0.75em;
 }
-code {
-  background: $color-gray-93;
-  padding: 0 $baseline-height / 4;
-}
-blockquote {
-  margin: $baseline-height $baseline-height $baseline-height 0;
-  padding-left: $baseline-height;
-  border-left: solid 3px $color-gray-15;
 
-  cite {
-    display: block;
-    text-align: right;
-  }
+code {
+  background: #EDEDED;
+  padding: 0 0.375em;
 }
+
+blockquote {
+  margin: 1.5em 1.5em 1.5em 0;
+  padding-left: 1.5em;
+  border-left: solid 3px #262626;
+}
+blockquote cite {
+  display: block;
+  text-align: right;
+}
+
 hr {
-  margin: $baseline-height 0;
+  margin: 1.5em 0;
 }
+
 /* Table styles */
 table {
   border-spacing: 0;
   border-collapse: collapse;
-  margin: $baseline-height 0;
+  margin: 1.5em 0;
 }
+
 td,
 th {
-  padding: $baseline-height / 2;
-  border: solid 1px $color-gray-70;
+  padding: 0.75em;
+  border: solid 1px #B3B3B3;
 }
 
 /* Images */
-
 .alignleft {
   float: left;
-  margin: 0 $baseline-height $baseline-height 0;
+  margin: 0 1.5em 1.5em 0;
 }
+
 .alignright {
   float: right;
-  margin: 0 0 $baseline-height $baseline-height;
+  margin: 0 0 1.5em 1.5em;
 }
+
 .aligncenter {
   text-align: center;
-  margin: $baseline-height auto;
+  margin: 1.5em auto;
   display: block;
 }
+
 .alignnone {
   display: block;
-  margin: $baseline-height 0;
+  margin: 1.5em 0;
 }
+
 .wp-block-gallery.alignnone {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
+
 .alignright,
 .alignleft,
 .aligncenter,
@@ -149,55 +173,56 @@ th {
   max-width: 100%;
   height: auto;
 }
-.wp-caption-text,
-.gallery-caption {
-  @extend %twelve-pixels;
-}
+
 .wp-block {
   max-width: 733px;
 }
+
 .editor-post-title textarea {
-  @extend h1;
-  color: $color-gray-23;
+  color: #3a3a3a;
   outline: none;
   padding: 19px;
-  font-family: $primary-font-stack;
+  font-family: "Poppins", sans-serif;
   text-align: center;
 }
+
 .wp-block[data-align="wide"],
 .wp-block[data-align="full"] {
   max-width: none;
 }
+
 .wp-block-quote.is-large {
   padding-left: 0;
   border-left: none;
 }
+
 .wp-block-embed {
-  margin: $baseline-height 0;
+  margin: 1.5em 0;
 }
+
 .has-small-font-size {
   font-size: 14px;
 }
+
 .has-regular-font-size {
-  font-size:21px;
+  font-size: 21px;
 }
+
 .has-large-font-size {
   font-size: 38px;
 }
+
 .has-extra-large-font-size {
   font-size: 51px;
 }
 
 @media all and (min-width: 600px) {
-
   .editor-post-title textarea {
     font-size: 1.75em;
     line-height: 1.357;
   }
 }
-
 @media all and (min-width: 900px) {
-
   .editor-post-title textarea {
     font-size: 2.375em;
     line-height: 1.342;

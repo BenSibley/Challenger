@@ -9,7 +9,7 @@ function ct_challenger_last_updated_meta_box() {
 
 		add_meta_box(
 			'ct_challenger_last_updated',
-			esc_html__( 'Last Updated Date', 'challenger' ),
+			esc_html__( 'Last Updated Date', 'challenger'  ),
 			'ct_challenger_last_updated_callback',
 			$screen,
 			'side'
@@ -26,14 +26,14 @@ function ct_challenger_last_updated_callback( $post ) {
   ?>
 	<p>
 		<select name="challenger-last-updated" id="challenger-last-updated" class="widefat">
-			<option value="default"><?php esc_html_e( 'Use Customizer setting', 'challenger' ); ?></option>
+			<option value="default"><?php esc_html_e( 'Use Customizer setting', 'challenger'  ); ?></option>
 			<option value="yes" <?php if ( $display == 'yes' ) {
 				echo 'selected';
-			} ?>><?php esc_html_e( 'Show the date', 'challenger' ); ?>
+			} ?>><?php esc_html_e( 'Show the date', 'challenger'  ); ?>
 			</option>
 			<option value="no" <?php if ( $display == 'no' ) {
 				echo 'selected';
-			} ?>><?php esc_html_e( "Don't show the date", 'challenger' ); ?>
+			} ?>><?php esc_html_e( "Don't show the date", 'challenger'  ); ?>
 			</option>
 		</select>
 	</p> <?php

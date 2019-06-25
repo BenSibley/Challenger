@@ -19,7 +19,7 @@ get_header(); ?>
             <?php get_sidebar( 'before-page' ); ?>
             <?php the_content(); ?>
             <?php wp_link_pages( array(
-              'before' => '<p class="singular-pagination">' . esc_html__( 'Pages:', 'challenger' ),
+              'before' => '<p class="singular-pagination">' . esc_html__( 'Pages:', 'challenger'  ),
               'after'  => '</p>',
             ) ); ?>
             <?php do_action( 'challenger_page_after' ); ?>
