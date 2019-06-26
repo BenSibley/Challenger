@@ -11,10 +11,10 @@ function ct_challenger_enqueue_scripts_styles() {
   wp_enqueue_script( 'ct-challenger-js', get_template_directory_uri() . '/js/prod/front-end.min.js', array( 'jquery' ), '', true );
   // Localize all English text in JS files
 	wp_localize_script( 'ct-challenger-js', 'objectL10n', array(
-		'openMenu'       => esc_html__( 'open menu', 'challenger'  ),
-		'closeMenu'      => esc_html__( 'close menu', 'challenger'  ),
-		'openChildMenu'  => esc_html__( 'open dropdown menu', 'challenger'  ),
-		'closeChildMenu' => esc_html__( 'close dropdown menu', 'challenger'  )
+		'openMenu'       => esc_html__( 'open menu', 'challenger' ),
+		'closeMenu'      => esc_html__( 'close menu', 'challenger' ),
+		'openChildMenu'  => esc_html__( 'open dropdown menu', 'challenger' ),
+		'closeChildMenu' => esc_html__( 'close dropdown menu', 'challenger' )
   ) );
   // Enqueue Font Awesome (custom handle to avoid degrading to <FA5.0)
   wp_enqueue_style( 'ct-challenger-font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/all.min.css' );

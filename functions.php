@@ -28,7 +28,7 @@ new WP_Review_Me( array(
 if ( ! function_exists( ( 'ct_challenger_set_content_width' ) ) ) {
 	function ct_challenger_set_content_width() {
 		if ( ! isset( $content_width ) ) {
-			$content_width = 680;
+			$content_width = 723;
 		}
 	}
 }
@@ -37,8 +37,8 @@ add_action( 'after_setup_theme', 'ct_challenger_set_content_width', 0 );
 //----------------------------------------------------------------------------------
 //	Add theme support for various features, register menus, load text domain
 //----------------------------------------------------------------------------------
-if (!function_exists(('ct_THEME_UNDERSCORES_theme_setup'))) {
-  function ct_THEME_UNDERSCORES_theme_setup() {
+if (!function_exists(('ct_challenger_theme_setup'))) {
+  function ct_challenger_theme_setup() {
 
     // Add Featured Image support
     add_theme_support('post-thumbnails');
@@ -69,7 +69,7 @@ if (!function_exists(('ct_THEME_UNDERSCORES_theme_setup'))) {
     add_theme_support('infinite-scroll', array(
       'container' => 'loop-container',
       'footer'    => 'overflow-container',
-      'render'    => 'ct_THEME_UNDERSCORES_infinite_scroll_render'
+      'render'    => 'ct_challenger_infinite_scroll_render'
     ));
 
     // Add WooCommerce support
@@ -90,26 +90,26 @@ if (!function_exists(('ct_THEME_UNDERSCORES_theme_setup'))) {
     // Gutenberg - modify the selectable font sizes
     add_theme_support('editor-font-sizes', array(
       array(
-        'name'      => __('small', 'THEME_SLUG'),
-        'shortName' => __('S', 'THEME_SLUG'),
+        'name'      => __('small', 'challenger'),
+        'shortName' => __('S', 'challenger'),
         'size'      => 14,
         'slug'      => 'small'
       ),
       array(
-        'name'      => __('regular', 'THEME_SLUG'),
-        'shortName' => __('M', 'THEME_SLUG'),
+        'name'      => __('regular', 'challenger'),
+        'shortName' => __('M', 'challenger'),
         'size'      => 21,
         'slug'      => 'regular'
       ),
       array(
-        'name'      => __('large', 'THEME_SLUG'),
-        'shortName' => __('L', 'THEME_SLUG'),
+        'name'      => __('large', 'challenger'),
+        'shortName' => __('L', 'challenger'),
         'size'      => 38,
         'slug'      => 'large'
       ),
       array(
-        'name'      => __('larger', 'THEME_SLUG'),
-        'shortName' => __('XL', 'THEME_SLUG'),
+        'name'      => __('larger', 'challenger'),
+        'shortName' => __('XL', 'challenger'),
         'size'      => 51,
         'slug'      => 'larger'
       )
@@ -117,14 +117,14 @@ if (!function_exists(('ct_THEME_UNDERSCORES_theme_setup'))) {
 
     // Register custom menus
     register_nav_menus(array(
-      'primary' => esc_html__('Primary', 'THEME_SLUG')
+      'primary' => esc_html__('Primary', 'challenger')
     ));
 
     // Load the theme's translated strings
-    load_theme_textdomain('THEME_SLUG', get_template_directory() . '/languages');
+    load_theme_textdomain('challenger', get_template_directory() . '/languages');
   }
 }
-add_action('after_setup_theme', 'ct_THEME_UNDERSCORES_theme_setup');
+add_action('after_setup_theme', 'ct_challenger_theme_setup');
 
 //----------------------------------------------------------------------------------
 //	Output meta tags in <head>
@@ -190,18 +190,94 @@ if ( ! function_exists( ( 'ct_challenger_wp_page_menu' ) ) ) {
 //----------------------------------------------------------------------------------
 if ( ! function_exists( 'ct_challenger_register_widget_areas' ) ) {
 	function ct_challenger_register_widget_areas() {
-		register_sidebar( array(
-			'name'          => esc_html__( 'Primary Sidebar', 'challenger' ),
-			'id'            => 'primary',
-			'description'   => esc_html__( 'Widgets in this area will be shown in the sidebar next to the main post content', 'challenger' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>'
-		) );
+		
+		
+  // Before Post Content
+  register_sidebar( array(
+    'name'          => esc_html__( 'Before Post Content', 'challenger' ),
+    'id'            => 'before-post',
+    'description'   => esc_html__( 'Widgets in this area will be shown on post pages before the content.', 'challenger' ),
+    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<div class="widget-title">',
+    'after_title'   => '</div>'
+  ) );
+		
+  // Before Page Content
+  register_sidebar( array(
+    'name'          => esc_html__( 'Before Page Content', 'challenger' ),
+    'id'            => 'before-page',
+    'description'   => esc_html__( 'Widgets in this area will be shown on pages before the content.', 'challenger' ),
+    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<div class="widget-title">',
+    'after_title'   => '</div>'
+  ) );
+		
+  // After Post Content
+  register_sidebar( array(
+    'name'          => esc_html__( 'After Post Content', 'challenger' ),
+    'id'            => 'after-post',
+    'description'   => esc_html__( 'Widgets in this area will be shown on post pages after the content.', 'challenger' ),
+    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<div class="widget-title">',
+    'after_title'   => '</div>'
+  ) );
+		
+  // After Page Content
+  register_sidebar( array(
+    'name'          => esc_html__( 'After Page Content', 'challenger' ),
+    'id'            => 'after-page',
+    'description'   => esc_html__( 'Widgets in this area will be shown on pages after the content.', 'challenger' ),
+    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<div class="widget-title">',
+    'after_title'   => '</div>'
+  ) );
 	}
 }
 add_action( 'widgets_init', 'ct_challenger_register_widget_areas' );
+
+//----------------------------------------------------------------------------------
+//	Output the After Post Content widget area
+//----------------------------------------------------------------------------------
+if ( !function_exists( 'ct_challenger_output_widget_area_after_post_content' )) {
+  function ct_challenger_output_widget_area_after_post_content() {
+    get_sidebar( 'after-post' );
+  }
+}
+add_action( 'challenger_after_post_meta', 'ct_challenger_output_widget_area_after_post_content' );
+
+//----------------------------------------------------------------------------------
+//	Output the After Page Content widget area
+//----------------------------------------------------------------------------------
+if ( !function_exists( 'ct_challenger_output_widget_area_after_page_content' )) {
+  function ct_challenger_output_widget_area_after_page_content() {
+    get_sidebar( 'after-page' );
+  }
+}
+add_action( 'challenger_after_page_content', 'ct_challenger_output_widget_area_after_page_content' );
+
+//----------------------------------------------------------------------------------
+//	Output the Before Post Content widget area
+//----------------------------------------------------------------------------------
+if ( !function_exists( 'ct_challenger_output_widget_area_before_post_content' )) {
+  function ct_challenger_output_widget_area_before_post_content() {
+    get_sidebar( 'before-post' );
+  }
+}
+add_action( 'challenger_before_post_content', 'ct_challenger_output_widget_area_before_post_content' );
+
+//----------------------------------------------------------------------------------
+//	Output the Before Page Content widget area
+//----------------------------------------------------------------------------------
+if ( !function_exists( 'ct_challenger_output_widget_area_before_page_content' )) {
+  function ct_challenger_output_widget_area_before_page_content() {
+    get_sidebar( 'before-page' );
+  }
+}
+add_action( 'challenger_before_page_content', 'ct_challenger_output_widget_area_before_page_content' );
 
 //----------------------------------------------------------------------------------
 //	Add "Continue reading" button. 
@@ -496,18 +572,20 @@ if ( ! function_exists( 'ct_challenger_output_social_icons' ) ) {
     // Store only icons with URLs saved
     $saved = array();
 
-		// Store the site name and url if user entered a value
-		foreach ( $social_sites as $site => $handle ) {
+		/* Store the site name and ID if saved
+		/* name: twitter
+		/* id: ct_challenger_twitter_profile */
+		foreach ( $social_sites as $name => $id ) {
       // Access theme mods for header icons
 			if ( $source == 'header' ) {
-				if ( strlen( get_theme_mod( $site ) ) > 0 ) {
-					$saved[ $site ] = $handle;
+				if ( strlen( get_theme_mod( $name ) ) > 0 ) {
+					$saved[ $name ] = $id;
 				}
       } 
       // Access the post author's data if used in the "About the author" box
       elseif ( $source == 'author' ) {
-				if ( strlen( get_the_author_meta( $site ) ) > 0 ) {
-					$saved[ $site ] = $handle;
+				if ( strlen( get_the_author_meta( $id ) ) > 0 ) {
+					$saved[ $name ] = $id;
 				}
 			}
 		}
@@ -518,40 +596,40 @@ if ( ! function_exists( 'ct_challenger_output_social_icons' ) ) {
       echo '<ul class="social-media-icons">';
       
       // Output list item for every saved profile
-			foreach ( $saved as $site => $handle ) {
+			foreach ( $saved as $name => $id ) {
 
         // Store appropriate class for Font Awesome
-				if ( $site == 'rss' ) {
+				if ( $name == 'rss' ) {
 					$class = 'fas fa-rss';
-				} elseif ( $site == 'email' ) {
+				} elseif ( $name == 'email' ) {
 					$class = 'fas fa-envelope';
-				} elseif ( $site == 'email-form' ) {
+				} elseif ( $name == 'email-form' ) {
 					$class = 'far fa-envelope';
-				} elseif ( $site == 'podcast' ) {
+				} elseif ( $name == 'podcast' ) {
 					$class = 'fas fa-podcast';
-				} elseif ( $site == 'ok-ru' ) {
+				} elseif ( $name == 'ok-ru' ) {
 					$class = 'fab fa-odnoklassniki';
-				} elseif ( $site == 'wechat' ) {
+				} elseif ( $name == 'wechat' ) {
 					$class = 'fab fa-weixin';
-				} elseif ( $site == 'phone' ) {
+				} elseif ( $name == 'phone' ) {
 					$class = 'fas fa-phone';
 				} else {
-					$class = 'fab fa-' . $site;
+					$class = 'fab fa-' . $name;
         }
         
         // Access the URL based on the context
 				if ( $source == 'header' ) {
-					$url = get_theme_mod( $site );
+					$url = get_theme_mod( $name );
 				} elseif ( $source == 'author' ) {
-					$url = get_the_author_meta( $site );
+					$url = get_the_author_meta( $id );
         }
 
         // Escape the URL based on protocol being used
-        if ( $site == 'email' ) {
+        if ( $name == 'email' ) {
           $href = 'mailto:' . antispambot( is_email( $url ) );
-        } elseif ( $site == 'skype' ) {
+        } elseif ( $name == 'skype' ) {
           $href = esc_url( $url, array( 'http', 'https', 'skype' ) );
-        } elseif ( $site == 'phone' ) {
+        } elseif ( $name == 'phone' ) {
           $href = esc_url( $url, array( 'tel' ) );
         } else {
           $href = esc_url( $url );
@@ -559,9 +637,9 @@ if ( ! function_exists( 'ct_challenger_output_social_icons' ) ) {
         // Output the icon
         ?>
 				<li>
-				  <a class="<?php echo esc_attr( $site ); ?>" target="_blank" href="<?php echo $href; ?>">
+				  <a class="<?php echo esc_attr( $name ); ?>" target="_blank" href="<?php echo $href; ?>">
             <i class="<?php echo esc_attr( $class ); ?>" aria-hidden="true"></i>
-            <span class="screen-reader-text"><?php echo esc_html( $site );  ?></span>
+            <span class="screen-reader-text"><?php echo esc_html( $name );  ?></span>
           </a>
         </li>
         <?php
@@ -586,9 +664,6 @@ if ( ! function_exists( ( 'ct_challenger_body_class' ) ) ) {
 		if ( get_bloginfo( 'description' ) ) {
 			$classes[] = 'has-tagline';
 		}
-		// if ( get_theme_mod( 'header_box' ) != 'no' && ct_challenger_header_box_output_rules() == true ) {
-		// 	$classes[] = 'has-header-box';
-		// }
 
 		return $classes;
 	}
@@ -684,7 +759,7 @@ function ct_challenger_welcome_redirect() {
   // Set URL to Challenger options page
 	$welcome_url = add_query_arg(
 		array(
-			'page' => 'THEME_SLUG-options',
+			'page' => 'challenger-options',
 			'challenger_status' => 'activated'
 		),
 		admin_url( 'themes.php' )

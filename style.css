@@ -501,7 +501,11 @@ a img {
 }
 .comment-author img {
   border-radius: 50%;
-  margin-right: 12px;
+  margin: 0 12px 0 0;
+}
+
+.awaiting-moderation {
+  font-style: italic;
 }
 
 .comment-reply-link,
@@ -1392,10 +1396,14 @@ a img {
 }
 .author-box .avatar {
   border-radius: 50%;
+  margin: 0;
 }
 .author-box .social-media-icons {
   margin: 1.5em 0;
   padding: 0;
+}
+.author-box .social-media-icons li {
+  margin-right: -6px;
 }
 .author-box .social-media-icons a {
   font-size: 16px;
@@ -2072,10 +2080,10 @@ a img {
 
 ATTENTION:
 
-Please do not edit this. Your changes will be overwritten when you update ACTIVE_THEME.
+Please do not edit this. Your changes will be overwritten when you update Challenger.
 
 If you want to make CSS edits, use the "Additional CSS" section in the Customizer instead (Appearance > Customize).
 
-If you want more information about customizing ACTIVE_THEME with CSS, check out this guide: https://www.competethemes.com/help/custom-css-ACTIVE_THEME_HYPHENS/
+If you want more information about customizing Challenger with CSS, check out this guide: https://www.competethemes.com/help/custom-css-challenger/
 
 */

@@ -9,7 +9,7 @@
     <?php do_action( 'challenger_before_page_content' ); ?>
 			<?php the_content(); ?>
 			<?php wp_link_pages( array(
-				'before' => '<p class="singular-pagination">' . esc_html__( 'Pages:', 'challenger'  ),
+				'before' => '<p class="singular-pagination">' . esc_html__( 'Pages:', 'challenger' ),
 				'after'  => '</p>',
 			) ); ?>
 			<?php do_action( 'challenger_after_page_content' ); ?>

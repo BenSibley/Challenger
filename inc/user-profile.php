@@ -12,40 +12,40 @@ if ( ! function_exists( ( 'ct_challenger_add_author_social_profiles' ) ) ) {
 			return false;
     }
     // Get social icons data
-		$social_sites = ct_challenger_social_array();
+    $social_sites = ct_challenger_social_array();
 		?>
 		<table class="form-table">
 			<tr>
 				<th>
-					<h3><?php esc_html_e( 'Social Profiles', 'challenger'  ); ?></h3>
+					<h3><?php esc_html_e( 'Social Profiles', 'challenger' ); ?></h3>
 				</th>
 			</tr>
 			<?php
-			foreach ( $social_sites as $key => $social_site ) {
-        $label = ct_challenger_social_icon_labels( $social_site ); 
+			foreach ( $social_sites as $name => $id ) {
+        $label = ct_challenger_social_icon_labels( $name ); 
         $type = 'url';
-        if ( $key == 'email' ) {
-          $value = is_email( get_the_author_meta( $social_site, $user->ID ) );
+        if ( $name == 'email' ) {
+          $value = is_email( get_the_author_meta( $id, $user->ID ) );
           $type = 'text';
-        } elseif ( $key == 'skype' ) {
-          $value = esc_url( get_the_author_meta( $social_site, $user->ID ), array(
+        } elseif ( $name == 'skype' ) {
+          $value = esc_url( get_the_author_meta( $id, $user->ID ), array(
             'http',
             'https',
             'skype'
           ) );
-        } elseif ( $key == 'phone' ) {
-          $value = esc_url( get_the_author_meta( $social_site, $user->ID ), array( 'tel' ) );
+        } elseif ( $name == 'phone' ) {
+          $value = esc_url( get_the_author_meta( $id, $user->ID ), array( 'tel' ) );
         } else {
-          $value = esc_url( get_the_author_meta( $social_site, $user->ID ) );
+          $value = esc_url( get_the_author_meta( $id, $user->ID ) );
         }
         ?>
 				<tr>
 					<th>
-            <label for="<?php echo esc_attr( $key ); ?>-profile"><?php echo esc_html( $label ); ?></label>
+            <label for="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $label ); ?></label>
 					</th>
 					<td>
-						<input type='<?php echo esc_attr( $type ); ?>' id='<?php echo esc_attr( $key ); ?>-profile' class='regular-text'
-              name='<?php echo esc_attr( $key ); ?>-profile' value='<?php echo $value; ?>'/>
+						<input type='<?php echo esc_attr( $type ); ?>' id='<?php echo esc_attr( $id ); ?>' class='regular-text'
+              name='<?php echo esc_attr( $id ); ?>' value='<?php echo $value; ?>'/>
 					</td>
 				</tr>
 			<?php } ?>
@@ -69,27 +69,27 @@ if ( ! function_exists( ( 'ct_challenger_save_social_profiles' ) ) ) {
 		$social_sites = ct_challenger_social_array();
 
     // Loop through icons and save any with URLs entered
-		foreach ( $social_sites as $key => $social_site ) {
-      if ( isset( $_POST["$key-profile"] ) ) {
+		foreach ( $social_sites as $name => $id ) {
+      if ( isset( $_POST[$id] ) ) {
         // if email, only accept 'mailto' protocol
-        if ( $key == 'email' ) {
-          update_user_meta( $user_id, $social_site, sanitize_email( wp_unslash( $_POST["$key-profile"] ) ) );
+        if ( $name == 'email' ) {
+          update_user_meta( $user_id, $id, sanitize_email( wp_unslash( $_POST[$id] ) ) );
         } // accept skype protocol
-        elseif ( $key == 'skype' ) {
-          update_user_meta( $user_id, $social_site, esc_url_raw( wp_unslash( $_POST["$key-profile"] ), array(
+        elseif ( $name == 'skype' ) {
+          update_user_meta( $user_id, $id, esc_url_raw( wp_unslash( $_POST[$id] ), array(
             'http',
             'https',
             'skype'
           ) ) );
         } // if phone, only accept 'tel' protocol 
-        elseif ( $key == 'phone' ) {
-          if ( $_POST["$key-profile"] == '' ) {
-            update_user_meta( $user_id, $social_site, '' );
+        elseif ( $name == 'phone' ) {
+          if ( $_POST[$id] == '' ) {
+            update_user_meta( $user_id, $id, '' );
           } else {
-            update_user_meta( $user_id, $social_site, esc_url_raw( 'tel:' . $_POST["$key-profile"], array( 'tel' ) ) );
+            update_user_meta( $user_id, $id, esc_url_raw( 'tel:' . $_POST[$id], array( 'tel' ) ) );
           }
         } else {
-          update_user_meta( $user_id, $social_site, esc_url_raw( wp_unslash( $_POST["$key-profile"] ) ) );
+          update_user_meta( $user_id, $id, esc_url_raw( wp_unslash( $_POST[$id] ) ) );
         }
       }
 		}
