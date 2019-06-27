@@ -43,11 +43,13 @@ jQuery(document).ready(function($){
     // Auto-close the mobile menu if screen resized to desktop design
     if ( window.innerWidth > 799 ) {
       if ( menuPrimaryContainer.hasClass('open') ) {
-        menuPrimaryContainer.css('padding-top', 0);
-        menuPrimaryContainer.removeClass('open');
         toggleNavigation.removeClass('open');
-        body.css('overflow', 'auto');
         siteHeader.removeClass('open');
+        menuPrimaryContainer.removeClass('open');
+        menuPrimaryContainer.css('margin-top', 0);
+        menuPrimaryItems.find('li').removeClass('visible');
+        body.css('overflow', 'auto');
+        $('.overflow-container').css('position', 'static');
       }
     }
   });
@@ -81,21 +83,22 @@ jQuery(document).ready(function($){
   //----------------------------------------------------------------------------------
   function openPrimaryMenu() {
 
+    // Close the mobile menu
     if ( menuPrimaryContainer.hasClass('open') ) {
+      $(this).removeClass('open');
       siteHeader.removeClass('open');
       menuPrimaryContainer.removeClass('open');
-      $(this).removeClass('open');
+      menuPrimaryItems.find('li').removeClass('visible');
       body.css('overflow', 'auto');
       $('.overflow-container').css('position', 'static');
 
-      // change screen reader text
+      // Change screen reader text
       $(this).children('span').text(objectL10n.openMenu);
 
-      // change aria text
+      // Change aria text
       $(this).attr('aria-expanded', 'false');
 
-      menuPrimaryItems.find('li').removeClass('visible');
-      
+      // Delay the margin-top so that the menu doesn't jump up instantly when closed
       setTimeout( function(){ 
           menuPrimaryContainer.css('margin-top', 0);
       }, 500)
@@ -105,14 +108,14 @@ jQuery(document).ready(function($){
       $(this).addClass('open');
       body.css('overflow', 'hidden');
       $('.overflow-container').css('position', 'fixed');
-      $('#menu-overflow-cover').css('height', parseInt($('#title-container').offset().top + $('#title-container').height() + 12) + 'px' );
 
-      // change screen reader text
+      // Change screen reader text
       $(this).children('span').text(objectL10n.closeMenu);
 
-      // change aria text
+      // Change aria text
       $(this).attr('aria-expanded', 'true');
 
+      // Move the menu down below the title container
       var marginTop = siteHeader.outerHeight();
       if ( body.hasClass('admin-bar') ) {
           if ( window.innerWidth < 783 ) {
@@ -121,11 +124,13 @@ jQuery(document).ready(function($){
               marginTop += 32;
           }   
       }
+      // Move further up to account for pages with the Header Box
       if ( body.hasClass('has-header-box') ) {
           marginTop -= $('#header-box').outerHeight(true);
       }
       menuPrimaryContainer.css('margin-top', marginTop + 'px');
 
+      // Make each list item fade-in one after the next
       var delay = 200/menuPrimaryItems.children().length;;
       var currentDelay = 75
       menuPrimaryItems.find('li').each(function() {
@@ -208,6 +213,7 @@ jQuery(document).ready(function($){
   //  outside of menus to close sub menus
   //----------------------------------------------------------------------------------
   function tabletSubMenus() {
+    console.log('cafsdfsdfd');
     $(window).off('touchstart', tabletSubMenus);
     parentMenuItems.on('click', openDropdown);
     $(document).on('touchstart', (function(e) {
