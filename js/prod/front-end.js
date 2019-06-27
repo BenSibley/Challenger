@@ -248,7 +248,7 @@ jQuery(document).ready(function($){
       // Loop through every Featured Image on the page
       $('.featured-image').each(function () {
         // As long as it's not a natural aspect ratio Featured Image...
-        if ( !$(this).parent().parent('.post').hasClass('ratio-natural') ) {
+        if ( !$(this).hasClass('ratio-natural') ) {
           // Get the image whether inside a link element or div.featured-image
           var image = $(this).children('img').add($(this).children('a').children('img'));
           // Don't process images twice (relevant when using infinite scroll)

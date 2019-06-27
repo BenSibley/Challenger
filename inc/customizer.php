@@ -95,7 +95,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	) );
 	// Page display control
 	$wp_customize->add_control(
-		new CT_ACTIVE_THEME_Control_Checkbox_Multiple( 
+		new CT_challenger_Control_Checkbox_Multiple( 
 			$wp_customize, 'header_box_display', array(
 			'label'    => __( 'Which pages should it display on?', 'challenger'  ),
 			'section'  => 'challenger_header',
@@ -291,7 +291,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
   // Section
   $wp_customize->add_section( 'ct_challenger_social_media_icons', array(
     'title'       => __( 'Social Media Icons', 'challenger'  ),
-    'description' => __( 'Enter your social profile URLS to include new icons in the header.', 'challenger'  ),
+    'description' => __( 'Enter your social profile URLs to include new icons in the header.', 'challenger'  ),
     'priority'    => 10
   ) );
 
@@ -733,6 +733,8 @@ function ct_challenger_social_icon_labels( $social_site ) {
 		$label = __('Stack Overflow', 'challenger' );
 	} elseif ( $social_site == 'ok-ru' ) {
 		$label = __('OK.ru', 'challenger' );
+	} elseif ( $social_site == 'artstation' ) {
+		$label = __('ArtStation', 'challenger' );
 	}
 
 	return $label;

@@ -1312,6 +1312,12 @@ a img {
   margin-right: 6px;
 }
 
+.post-content h2, .post-content .comment-reply-title, .post-content h3, .post-content .archive-header h1, .archive-header .post-content h1,
+.post-content .search-header h1,
+.search-header .post-content h1, .post-content h4, .post-content h5, .post-content h6 {
+  margin: 1em 0;
+}
+
 .post-content,
 .post-meta,
 .comments {

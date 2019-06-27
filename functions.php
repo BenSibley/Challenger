@@ -387,13 +387,17 @@ if ( ! function_exists( 'ct_challenger_featured_image' ) ) {
 
 		global $post;
 		$featured_image = '';
+		$class = 'featured-image';
+		if ( get_theme_mod( 'fi_size_type' ) == 'no' ) {
+			$class .= ' ratio-natural';
+		}
 
     // Store Featured Image markup if the post has a Featured Image
 		if ( has_post_thumbnail( $post->ID ) ) {
 			if ( is_singular() ) {
-				$featured_image = '<div class="featured-image">' . get_the_post_thumbnail( $post->ID, 'full' ) . '</div>';
+				$featured_image = '<div class="'. esc_attr( $class ) .'">' . get_the_post_thumbnail( $post->ID, 'full' ) . '</div>';
 			} else {
-				$featured_image = '<div class="featured-image"><a href="' . esc_url( get_permalink() ) . '">' . esc_html( get_the_title() ) . get_the_post_thumbnail( $post->ID, 'full' ) . '</a></div>';
+				$featured_image = '<div class="'. esc_attr( $class ) .'"><a href="' . esc_url( get_permalink() ) . '">' . esc_html( get_the_title() ) . get_the_post_thumbnail( $post->ID, 'full' ) . '</a></div>';
 			}
 		}
 
@@ -421,14 +425,14 @@ if ( ! function_exists( 'ct_challenger_featured_image' ) ) {
 				),
 				// for Featured Videos in Challenger Pro
 				'iframe' => array(
-					'src' => array(),
-					'id' => array(),
-					'title' => array(),
-					'frameborder' => array(),
-					'allow' => array(),
-					'allowfullscreen' => array(),
+					'src' 									=> array(),
+					'id' 										=> array(),
+					'title' 								=> array(),
+					'frameborder' 					=> array(),
+					'allow' 								=> array(),
+					'allowfullscreen' 			=> array(),
 					'webkitallowfullscreen' => array(),
-					'mozallowfullscreen' => array()
+					'mozallowfullscreen' 		=> array()
 				)
 			) );
 		}
@@ -981,8 +985,8 @@ function ct_challenger_output_header_styles() {
 	$css .= ".site-title a, .tagline { color: $color; }";
 	$css .= ".has-header-box .toggle-navigation svg g { fill: $color; }";
 	$css .= "@media all and (min-width: 800px) {
-		.social-media-icons a, #menu-primary a { color: $color; }
-		.social-media-icons a, .social-media-icons a:hover { border-color: $color; }
+		.site-header .social-media-icons a, #menu-primary a { color: $color; }
+		.site-header .social-media-icons a, .site-header .social-media-icons a:hover { border-color: $color; }
 	}";
 
 	if ( !empty( $css ) ) {
