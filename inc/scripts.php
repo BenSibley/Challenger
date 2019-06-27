@@ -44,7 +44,7 @@ add_action( 'admin_init', 'ct_challenger_add_editor_styles' );
 function ct_challenger_enqueue_admin_styles( $hook ) {
 
   // Enqueue styles for theme options page
-	if ( $hook == 'appearance_page_challenger_options' ) {
+	if ( $hook == 'appearance_page_challenger-options' ) {
 		wp_enqueue_style( 'ct-challenger-admin-styles', get_template_directory_uri() . '/styles/admin.min.css' );
   }
   // Enqueue font to be used in the post editor
