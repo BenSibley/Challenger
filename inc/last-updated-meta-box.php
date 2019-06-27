@@ -40,8 +40,6 @@ function ct_challenger_last_updated_callback( $post ) {
 }
 function ct_challenger_last_updated_save_data( $post_id ) {
 
-	global $post;
-
 	if ( ! isset( $_POST['ct_challenger_last_updated_nonce'] ) ) {
 		return;
 	}
