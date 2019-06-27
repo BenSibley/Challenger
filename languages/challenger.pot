@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: ACTIVE_THEME 1.10\n"
+"Project-Id-Version: Challenger 1.10\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2019-06-25 14:02:42+00:00\n"
+"POT-Creation-Date: 2019-06-27 17:02:45+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -50,8 +50,16 @@ msgstr ""
 msgid "Posts tagged as"
 msgstr ""
 
-#: content/author-box.php:13 content/header-box.php:13
+#: content/author-box.php:13
 msgid "View all posts"
+msgstr ""
+
+#: content/header-box.php:5 inc/customizer.php:114
+msgid "Become a professional blogger with our FREE 5-day email course"
+msgstr ""
+
+#: content/header-box.php:6 inc/customizer.php:155
+msgid "Signup Now"
 msgstr ""
 
 #: content/post-categories.php:10
@@ -115,49 +123,71 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: functions.php:194
-msgid "Primary Sidebar"
+#: functions.php:197
+msgid "Before Post Content"
 msgstr ""
 
-#: functions.php:196
-msgid ""
-"Widgets in this area will be shown in the sidebar next to the main post "
-"content"
+#: functions.php:199
+msgid "Widgets in this area will be shown on post pages before the content."
 msgstr ""
 
-#: functions.php:228
+#: functions.php:208
+msgid "Before Page Content"
+msgstr ""
+
+#: functions.php:210
+msgid "Widgets in this area will be shown on pages before the content."
+msgstr ""
+
+#: functions.php:219
+msgid "After Post Content"
+msgstr ""
+
+#: functions.php:221
+msgid "Widgets in this area will be shown on post pages after the content."
+msgstr ""
+
+#: functions.php:230
+msgid "After Page Content"
+msgstr ""
+
+#: functions.php:232
+msgid "Widgets in this area will be shown on pages after the content."
+msgstr ""
+
+#: functions.php:304
 msgid "Continue Reading"
 msgstr ""
 
-#: functions.php:267
+#: functions.php:343
 msgid "Comment on this post"
 msgstr ""
 
-#: functions.php:380
+#: functions.php:460
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:387
+#: functions.php:467
 msgid "Reply"
 msgstr ""
 
-#: functions.php:392
+#: functions.php:472
 msgid "Edit"
 msgstr ""
 
-#: functions.php:617
+#: functions.php:696
 msgid "Featured"
 msgstr ""
 
-#: functions.php:674
+#: functions.php:753
 msgid "Last updated on"
 msgstr ""
 
-#: functions.php:787
+#: functions.php:866
 msgid "Customizer settings deleted"
 msgstr ""
 
-#: functions.php:791
+#: functions.php:870
 msgid "%s successfully activated!"
 msgstr ""
 
@@ -221,10 +251,6 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
-#: inc/customizer.php:114
-msgid "Become a professional blogger with our FREE 5-day email course"
-msgstr ""
-
 #: inc/customizer.php:120
 msgid "Title text"
 msgstr ""
@@ -235,10 +261,6 @@ msgstr ""
 
 #: inc/customizer.php:148
 msgid "Site title, tagline, and menu color"
-msgstr ""
-
-#: inc/customizer.php:155
-msgid "Signup Now"
 msgstr ""
 
 #: inc/customizer.php:161
@@ -292,7 +314,7 @@ msgid "Social Media Icons"
 msgstr ""
 
 #: inc/customizer.php:294
-msgid "Enter your social profile URLS to include new icons in the header."
+msgid "Enter your social profile URLs to include new icons in the header."
 msgstr ""
 
 #: inc/customizer.php:334
@@ -467,6 +489,10 @@ msgstr ""
 msgid "OK.ru"
 msgstr ""
 
+#: inc/customizer.php:737
+msgid "ArtStation"
+msgstr ""
+
 #: inc/last-updated-meta-box.php:12
 msgid "Last Updated Date"
 msgstr ""
@@ -518,16 +544,16 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"ACTIVE_THEME is a premium-quality theme for modern blogs, podcasts, and "
+"Challenger is a premium-quality theme for modern blogs, podcasts, and "
 "vloggers. As a fully responsive theme, your website will look awesome on "
 "laptops, tablets, and mobile devices. The design is simple and minimalist "
 "with special attention paid to the typography for maximum readability. The "
-"free ACTIVE_THEME theme includes a diverse feature set including 4 widget "
+"free Challenger theme includes a diverse feature set including 4 widget "
 "areas, 50+ social media icons, and a completely customizable header section "
 "for email list building. Use it for a business, niche news magazine, or "
-"professional blog. ACTIVE_THEME is also fully compatible with the new "
+"professional blog. Challenger is also fully compatible with the new "
 "Gutenberg post editor. View the fully setup live demo here: "
-"https://www.competethemes.com/demos/?theme=ACTIVE_THEME"
+"https://www.competethemes.com/demos/?theme=challenger"
 msgstr ""
 
 #. Template Name of the plugin/theme
