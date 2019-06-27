@@ -25,16 +25,16 @@ if ( post_password_required() || ( !have_comments() && !comments_open() && !ping
       'title_reply_before' => '<div id="reply-title" class="comment-reply-title">',
       'title_reply_after'  => '</div>'
     ) );
-  } elseif (!comments_open() && have_comments() && pings_open()) { ?>
+  } elseif (!comments_open() && pings_open()) { ?>
     <p class="comments-closed pings-open">
       <?php
       // translators: placeholder is link to the trackback URL
-      printf( esc_html__( 'Comments are closed, but <a href="%s" title="Trackback URL for this post">trackbacks</a> and pingbacks are open.', 'challenger'  ), esc_url( get_trackback_url() ) );
+      echo wp_kses_post( sprintf( __( 'Comments are closed, but <a href="%s" title="Trackback URL for this post">trackbacks</a> and pingbacks are open.', 'challenger' ), esc_url( get_trackback_url() ) ) );
       ?>
     </p>
   <?php } elseif (!comments_open() && have_comments()) { ?>
     <p class="comments-closed">
-      <?php esc_html_e( 'Comments are closed.', 'challenger'  ); ?>
+      <?php esc_html_e( 'Comments are closed.', 'challenger' ); ?>
     </p>
   <?php } ?>
 </section>
