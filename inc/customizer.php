@@ -332,7 +332,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 
 	$wp_customize->add_section( 'challenger_fi_size', array(
 		'title'    => __( 'Featured Image Size', 'challenger'  ),
-		'priority' => 15
+		'priority' => 25
 	) );
 	// Aspect ratio or natural setting
 	$wp_customize->add_setting( 'fi_size_type', array(
@@ -457,7 +457,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 
   $wp_customize->add_section( 'challenger_show_hide', array(
     'title'    => __( 'Show/Hide Elements', 'challenger'  ),
-    'priority' => 25
+    'priority' => 15
   ) );
   // setting
   $wp_customize->add_setting( 'post_byline_avatar', array(
@@ -595,7 +595,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 	// section
 	$wp_customize->add_section( 'ct_challenger_additional_options', array(
 		'title'    => __( 'Additional Options', 'challenger'  ),
-		'priority' => 75
+		'priority' => 30
 	) );
 	// setting - last updated
 	$wp_customize->add_setting( 'last_updated', array(
