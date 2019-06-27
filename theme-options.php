@@ -7,13 +7,6 @@ add_action( 'admin_menu', 'ct_challenger_register_theme_page' );
 
 function ct_challenger_options_content() {
 
-	$customizer_url = add_query_arg(
-		array(
-			'url'    => get_home_url(),
-			'return' => add_query_arg( 'page', 'challenger-options', admin_url( 'themes.php' ) )
-		),
-		admin_url( 'customize.php' )
-	);
 	$pro_url = 'https://www.competethemes.com/challenger-pro/?utm_source=wp-dashboard&utm_medium=Dashboard&utm_campaign=Challenger%20Pro%20-%20Dashboard';
 	?>
 	<div id="challenger-dashboard-wrap" class="wrap challenger-dashboard-wrap">
@@ -34,7 +27,7 @@ function ct_challenger_options_content() {
 			</div>
 			<div class="pro">
 				<h3>Customize More with Challenger Pro</h3>
-				<p>Add 7 new customization features to your site with the <a href="<?php echo $pro_url; ?>" target="_blank">Challenger Pro</a> plugin.</p>
+				<p>Add 7 new customization features to your site with the <a href="<?php echo esc_url( $pro_url ); ?>" target="_blank">Challenger Pro</a> plugin.</p>
 				<ul class="feature-list">
 					<li>
 						<div class="image">
@@ -108,12 +101,12 @@ function ct_challenger_options_content() {
 						</div>
 					</li>
 				</ul>
-				<p><a href="<?php echo $pro_url; ?>" target="_blank">Click here</a> to view Challenger Pro now, and see what it can do for your site.</p>
+				<p><a href="<?php echo esc_url( $pro_url ); ?>" target="_blank">Click here</a> to view Challenger Pro now, and see what it can do for your site.</p>
 			</div>
 			<div class="pro-ad" style="background-image: url(<?php echo trailingslashit(get_template_directory_uri()) . 'assets/img/bg-texture.png'; ?>)">
 				<h3>Add Incredible Flexibility to Your Site</h3>
 				<p>Start customizing with Challenger Pro today</p>
-				<a href="<?php echo $pro_url; ?>" target="_blank">View Challenger Pro</a>
+				<a href="<?php echo esc_url( $pro_url ); ?>" target="_blank">View Challenger Pro</a>
 			</div>
 			<?php endif; ?>
 		</div>
@@ -127,7 +120,7 @@ function ct_challenger_options_content() {
 					<li><a href="https://www.competethemes.com/help/challenger-css-snippets/" target="_blank">CSS Snippets</a></li>
 					<li><a href="https://www.competethemes.com/help/child-theme-challenger/" target="_blank">Starter child theme</a></li>
 					<li><a href="https://www.competethemes.com/help/challenger-demo-data/" target="_blank">Challenger demo data</a></li>
-					<li><a href="<?php echo $pro_url; ?>" target="_blank">Challenger Pro</a></li>
+					<li><a href="<?php echo esc_url( $pro_url ); ?>" target="_blank">Challenger Pro</a></li>
 				</ul>
 			</div>
 			<div class="dashboard-widget">

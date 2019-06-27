@@ -7,7 +7,7 @@ if ( post_password_required() || ( !have_comments() && !comments_open() && !ping
   <?php if ( wp_count_comments($post->ID)->approved > 0 ) : ?>
     <div class="comments-number">
       <h2>
-        <?php comments_number( __( 'Be First to Comment', 'challenger'  ), __( 'One Comment', 'challenger'  ), _x( '% Comments', 'noun: 5 comments', 'challenger'  ) ); ?>
+        <?php comments_number( esc_html__( 'Be First to Comment', 'challenger' ), esc_html__( 'One Comment', 'challenger' ), esc_html_x( '% Comments', 'noun: 5 comments', 'challenger' ) ); ?>
       </h2>
     </div>
   <?php endif; ?>
