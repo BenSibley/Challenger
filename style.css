@@ -78,6 +78,7 @@ body {
   overflow: hidden;
   height: auto;
   min-height: 100%;
+  max-width: 100%;
 }
 
 .main {
