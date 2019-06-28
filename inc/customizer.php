@@ -60,10 +60,23 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
 
 	//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 	//----------------------------------------------------------------------------------
-	//	Add Customizer sections, settings, and controls
+	//	Add Customizer panels, sections, settings, and controls
 	//----------------------------------------------------------------------------------
 	//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+	//----------------------------------------------------------------------------------
+	// Add panels
+	//----------------------------------------------------------------------------------
+	
+	if ( method_exists( 'WP_Customize_Manager', 'add_panel' ) ) {
+
+		$wp_customize->add_panel( 'ct_challenger_show_hide_panel', array(
+			'priority'    => 30,
+			'title'       => __( 'Show/Hide Elements', 'challenger' ),
+			'description' => __( 'Choose which elements you want displayed on the site.', 'challenger' )
+		) );
+	}
+	
 	//----------------------------------------------------------------------------------
   //	Header Box
   //----------------------------------------------------------------------------------
@@ -455,9 +468,63 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
   //	Show/Hide Elements
   //----------------------------------------------------------------------------------
 
-  $wp_customize->add_section( 'challenger_show_hide', array(
-    'title'    => __( 'Show/Hide Elements', 'challenger'  ),
-    'priority' => 15
+  // Section - Header
+  $wp_customize->add_section( 'challenger_show_hide_header', array(
+    'title' => __( 'Header', 'challenger'  ),
+    'panel' => 'ct_challenger_show_hide_panel'
+  ) );
+  // setting
+  $wp_customize->add_setting( 'display_site_title', array(
+    'default'           => 'yes',
+    'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
+  ) );
+  // control
+  $wp_customize->add_control( 'display_site_title', array(
+    'label'    => __( 'Show the site title?', 'challenger'  ),
+    'section'  => 'challenger_show_hide_header',
+    'settings' => 'display_site_title',
+    'type'     => 'radio',
+    'choices'  => array(
+      'yes' => __( 'Yes', 'challenger'  ),
+      'no'  => __( 'No', 'challenger'  )
+    )
+  ) );
+  // setting
+  $wp_customize->add_setting( 'display_tagline', array(
+    'default'           => 'yes',
+    'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
+  ) );
+  // control
+  $wp_customize->add_control( 'display_tagline', array(
+    'label'    => __( 'Show the tagline?', 'challenger'  ),
+    'section'  => 'challenger_show_hide_header',
+    'settings' => 'display_tagline',
+    'type'     => 'radio',
+    'choices'  => array(
+      'yes' => __( 'Yes', 'challenger'  ),
+      'no'  => __( 'No', 'challenger'  )
+    )
+  ) );
+  // Section - Posts
+  $wp_customize->add_section( 'challenger_show_hide_posts', array(
+    'title' => __( 'Posts', 'challenger'  ),
+    'panel' => 'ct_challenger_show_hide_panel'
+  ) );
+  // setting
+  $wp_customize->add_setting( 'display_featured_image_post', array(
+    'default'           => 'yes',
+    'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
+  ) );
+  // control
+  $wp_customize->add_control( 'display_featured_image_post', array(
+    'label'    => __( 'Show Featured Image?', 'challenger'  ),
+    'section'  => 'challenger_show_hide_posts',
+    'settings' => 'display_featured_image_post',
+    'type'     => 'radio',
+    'choices'  => array(
+      'yes' => __( 'Yes', 'challenger'  ),
+      'no'  => __( 'No', 'challenger'  )
+    )
   ) );
   // setting
   $wp_customize->add_setting( 'post_byline_avatar', array(
@@ -467,7 +534,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
   // control
   $wp_customize->add_control( 'post_byline_avatar', array(
     'label'    => __( 'Show author avatar in post byline?', 'challenger'  ),
-    'section'  => 'challenger_show_hide',
+    'section'  => 'challenger_show_hide_posts',
     'settings' => 'post_byline_avatar',
     'type'     => 'radio',
     'choices'  => array(
@@ -483,7 +550,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
   // control
   $wp_customize->add_control( 'post_byline_author', array(
     'label'    => __( 'Show author name in post byline?', 'challenger'  ),
-    'section'  => 'challenger_show_hide',
+    'section'  => 'challenger_show_hide_posts',
     'settings' => 'post_byline_author',
     'type'     => 'radio',
     'choices'  => array(
@@ -499,7 +566,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
   // control
   $wp_customize->add_control( 'post_byline_date', array(
     'label'    => __( 'Show date in post byline?', 'challenger'  ),
-    'section'  => 'challenger_show_hide',
+    'section'  => 'challenger_show_hide_posts',
     'settings' => 'post_byline_date',
     'type'     => 'radio',
     'choices'  => array(
@@ -515,7 +582,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
   // control
   $wp_customize->add_control( 'continue_reading', array(
     'label'    => __( 'Show "Continue Reading" button after posts?', 'challenger'  ),
-    'section'  => 'challenger_show_hide',
+    'section'  => 'challenger_show_hide_posts',
     'settings' => 'continue_reading',
     'type'     => 'radio',
     'choices'  => array(
@@ -531,7 +598,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
   // control
   $wp_customize->add_control( 'author_box', array(
     'label'    => __( 'Show author box after posts?', 'challenger'  ),
-    'section'  => 'challenger_show_hide',
+    'section'  => 'challenger_show_hide_posts',
     'settings' => 'author_box',
     'type'     => 'radio',
     'choices'  => array(
@@ -547,7 +614,7 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
   // control
   $wp_customize->add_control( 'post_categories', array(
     'label'    => __( 'Show categories after the post?', 'challenger'  ),
-    'section'  => 'challenger_show_hide',
+    'section'  => 'challenger_show_hide_posts',
     'settings' => 'post_categories',
     'type'     => 'radio',
     'choices'  => array(
@@ -563,13 +630,39 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
   // control
   $wp_customize->add_control( 'post_tags', array(
     'label'    => __( 'Show tags after the post?', 'challenger'  ),
-    'section'  => 'challenger_show_hide',
+    'section'  => 'challenger_show_hide_posts',
     'settings' => 'post_tags',
     'type'     => 'radio',
     'choices'  => array(
       'yes' => __( 'Yes', 'challenger'  ),
       'no'  => __( 'No', 'challenger'  )
     )
+  ) );
+  // Section - Blog & Archives
+  $wp_customize->add_section( 'challenger_show_hide_blog_archives', array(
+    'title' => __( 'Blog & Archives', 'challenger'  ),
+    'panel' => 'ct_challenger_show_hide_panel'
+  ) );
+  // setting
+  $wp_customize->add_setting( 'display_featured_image_blog', array(
+    'default'           => 'yes',
+    'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
+  ) );
+  // control
+  $wp_customize->add_control( 'display_featured_image_blog', array(
+    'label'    => __( 'Show the Featured Images?', 'challenger'  ),
+    'section'  => 'challenger_show_hide_blog_archives',
+    'settings' => 'display_featured_image_blog',
+    'type'     => 'radio',
+    'choices'  => array(
+      'yes' => __( 'Yes', 'challenger'  ),
+      'no'  => __( 'No', 'challenger'  )
+    )
+  ) );
+  // Section - Archives
+  $wp_customize->add_section( 'challenger_show_hide_archives', array(
+    'title' => __( 'Archives', 'challenger'  ),
+    'panel' => 'ct_challenger_show_hide_panel'
   ) );
   // setting
   $wp_customize->add_setting( 'archive_header', array(
@@ -579,8 +672,24 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
   // control
   $wp_customize->add_control( 'archive_header', array(
     'label'    => __( 'Show archive page titles?', 'challenger'  ),
-    'section'  => 'challenger_show_hide',
+    'section'  => 'challenger_show_hide_archives',
     'settings' => 'archive_header',
+    'type'     => 'radio',
+    'choices'  => array(
+      'yes' => __( 'Yes', 'challenger'  ),
+      'no'  => __( 'No', 'challenger'  )
+    )
+  ) );
+  // setting
+  $wp_customize->add_setting( 'display_archive_description', array(
+    'default'           => 'yes',
+    'sanitize_callback' => 'ct_challenger_sanitize_yes_no_settings'
+  ) );
+  // control
+  $wp_customize->add_control( 'display_archive_description', array(
+    'label'    => __( 'Show archive description?', 'challenger'  ),
+    'section'  => 'challenger_show_hide_archives',
+    'settings' => 'display_archive_description',
     'type'     => 'radio',
     'choices'  => array(
       'yes' => __( 'Yes', 'challenger'  ),
