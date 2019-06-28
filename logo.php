@@ -1,4 +1,7 @@
 <?php
+if ( get_theme_mod( 'display_site_title' ) == 'no' ) {
+	return;
+}
 $alt_logo = get_theme_mod( 'header_box_alt_logo' );
 echo "<div id='site-title' class='site-title'>";
 	if ( ct_challenger_header_box_output_rules() == true && $alt_logo ) {

@@ -385,6 +385,12 @@ add_filter( 'the_content_more_link', 'ct_challenger_remove_more_link_scroll' );
 if ( ! function_exists( 'ct_challenger_featured_image' ) ) {
 	function ct_challenger_featured_image() {
 
+		if ( 
+			(is_singular() && get_theme_mod( 'display_featured_image_post' ) == 'no') 
+			|| (is_home() || is_archive() || is_search()) && get_theme_mod( 'display_featured_image_blog' ) == 'no' )
+		{
+			return;
+		}
 		global $post;
 		$featured_image = '';
 		$class = 'featured-image';

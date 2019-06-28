@@ -17,7 +17,7 @@
 				<div class="max-width">
 					<div id="title-container" class="title-container">
 						<?php get_template_part( 'logo' ) ?>
-						<?php if ( get_bloginfo( 'description' ) ) {
+						<?php if ( get_bloginfo( 'description' ) && get_theme_mod( 'display_tagline' ) != 'no' ) {
 							echo '<p class="tagline">' . esc_html( get_bloginfo( 'description' ) ) . '</p>';
 						} ?>
 					</div>

@@ -2,7 +2,7 @@
 if ( is_home() ) {
 	echo '<h1 class="screen-reader-text">' . esc_html( get_bloginfo( "name" ) ) . '</h1>';
 }
-if ( ! is_archive() || get_theme_mod( 'archive_header' ) == 'no' ) {
+if ( ! is_archive() ) {
 	return;
 }
 
@@ -23,14 +23,16 @@ if ( is_tag() ) {
 ?>
 
 <div class='archive-header'>
-	<h1>
-		<i class="fas fa-<?php echo esc_attr( $icon_class ); ?>"></i>
-		<?php
-		echo esc_html( $prefix ) . ' ';
-		the_archive_title( '&ldquo;', '&rdquo;' );
-		?>
-	</h1>
-	<?php if ( get_the_archive_description() != '' ) : ?>
+	<?php if ( get_theme_mod( 'archive_header' ) != 'no' ) : ?>
+		<h1>
+			<i class="fas fa-<?php echo esc_attr( $icon_class ); ?>"></i>
+			<?php
+			echo esc_html( $prefix ) . ' ';
+			the_archive_title( '&ldquo;', '&rdquo;' );
+			?>
+		</h1>
+	<?php endif; ?>
+	<?php if ( get_the_archive_description() != '' && get_theme_mod( 'display_archive_description' ) != 'no' ) : ?>
 		<p class="description">
 			<?php the_archive_description(); ?>
 		</p>
