@@ -1210,6 +1210,15 @@ a img {
     right: auto;
     left: 100%;
   }
+  .menu-primary-items ul.focused,
+  .menu-unset > ul ul.focused {
+    opacity: 1;
+    visibility: visible;
+  }
+  .menu-primary-items ul.focused > li,
+  .menu-unset > ul ul.focused > li {
+    opacity: 1;
+  }
 
   .rtl .menu-primary-items ul,
   .rtl .menu-unset > ul ul {
