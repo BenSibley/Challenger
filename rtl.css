@@ -1294,6 +1294,13 @@ a img {
   font-size: 13px;
   line-height: 1;
 }
+.featured-image .ccfic a {
+  color: #fff;
+  margin-right: 4px;
+}
+.featured-image .ccfic a:link, .featured-image .ccfic a:visited {
+  color: #fff;
+}
 
 .entry {
   margin-bottom: 3em;
