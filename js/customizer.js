@@ -37,7 +37,7 @@ jQuery(document).ready(function($){
   }
 
   /* === Add reset button to Header overlay opacity === */
-  const resetOpacityButton = '<input type="button" id="reset-overlay-opacity" class="button button-small wp-picker-default" value="Default" aria-label="Reset Featured Image Size">';
+  const resetOpacityButton = '<input type="button" id="reset-overlay-opacity" class="button button-small wp-picker-default" value="Reset" aria-label="Reset Featured Image Size">';
   $('#customize-control-header_box_overlay_opacity').append(resetOpacityButton);
   $('#reset-overlay-opacity').on('click', function() {
     $('#_customize-input-header_box_overlay_opacity').val(0.8);
@@ -45,7 +45,7 @@ jQuery(document).ready(function($){
   });
 
   /* === Add reset button to Featured Image size === */
-  const resetFIButton = '<input type="button" id="reset-fi-size" class="button button-small wp-picker-default" value="Default" aria-label="Reset Featured Image Size">';
+  const resetFIButton = '<input type="button" id="reset-fi-size" class="button button-small wp-picker-default" value="Reset" aria-label="Reset Featured Image Size">';
   $('#customize-control-fi_size').append(resetFIButton);
   $('#reset-fi-size').on('click', function() {
     $('#_customize-input-fi_size').val(40);
