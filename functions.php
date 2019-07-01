@@ -131,7 +131,10 @@ add_action('after_setup_theme', 'ct_challenger_theme_setup');
 //----------------------------------------------------------------------------------
 if ( ! function_exists( ( 'ct_challenger_add_meta_tags' ) ) ) {
 	function ct_challenger_add_meta_tags() {
-
+		// Deprecation handling after renaming function
+		if ( function_exists( 'ct_challenger_add_meta_element' ) ) {
+			return;
+		}
 		$meta_tags = '';
     // Set the character encoding
     $meta_tags .= sprintf( '<meta charset="%s" />', esc_attr( get_bloginfo( 'charset' ) ) ) . "\n";
@@ -292,6 +295,10 @@ add_action( 'challenger_before_page_content', 'ct_challenger_output_widget_area_
 //----------------------------------------------------------------------------------
 if ( ! function_exists( 'ct_challenger_add_read_more_link' ) ) {
 	function ct_challenger_add_read_more_link( $custom = false ) {
+		// Deprecation handling after renaming function
+		if ( function_exists( 'ct_challenger_filter_read_more_link' ) ) {
+			return;
+		}
 		global $post;
 		$custom_text  = get_theme_mod( 'read_more_text' );
 		$excerpt_more = ( get_theme_mod( 'excerpt_length' ) === 0 ) ? '' : '&#8230;';
@@ -325,6 +332,10 @@ add_filter( 'excerpt_more', 'ct_challenger_add_read_more_link', 10 ); // automat
 //----------------------------------------------------------------------------------
 if ( ! function_exists( 'ct_challenger_filter_custom_excerpts' ) ) {
 	function ct_challenger_filter_custom_excerpts( $excerpt ) {
+		// Deprecation handling after renaming function
+		if ( function_exists( 'ct_challenger_filter_manual_excerpts' ) ) {
+			return;
+		}
 		if ( has_excerpt() ) {
 			return $excerpt . ct_challenger_add_read_more_link( true );
 		} else {
@@ -1123,3 +1134,27 @@ if ( ! function_exists( ( 'ct_challenger_body_class_extras' ) ) ) {
 	}
 }
 add_filter( 'body_class', 'ct_challenger_body_class_extras' );
+
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+//----------------------------------------------------------------------------------
+//	Deprecation handling for functions renamed after switching to CORE to generate files
+//----------------------------------------------------------------------------------
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+if ( !function_exists( 'ct_challenger_get_content_template' ) ) {
+	function ct_challenger_get_content_template() {
+		ct_challenger_get_template();
+	}
+}
+
+if ( !function_exists( 'ct_challenger_social_icons_output' ) ) {
+	function ct_challenger_social_icons_output() {
+		ct_challenger_output_social_icons();
+	}
+}
+
+if ( !function_exists( 'ct_challenger_svg_output' ) ) {
+	function ct_challenger_svg_output( $name ) {
+		ct_challenger_svgs( $name );
+	}
+}
