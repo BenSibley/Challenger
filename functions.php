@@ -698,28 +698,31 @@ if ( ! function_exists( ( 'ct_challenger_post_class' ) ) ) {
 	}
 }
 add_filter( 'post_class', 'ct_challenger_post_class' );
+
 //----------------------------------------------------------------------------------
 // Output standard post pagination
 //----------------------------------------------------------------------------------
-function ct_challenger_pagination() {
+if ( ! function_exists( ( 'ct_challenger_pagination' ) ) ) {
+  function ct_challenger_pagination() {
 
-  // Never output pagination on bbpress pages
-	if ( function_exists( 'is_bbpress' ) ) {
-		if ( is_bbpress() ) {
-			return;
-		} 
-  }
-   // Output pagination if Jetpack not installed, otherwise check if infinite scroll is active before outputting
-  if ( !class_exists( 'Jetpack' ) ) {
-    the_posts_pagination( array(
-      'prev_text' => esc_html__( 'Previous', 'challenger' ),
-      'next_text' => esc_html__( 'Next', 'challenger' )
-    ) );
-  } elseif ( !Jetpack::is_module_active( 'infinite-scroll' ) ) {
-    the_posts_pagination( array(
-      'prev_text' => esc_html__( 'Previous', 'challenger' ),
-      'next_text' => esc_html__( 'Next', 'challenger' )
-    ) );
+    // Never output pagination on bbpress pages
+    if ( function_exists( 'is_bbpress' ) ) {
+      if ( is_bbpress() ) {
+        return;
+      } 
+    }
+    // Output pagination if Jetpack not installed, otherwise check if infinite scroll is active before outputting
+    if ( !class_exists( 'Jetpack' ) ) {
+      the_posts_pagination( array(
+        'prev_text' => esc_html__( 'Previous', 'challenger' ),
+        'next_text' => esc_html__( 'Next', 'challenger' )
+      ) );
+    } elseif ( !Jetpack::is_module_active( 'infinite-scroll' ) ) {
+      the_posts_pagination( array(
+        'prev_text' => esc_html__( 'Previous', 'challenger' ),
+        'next_text' => esc_html__( 'Next', 'challenger' )
+      ) );
+    }
   }
 }
 
@@ -776,37 +779,41 @@ add_filter( 'get_the_archive_description', 'ct_challenger_modify_archive_descrip
 //----------------------------------------------------------------------------------
 // Output the post's "Last Updated" date
 //----------------------------------------------------------------------------------
-function ct_challenger_output_last_updated_date() {
-	
-	global $post;
+if ( ! function_exists( ( 'ct_challenger_output_last_updated_date' ) ) ) {
+	function ct_challenger_output_last_updated_date() {
+		
+		global $post;
 
-	if ( get_the_modified_date() != get_the_date() ) {
-		$updated_post = get_post_meta( $post->ID, 'ct_challenger_last_updated', true );
-		$updated_customizer = get_theme_mod( 'last_updated' );
-		if ( 
-			( $updated_customizer == 'yes' && ( $updated_post != 'no' ) )
-			|| $updated_post == 'yes' 
-			) {
-				echo '<p class="last-updated">'. esc_html__('Last updated on', 'challenger') . ' ' . get_the_modified_date() . ' </p>';
-			}
+		if ( get_the_modified_date() != get_the_date() ) {
+			$updated_post = get_post_meta( $post->ID, 'ct_challenger_last_updated', true );
+			$updated_customizer = get_theme_mod( 'last_updated' );
+			if ( 
+				( $updated_customizer == 'yes' && ( $updated_post != 'no' ) )
+				|| $updated_post == 'yes' 
+				) {
+					echo '<p class="last-updated">'. esc_html__('Last updated on', 'challenger') . ' ' . get_the_modified_date() . ' </p>';
+				}
+		}
 	}
 }
 
 //----------------------------------------------------------------------------------
 // Redirect to dashboard upon theme activation
 //----------------------------------------------------------------------------------
-function ct_challenger_welcome_redirect() {
+if ( ! function_exists( ( 'ct_challenger_welcome_redirect' ) ) ) {
+	function ct_challenger_welcome_redirect() {
 
-  // Set URL to Challenger options page
-	$welcome_url = add_query_arg(
-		array(
-			'page' => 'challenger-options',
-			'challenger_status' => 'activated'
-		),
-		admin_url( 'themes.php' )
-  );
-  // Safely redirect the visitor to the dashboard page
-	wp_safe_redirect( esc_url_raw( $welcome_url ) );
+		// Set URL to Challenger options page
+		$welcome_url = add_query_arg(
+			array(
+				'page' => 'challenger-options',
+				'challenger_status' => 'activated'
+			),
+			admin_url( 'themes.php' )
+		);
+		// Safely redirect the visitor to the dashboard page
+		wp_safe_redirect( esc_url_raw( $welcome_url ) );
+	}
 }
 add_action( 'after_switch_theme', 'ct_challenger_welcome_redirect' );
 
@@ -955,8 +962,10 @@ if ( ! function_exists( ( 'ct_challenger_svgs' ) ) ) {
 //  Allows site title to display in Customizer preview when logo is removed
 //  NOTE: Core has partial implementation that won't restore the original markup :/
 //----------------------------------------------------------------------------------
-function ct_challenger_logo_refresh($wp_customize) {
-  $wp_customize->get_setting( 'custom_logo' )->transport = 'refresh';
+if ( ! function_exists( ( 'ct_challenger_logo_refresh' ) ) ) {
+  function ct_challenger_logo_refresh($wp_customize) {
+    $wp_customize->get_setting( 'custom_logo' )->transport = 'refresh';
+  }
 }
 add_action( 'customize_register', 'ct_challenger_logo_refresh', 20 );
 
