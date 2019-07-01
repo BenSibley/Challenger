@@ -1283,6 +1283,7 @@ a img {
   color: white;
   padding: 4px 4px 4px 12px;
   font-size: 13px;
+  line-height: 1;
 }
 
 .entry {
