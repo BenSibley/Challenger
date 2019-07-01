@@ -132,7 +132,7 @@ add_action('after_setup_theme', 'ct_challenger_theme_setup');
 if ( ! function_exists( ( 'ct_challenger_add_meta_tags' ) ) ) {
 	function ct_challenger_add_meta_tags() {
 		// Deprecation handling after renaming function
-		if ( function_exists( 'ct_challenger_add_meta_element' ) ) {
+		if ( function_exists( 'ct_challenger_add_meta_elements' ) ) {
 			return;
 		}
 		$meta_tags = '';
