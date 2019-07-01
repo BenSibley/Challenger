@@ -161,6 +161,13 @@ add_action( 'wp_head', 'ct_challenger_add_meta_tags', 1 );
 if ( ! function_exists( 'ct_challenger_get_template' ) ) {
 	function ct_challenger_get_template() {
 
+		// Get bbpress.php for all bbpress pages
+		if ( function_exists( 'is_bbpress' ) ) {
+			if ( is_bbpress() ) {
+				get_template_part( 'content/bbpress' );
+				return;
+			} 
+		}
 		if ( is_home() || is_archive() ) {
 			get_template_part( 'content-archive', get_post_type() );
 		} else {
@@ -691,6 +698,30 @@ if ( ! function_exists( ( 'ct_challenger_post_class' ) ) ) {
 	}
 }
 add_filter( 'post_class', 'ct_challenger_post_class' );
+//----------------------------------------------------------------------------------
+// Output standard post pagination
+//----------------------------------------------------------------------------------
+function ct_challenger_pagination() {
+
+  // Never output pagination on bbpress pages
+	if ( function_exists( 'is_bbpress' ) ) {
+		if ( is_bbpress() ) {
+			return;
+		} 
+  }
+   // Output pagination if Jetpack not installed, otherwise check if infinite scroll is active before outputting
+  if ( !class_exists( 'Jetpack' ) ) {
+    the_posts_pagination( array(
+      'prev_text' => esc_html__( 'Previous', 'challenger' ),
+      'next_text' => esc_html__( 'Next', 'challenger' )
+    ) );
+  } elseif ( !Jetpack::is_module_active( 'infinite-scroll' ) ) {
+    the_posts_pagination( array(
+      'prev_text' => esc_html__( 'Previous', 'challenger' ),
+      'next_text' => esc_html__( 'Next', 'challenger' )
+    ) );
+  }
+}
 
 //----------------------------------------------------------------------------------
 //	Add label for "sticky" posts

@@ -11,17 +11,8 @@ get_template_part( 'content/archive-header' ); ?>
         endwhile;
     endif;
     ?>
-</div>
+</div><?php
 
-<?php // Output pagination if Jetpack not installed, otherwise check if infinite scroll is active before outputting
-if ( !class_exists( 'Jetpack' ) ) {
-    the_posts_pagination( array(
-        'mid_size' => 1
-    ) );
-} elseif ( !Jetpack::is_module_active( 'infinite-scroll' ) ) {
-    the_posts_pagination( array(
-        'mid_size' => 1
-    ) );
-}
+ct_challenger_pagination();
 
 get_footer();
