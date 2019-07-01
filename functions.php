@@ -996,105 +996,122 @@ add_filter( 'kses_allowed_protocols' , 'ct_challenger_allow_skype_protocol' );
 //----------------------------------------------------------------------------------
 //	Output header box styles
 //----------------------------------------------------------------------------------
-function ct_challenger_output_header_styles() {
-	if ( get_theme_mod( 'header_box' ) == 'no' ) return; 
-	if ( ct_challenger_header_box_output_rules() == false ) return;
+if ( ! function_exists( ( 'ct_challenger_output_header_styles' ) ) ) {
+	function ct_challenger_output_header_styles() {
+		if ( get_theme_mod( 'header_box' ) == 'no' ) return; 
+		if ( ct_challenger_header_box_output_rules() == false ) return;
 
-	$css = '';
-	$header_box_image = get_theme_mod( 'header_box_image' ) ? get_theme_mod( 'header_box_image' ) : trailingslashit( get_template_directory_uri() ) . 'assets/img/header.jpg';
-	$overlay_color = get_theme_mod( 'header_box_overlay' ) ? get_theme_mod( 'header_box_overlay' ) : '#05b0e7';
-	$overlay_opacity = get_theme_mod( 'header_box_overlay_opacity' );
-	if ( (string) $overlay_opacity === '0' ) {
-		$overlay_opacity = 0;
-	} else {
-		$overlay_opacity = !empty( $overlay_opacity ) ? $overlay_opacity : '0.8';
-	}
-	$button_color = get_theme_mod( 'header_box_button_color' ) ? get_theme_mod( 'header_box_button_color' ) : '#fff';
-	$button_bg_color = get_theme_mod( 'header_box_button_bg_color' ) ? get_theme_mod( 'header_box_button_bg_color' ) : '#ff9900';
-	$title_color = get_theme_mod( 'header_box_title_color' ) ? get_theme_mod( 'header_box_title_color' ) : '#fff';
-	$color = get_theme_mod( 'header_box_color' ) ? get_theme_mod( 'header_box_color' ) : '#fff';
+		$css = '';
+		$header_box_image = get_theme_mod( 'header_box_image' ) ? get_theme_mod( 'header_box_image' ) : trailingslashit( get_template_directory_uri() ) . 'assets/img/header.jpg';
+		$overlay_color = get_theme_mod( 'header_box_overlay' ) ? get_theme_mod( 'header_box_overlay' ) : '#05b0e7';
+		$overlay_opacity = get_theme_mod( 'header_box_overlay_opacity' );
+		if ( (string) $overlay_opacity === '0' ) {
+			$overlay_opacity = 0;
+		} else {
+			$overlay_opacity = !empty( $overlay_opacity ) ? $overlay_opacity : '0.8';
+		}
+		$button_color = get_theme_mod( 'header_box_button_color' ) ? get_theme_mod( 'header_box_button_color' ) : '#fff';
+		$button_bg_color = get_theme_mod( 'header_box_button_bg_color' ) ? get_theme_mod( 'header_box_button_bg_color' ) : '#ff9900';
+		$title_color = get_theme_mod( 'header_box_title_color' ) ? get_theme_mod( 'header_box_title_color' ) : '#fff';
+		$color = get_theme_mod( 'header_box_color' ) ? get_theme_mod( 'header_box_color' ) : '#fff';
 
-	// Don't add the background image if the opacity is 1 unless in Customizer preview 
-	if ( is_customize_preview() || $overlay_opacity != 1 ) {
-		$css .= '.site-header { background-image: url("'. esc_url( $header_box_image ) .'"); }';
-	} 
+		// Don't add the background image if the opacity is 1 unless in Customizer preview 
+		if ( is_customize_preview() || $overlay_opacity != 1 ) {
+			$css .= '.site-header { background-image: url("'. esc_url( $header_box_image ) .'"); }';
+		} 
 
-	$css .= ".site-header .overlay { 
-		background: $overlay_color;
-		opacity: $overlay_opacity;
-	}";
-	$css .= ".header-box .button { 
-		color: $button_color;
-		background: $button_bg_color;
-	}";
-	$css .= ".header-box .title { color: $title_color; }";
-	$css .= ".site-title a, .tagline { color: $color; }";
-	$css .= ".has-header-box .toggle-navigation svg g { fill: $color; }";
-	$css .= "@media all and (min-width: 800px) {
-		.site-header .social-media-icons a, #menu-primary a { color: $color; }
-		.site-header .social-media-icons a, .site-header .social-media-icons a:hover { border-color: $color; }
-	}";
+		$css .= ".site-header .overlay { 
+			background: $overlay_color;
+			opacity: $overlay_opacity;
+		}";
+		$css .= ".header-box .button { 
+			color: $button_color;
+			background: $button_bg_color;
+		}";
+		$css .= ".header-box .title { color: $title_color; }";
+		$css .= ".site-title a, .tagline { color: $color; }";
+		$css .= ".has-header-box .toggle-navigation svg g { fill: $color; }";
+		$css .= "@media all and (min-width: 800px) {
+			.site-header .social-media-icons a, #menu-primary a { color: $color; }
+			.site-header .social-media-icons a, .site-header .social-media-icons a:hover { border-color: $color; }
+		}";
 
-	if ( !empty( $css ) ) {
-		$css = ct_challenger_sanitize_css($css);
-		wp_add_inline_style( 'ct-challenger-style', $css );
+		if ( !empty( $css ) ) {
+			$css = ct_challenger_sanitize_css($css);
+			wp_add_inline_style( 'ct-challenger-style', $css );
+		}
 	}
 }
 add_action( 'wp_enqueue_scripts', 'ct_challenger_output_header_styles', 99 );
 
-function ct_challenger_output_fi_styles() {
+//----------------------------------------------------------------------------------
+//	Style Featured Images based on user's height selection in Customizer
+//----------------------------------------------------------------------------------
+if ( ! function_exists( ( 'ct_challenger_output_fi_styles' ) ) ) {
+	function ct_challenger_output_fi_styles() {
 
-	$css = '';
-	$fi_size_type = get_theme_mod( 'fi_size_type' );
+		$css = '';
+		$fi_size_type = get_theme_mod( 'fi_size_type' );
 
-	if ( $fi_size_type == 'no' ) {
-		$css .= ".featured-image { 
-			padding-bottom: 0; 
-			height: auto;
-		}";
-		$css .= ".featured-image > a, .featured-image > a > img, .featured-image > img { 
-			position: static;
-		}";
-	} else {
-		$fi_size = get_theme_mod( 'fi_size' );
-		if ( !empty($fi_size) && $fi_size != 40 ) {
-			$css .= ".featured-image { padding-bottom: $fi_size%; }";
+		// No aspect ratio
+		if ( $fi_size_type == 'no' ) {
+			$css .= ".featured-image { 
+				padding-bottom: 0; 
+				height: auto;
+			}";
+			$css .= ".featured-image > a, .featured-image > a > img, .featured-image > img { 
+				position: static;
+			}";
+		} // Adjust height based on aspect ratio selected by user
+		else {
+			$fi_size = get_theme_mod( 'fi_size' );
+			if ( !empty($fi_size) && $fi_size != 40 ) {
+				$css .= ".featured-image { padding-bottom: $fi_size%; }";
+			}
 		}
-	}
-
-	if ( !empty( $css ) ) {
-		$css = ct_challenger_sanitize_css($css);
-		wp_add_inline_style( 'ct-challenger-style', $css );
+		// Output inline CSS
+		if ( !empty( $css ) ) {
+			$css = ct_challenger_sanitize_css($css);
+			wp_add_inline_style( 'ct-challenger-style', $css );
+		}
 	}
 }
 add_action( 'wp_enqueue_scripts', 'ct_challenger_output_fi_styles', 99 );
 
-function ct_challenger_header_box_output_rules() {
-	$display = get_theme_mod( 'header_box_display' ) ? get_theme_mod( 'header_box_display' ) : array('homepage');
-	$output = false;
+//----------------------------------------------------------------------------------
+//	Decide whether header box should be output based on user selection and current page
+//----------------------------------------------------------------------------------
+if ( ! function_exists( ( 'ct_challenger_header_box_output_rules' ) ) ) {
+	function ct_challenger_header_box_output_rules() {
+		$display = get_theme_mod( 'header_box_display' ) ? get_theme_mod( 'header_box_display' ) : array('homepage');
+		$output = false;
 
-	if ( is_front_page() && in_array( 'homepage', $display) ) {
-		$output = true;
-	}
-	if ( is_home() && in_array( 'blog', $display) ) {
-		$output = true;
-	}
-	if ( is_singular('post') && in_array( 'posts', $display) ) {
-		$output = true;
-	}
-	if ( is_singular('page') && !is_front_page() && in_array( 'pages', $display) ) {
-		$output = true;
-	}
-	if ( is_archive() && in_array( 'archives', $display) ) {
-		$output = true;
-	}
-	if ( is_search() && in_array( 'search', $display) ) {
-		$output = true;
-	}
+		if ( is_front_page() && in_array( 'homepage', $display) ) {
+			$output = true;
+		}
+		if ( is_home() && in_array( 'blog', $display) ) {
+			$output = true;
+		}
+		if ( is_singular('post') && in_array( 'posts', $display) ) {
+			$output = true;
+		}
+		if ( is_singular('page') && !is_front_page() && in_array( 'pages', $display) ) {
+			$output = true;
+		}
+		if ( is_archive() && in_array( 'archives', $display) ) {
+			$output = true;
+		}
+		if ( is_search() && in_array( 'search', $display) ) {
+			$output = true;
+		}
 
-	return $output;
+		return $output;
+	}
 }
 
+//----------------------------------------------------------------------------------
+//	Add class to body element when header box is displayed
+//----------------------------------------------------------------------------------
 if ( ! function_exists( ( 'ct_challenger_body_class_extras' ) ) ) {
 	function ct_challenger_body_class_extras( $classes ) {
 
