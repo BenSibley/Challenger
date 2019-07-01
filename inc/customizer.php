@@ -45,12 +45,10 @@ function ct_challenger_add_customizer_content( $wp_customize ) {
         $multi_values = !is_array( $this->value() ) ? explode( ',', $this->value() ) : $this->value(); ?>
         <ul>
           <?php // Output a checkbox for each possible value
-            foreach ( $this->choices as $value => $label ) : ?>
+						foreach ( $this->choices as $value => $label ) : ?>
 						<li>
-							<label>
-								<input type="checkbox" value="<?php echo esc_attr( $value ); ?>" <?php checked( in_array( $value, $multi_values ) ); ?> /> 
-								<?php echo esc_html( $label ); ?>
-							</label>
+							<input type="checkbox" value="<?php echo esc_attr( $value ); ?>" <?php checked( in_array( $value, $multi_values ) ); ?> />
+							<label><?php echo esc_html( $label ); ?></label>
 						</li>
 					<?php endforeach; ?>
         </ul>
