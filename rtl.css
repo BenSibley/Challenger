@@ -2103,6 +2103,7 @@ div.bbp-breadcrumb {
 }
 
 #subscription-toggle {
+  font-weight: 400;
   margin-right: 6px;
   text-decoration: underline;
 }
@@ -2119,7 +2120,8 @@ span.bbp-admin-links a,
 #bbpress-forums div.bbp-template-notice img.avatar,
 #bbpress-forums .widget_display_topics img.avatar,
 #bbpress-forums .widget_display_replies img.avatar {
-  margin-bottom: -3px;
+  margin: 0 0 -3px;
+  display: inline-block;
 }
 
 .bbp-form textarea {
