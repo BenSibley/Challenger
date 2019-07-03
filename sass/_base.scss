@@ -19,6 +19,7 @@ body {
   overflow: hidden;
   height: auto;
   min-height: 100%;
+  max-width: 100%;
 }
 .main {
   margin: 0 auto;
@@ -187,7 +188,8 @@ textarea {
 textarea { 
   overflow: auto; /* to hide scrollbar in IE */
 }
-input[type="submit"] {
+input[type="submit"],
+button {
   @extend %fourteen-pixels;
   font-family: $primary-font-stack;
   font-weight: 700;
