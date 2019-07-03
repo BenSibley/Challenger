@@ -1,0 +1,28 @@
+.site-footer {
+  clear: both;
+  margin: $baseline-height * 3 auto 0;
+  padding: 0 $column;
+
+  .max-width {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+}
+.design-credit {
+  @extend %fourteen-pixels;
+  margin: 24px 0 0;
+  padding-bottom: 24px;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    font-weight: 700;
+  }
+}
+@media all and (min-width: $nine-hundred) {
+
+  .design-credit {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+}
