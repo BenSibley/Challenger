@@ -877,6 +877,9 @@ a img {
 .toggle-navigation:hover {
   cursor: pointer;
 }
+.toggle-navigation:hover, .toggle-navigation:active, .toggle-navigation:focus {
+  background: none;
+}
 .toggle-navigation svg {
   display: block;
 }

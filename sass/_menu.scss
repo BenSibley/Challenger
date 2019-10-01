@@ -12,6 +12,11 @@
   &:hover {
     cursor: pointer;
   }
+  &:hover,
+  &:active,
+  &:focus {
+    background: none;
+  }
   svg {
     display: block;
   }
