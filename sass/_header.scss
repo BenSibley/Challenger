@@ -18,6 +18,7 @@
   z-index: 10;
   display: inline-block;
   align-self: center;
+  max-width: calc(100% - 60px);
 }
 .site-title {
   @extend %twenty-one-pixels;
