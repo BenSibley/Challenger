@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Challenger 1.10\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2019-06-27 18:15:56+00:00\n"
+"POT-Creation-Date: 2019-10-02 17:35:12+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -46,7 +46,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content/archive-header.php:14
+#: content/archive-header.php:23
 msgid "Posts tagged as"
 msgstr ""
 
@@ -54,11 +54,11 @@ msgstr ""
 msgid "View all posts"
 msgstr ""
 
-#: content/header-box.php:5 inc/customizer.php:114
+#: content/header-box.php:5 inc/customizer.php:125
 msgid "Become a professional blogger with our FREE 5-day email course"
 msgstr ""
 
-#: content/header-box.php:6 inc/customizer.php:155
+#: content/header-box.php:6 inc/customizer.php:166
 msgid "Signup Now"
 msgstr ""
 
@@ -123,72 +123,76 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: functions.php:197
+#: functions.php:207
 msgid "Before Post Content"
 msgstr ""
 
-#: functions.php:199
+#: functions.php:209
 msgid "Widgets in this area will be shown on post pages before the content."
 msgstr ""
 
-#: functions.php:208
+#: functions.php:218
 msgid "Before Page Content"
 msgstr ""
 
-#: functions.php:210
+#: functions.php:220
 msgid "Widgets in this area will be shown on pages before the content."
 msgstr ""
 
-#: functions.php:219
+#: functions.php:229
 msgid "After Post Content"
 msgstr ""
 
-#: functions.php:221
+#: functions.php:231
 msgid "Widgets in this area will be shown on post pages after the content."
 msgstr ""
 
-#: functions.php:230
+#: functions.php:240
 msgid "After Page Content"
 msgstr ""
 
-#: functions.php:232
+#: functions.php:242
 msgid "Widgets in this area will be shown on pages after the content."
 msgstr ""
 
-#: functions.php:304
+#: functions.php:318
 msgid "Continue Reading"
 msgstr ""
 
-#: functions.php:343
+#: functions.php:361
 msgid "Comment on this post"
 msgstr ""
 
-#: functions.php:460
+#: functions.php:484
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:467
+#: functions.php:491
 msgid "Reply"
 msgstr ""
 
-#: functions.php:472
+#: functions.php:496
 msgid "Edit"
 msgstr ""
 
-#: functions.php:696
+#: functions.php:728 functions.php:733
+msgid "Previous"
+msgstr ""
+
+#: functions.php:729 functions.php:734
+msgid "Next"
+msgstr ""
+
+#: functions.php:747
 msgid "Featured"
 msgstr ""
 
-#: functions.php:753
+#: functions.php:805
 msgid "Last updated on"
 msgstr ""
 
-#: functions.php:866
+#: functions.php:901
 msgid "Customizer settings deleted"
-msgstr ""
-
-#: functions.php:870
-msgid "%s successfully activated!"
 msgstr ""
 
 #: header.php:11
@@ -199,297 +203,329 @@ msgstr ""
 msgid "open menu"
 msgstr ""
 
-#: inc/customizer.php:72
+#: inc/customizer.php:73
+msgid "Show/Hide Elements"
+msgstr ""
+
+#: inc/customizer.php:74
+msgid "Choose which elements you want displayed on the site."
+msgstr ""
+
+#: inc/customizer.php:83 inc/customizer.php:471
 msgid "Header"
 msgstr ""
 
-#: inc/customizer.php:82
+#: inc/customizer.php:93
 msgid "Show the lead generation header?"
 msgstr ""
 
-#: inc/customizer.php:87 inc/customizer.php:191 inc/customizer.php:392
-#: inc/customizer.php:408 inc/customizer.php:424 inc/customizer.php:474
-#: inc/customizer.php:490 inc/customizer.php:506 inc/customizer.php:522
-#: inc/customizer.php:538 inc/customizer.php:554 inc/customizer.php:570
-#: inc/customizer.php:586 inc/customizer.php:612 inc/customizer.php:653
+#: inc/customizer.php:98 inc/customizer.php:202 inc/customizer.php:403
+#: inc/customizer.php:419 inc/customizer.php:435 inc/customizer.php:486
+#: inc/customizer.php:502 inc/customizer.php:523 inc/customizer.php:539
+#: inc/customizer.php:555 inc/customizer.php:571 inc/customizer.php:587
+#: inc/customizer.php:603 inc/customizer.php:619 inc/customizer.php:635
+#: inc/customizer.php:656 inc/customizer.php:677 inc/customizer.php:693
+#: inc/customizer.php:719 inc/customizer.php:760
 msgid "Yes"
 msgstr ""
 
-#: inc/customizer.php:88 inc/customizer.php:192 inc/customizer.php:393
-#: inc/customizer.php:409 inc/customizer.php:425 inc/customizer.php:475
-#: inc/customizer.php:491 inc/customizer.php:507 inc/customizer.php:523
-#: inc/customizer.php:539 inc/customizer.php:555 inc/customizer.php:571
-#: inc/customizer.php:587 inc/customizer.php:613 inc/customizer.php:654
+#: inc/customizer.php:99 inc/customizer.php:203 inc/customizer.php:404
+#: inc/customizer.php:420 inc/customizer.php:436 inc/customizer.php:487
+#: inc/customizer.php:503 inc/customizer.php:524 inc/customizer.php:540
+#: inc/customizer.php:556 inc/customizer.php:572 inc/customizer.php:588
+#: inc/customizer.php:604 inc/customizer.php:620 inc/customizer.php:636
+#: inc/customizer.php:657 inc/customizer.php:678 inc/customizer.php:694
+#: inc/customizer.php:720 inc/customizer.php:761
 msgid "No"
 msgstr ""
 
-#: inc/customizer.php:100
+#: inc/customizer.php:111
 msgid "Which pages should it display on?"
 msgstr ""
 
-#: inc/customizer.php:104
+#: inc/customizer.php:115
 msgid "Homepage"
 msgstr ""
 
-#: inc/customizer.php:105 inc/customizer.php:377
+#: inc/customizer.php:116 inc/customizer.php:388
 msgid "Blog"
 msgstr ""
 
-#: inc/customizer.php:106
+#: inc/customizer.php:117 inc/customizer.php:508
 msgid "Posts"
 msgstr ""
 
-#: inc/customizer.php:107
+#: inc/customizer.php:118
 msgid "Pages"
 msgstr ""
 
-#: inc/customizer.php:108
+#: inc/customizer.php:119 inc/customizer.php:662
 msgid "Archives"
 msgstr ""
 
-#: inc/customizer.php:109
+#: inc/customizer.php:120
 msgid "Search results"
 msgstr ""
 
-#: inc/customizer.php:120
+#: inc/customizer.php:131
 msgid "Title text"
 msgstr ""
 
-#: inc/customizer.php:134
+#: inc/customizer.php:145
 msgid "Title text color"
 msgstr ""
 
-#: inc/customizer.php:148
+#: inc/customizer.php:159
 msgid "Site title, tagline, and menu color"
 msgstr ""
 
-#: inc/customizer.php:161
+#: inc/customizer.php:172
 msgid "Button text"
 msgstr ""
 
-#: inc/customizer.php:174
+#: inc/customizer.php:185
 msgid "Button URL"
 msgstr ""
 
-#: inc/customizer.php:186
+#: inc/customizer.php:197
 msgid "Open the button link in a new tab?"
 msgstr ""
 
-#: inc/customizer.php:204
+#: inc/customizer.php:215
 msgid "Button text color"
 msgstr ""
 
-#: inc/customizer.php:218
+#: inc/customizer.php:229
 msgid "Button background color"
 msgstr ""
 
-#: inc/customizer.php:232
+#: inc/customizer.php:243
 msgid "Background overlay color"
 msgstr ""
 
-#: inc/customizer.php:245
+#: inc/customizer.php:256
 msgid "Overlay opacity"
 msgstr ""
 
-#: inc/customizer.php:262
+#: inc/customizer.php:273
 msgid "Background image"
 msgstr ""
 
-#: inc/customizer.php:263
+#: inc/customizer.php:274
 msgid "Use an image that is 2,000px wide for best results."
 msgstr ""
 
-#: inc/customizer.php:275
+#: inc/customizer.php:286
 msgid "Alternate logo"
 msgstr ""
 
-#: inc/customizer.php:276
+#: inc/customizer.php:287
 msgid ""
 "Upload a light variation of your logo to better match the background "
 "overlay."
 msgstr ""
 
-#: inc/customizer.php:293
+#: inc/customizer.php:304
 msgid "Social Media Icons"
 msgstr ""
 
-#: inc/customizer.php:294
+#: inc/customizer.php:305
 msgid "Enter your social profile URLs to include new icons in the header."
 msgstr ""
 
-#: inc/customizer.php:334
+#: inc/customizer.php:345
 msgid "Featured Image Size"
 msgstr ""
 
-#: inc/customizer.php:344
+#: inc/customizer.php:355
 msgid "Lock Featured Image aspect ratio?"
 msgstr ""
 
-#: inc/customizer.php:349
+#: inc/customizer.php:360
 msgid "Yes, use the same aspect ratio for all Featured Images"
 msgstr ""
 
-#: inc/customizer.php:350
+#: inc/customizer.php:361
 msgid "No, use the natural aspect ratio of each image"
 msgstr ""
 
-#: inc/customizer.php:361
+#: inc/customizer.php:372
 msgid "Featured Image Aspect Ratio"
 msgstr ""
 
-#: inc/customizer.php:387
+#: inc/customizer.php:398
 msgid "Show full posts on blog?"
 msgstr ""
 
-#: inc/customizer.php:403
+#: inc/customizer.php:414
 msgid "Show link to comments after each post?"
 msgstr ""
 
-#: inc/customizer.php:419
+#: inc/customizer.php:430
 msgid "Link author name to post archive?"
 msgstr ""
 
-#: inc/customizer.php:435
+#: inc/customizer.php:446
 msgid "Excerpt word count"
 msgstr ""
 
-#: inc/customizer.php:442
+#: inc/customizer.php:453
 msgid "Continue reading"
 msgstr ""
 
-#: inc/customizer.php:448
+#: inc/customizer.php:459
 msgid "Read More button text"
 msgstr ""
 
-#: inc/customizer.php:459
-msgid "Show/Hide Elements"
+#: inc/customizer.php:481
+msgid "Show the site title?"
 msgstr ""
 
-#: inc/customizer.php:469
+#: inc/customizer.php:497
+msgid "Show the tagline?"
+msgstr ""
+
+#: inc/customizer.php:518
+msgid "Show Featured Image?"
+msgstr ""
+
+#: inc/customizer.php:534
 msgid "Show author avatar in post byline?"
 msgstr ""
 
-#: inc/customizer.php:485
+#: inc/customizer.php:550
 msgid "Show author name in post byline?"
 msgstr ""
 
-#: inc/customizer.php:501
+#: inc/customizer.php:566
 msgid "Show date in post byline?"
 msgstr ""
 
-#: inc/customizer.php:517
+#: inc/customizer.php:582
 msgid "Show \"Continue Reading\" button after posts?"
 msgstr ""
 
-#: inc/customizer.php:533
+#: inc/customizer.php:598
 msgid "Show author box after posts?"
 msgstr ""
 
-#: inc/customizer.php:549
+#: inc/customizer.php:614
 msgid "Show categories after the post?"
 msgstr ""
 
-#: inc/customizer.php:565
+#: inc/customizer.php:630
 msgid "Show tags after the post?"
 msgstr ""
 
-#: inc/customizer.php:581
+#: inc/customizer.php:641
+msgid "Blog & Archives"
+msgstr ""
+
+#: inc/customizer.php:651
+msgid "Show the Featured Images?"
+msgstr ""
+
+#: inc/customizer.php:672
 msgid "Show archive page titles?"
 msgstr ""
 
-#: inc/customizer.php:597
+#: inc/customizer.php:688
+msgid "Show archive description?"
+msgstr ""
+
+#: inc/customizer.php:704
 msgid "Additional Options"
 msgstr ""
 
-#: inc/customizer.php:607
+#: inc/customizer.php:714
 msgid "Display the date each post was last updated?"
 msgstr ""
 
-#: inc/customizer.php:663
+#: inc/customizer.php:770
 msgid "Yes, keep all Featured Images the same aspect ratio"
 msgstr ""
 
-#: inc/customizer.php:664
+#: inc/customizer.php:771
 msgid "No, use the natural size of each image"
 msgstr ""
 
-#: inc/customizer.php:699
+#: inc/customizer.php:806
 msgid "Email Address"
 msgstr ""
 
-#: inc/customizer.php:701
+#: inc/customizer.php:808
 msgid "Google Plus"
 msgstr ""
 
-#: inc/customizer.php:703
+#: inc/customizer.php:810
 msgid "RSS"
 msgstr ""
 
-#: inc/customizer.php:705
+#: inc/customizer.php:812
 msgid "SoundCloud"
 msgstr ""
 
-#: inc/customizer.php:707
+#: inc/customizer.php:814
 msgid "SlideShare"
 msgstr ""
 
-#: inc/customizer.php:709
+#: inc/customizer.php:816
 msgid "CodePen"
 msgstr ""
 
-#: inc/customizer.php:711
+#: inc/customizer.php:818
 msgid "StumbleUpon"
 msgstr ""
 
-#: inc/customizer.php:713
+#: inc/customizer.php:820
 msgid "DeviantArt"
 msgstr ""
 
-#: inc/customizer.php:715
+#: inc/customizer.php:822
 msgid "Hacker News"
 msgstr ""
 
-#: inc/customizer.php:717
+#: inc/customizer.php:824
 msgid "WhatsApp"
 msgstr ""
 
-#: inc/customizer.php:719
+#: inc/customizer.php:826
 msgid "QQ"
 msgstr ""
 
-#: inc/customizer.php:721
+#: inc/customizer.php:828
 msgid "VK"
 msgstr ""
 
-#: inc/customizer.php:723
+#: inc/customizer.php:830
 msgid "WeChat"
 msgstr ""
 
-#: inc/customizer.php:725
+#: inc/customizer.php:832
 msgid "Tencent Weibo"
 msgstr ""
 
-#: inc/customizer.php:727
+#: inc/customizer.php:834
 msgid "PayPal"
 msgstr ""
 
-#: inc/customizer.php:729
+#: inc/customizer.php:836
 msgid "Contact Form"
 msgstr ""
 
-#: inc/customizer.php:731
+#: inc/customizer.php:838
 msgid "Google Wallet"
 msgstr ""
 
-#: inc/customizer.php:733
+#: inc/customizer.php:840
 msgid "Stack Overflow"
 msgstr ""
 
-#: inc/customizer.php:735
+#: inc/customizer.php:842
 msgid "OK.ru"
 msgstr ""
 
-#: inc/customizer.php:737
+#: inc/customizer.php:844
 msgid "ArtStation"
 msgstr ""
 
@@ -538,7 +574,7 @@ msgstr ""
 msgid "Can't find what you're looking for?  Try refining your search:"
 msgstr ""
 
-#: theme-options.php:4 theme-options.php:20
+#: theme-options.php:4 theme-options.php:13
 msgid "%s Dashboard"
 msgstr ""
 
@@ -553,7 +589,7 @@ msgid ""
 "for email list building. Use it for a business, niche news magazine, or "
 "professional blog. Challenger is also fully compatible with the new "
 "Gutenberg post editor. View the fully setup live demo here: "
-"https://www.competethemes.com/demos/?theme=challenger"
+"https://www.competethemes.com/demos/?theme=Challenger"
 msgstr ""
 
 #. Template Name of the plugin/theme
@@ -565,17 +601,17 @@ msgctxt "noun: 5 comments"
 msgid "% Comments"
 msgstr ""
 
-#: content/archive-header.php:10
+#: content/archive-header.php:19
 msgctxt "Posts published in CATEGORY"
 msgid "Posts published in"
 msgstr ""
 
-#: content/archive-header.php:17
+#: content/archive-header.php:26
 msgctxt "Posts published by AUTHOR"
 msgid "Posts published by"
 msgstr ""
 
-#: content/archive-header.php:21
+#: content/archive-header.php:30
 msgctxt "Posts published in MONTH"
 msgid "Posts published in"
 msgstr ""
