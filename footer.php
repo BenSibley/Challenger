@@ -2,6 +2,10 @@
 </section> <!-- .main -->
 <?php do_action( 'challenger_after_main' ); ?>
 </div> <!-- .layout-container -->
+<?php 
+// Elementor `footer` location
+if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'footer' ) ) :
+?>
 <footer id="site-footer" class="site-footer" role="contentinfo">
     <div class="max-width">
         <?php do_action( 'challenger_footer_top' ); ?>
@@ -18,6 +22,7 @@
         <?php do_action( 'challenger_footer_bottom' ); ?>
     </div>
 </footer>
+<?php endif; ?>
 </div><!-- .max-width -->
 </div><!-- .overflow-container -->
 

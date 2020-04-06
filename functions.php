@@ -1114,6 +1114,15 @@ if ( ! function_exists( ( 'ct_challenger_body_class_extras' ) ) ) {
 }
 add_filter( 'body_class', 'ct_challenger_body_class_extras' );
 
+//----------------------------------------------------------------------------------
+// Add support for Elementor headers & footers
+//----------------------------------------------------------------------------------
+function ct_challenger_register_elementor_locations( $elementor_theme_manager ) {
+	$elementor_theme_manager->register_location( 'header' );
+	$elementor_theme_manager->register_location( 'footer' );
+}
+add_action( 'elementor/theme/register_locations', 'ct_challenger_register_elementor_locations' );
+
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 //----------------------------------------------------------------------------------
 //	Deprecation handling for functions renamed after switching to CORE to generate files
