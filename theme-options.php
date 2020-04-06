@@ -1,7 +1,12 @@
 <?php
 
 function ct_challenger_register_theme_page() {
-	add_theme_page( sprintf( esc_html__( '%s Dashboard', 'challenger' ), wp_get_theme() ), sprintf( esc_html__( '%s Dashboard', 'challenger' ), wp_get_theme() ), 'edit_theme_options', 'challenger-options', 'ct_challenger_options_content', 'ct_challenger_options_content' );
+	add_theme_page( 
+		sprintf( esc_html__( '%s Dashboard', 'challenger' ), wp_get_theme() ), 
+		sprintf( esc_html__( '%s Dashboard', 'challenger' ), wp_get_theme() ), 
+		'edit_theme_options', 
+		'challenger-options', 
+		'ct_challenger_options_content' );
 }
 add_action( 'admin_menu', 'ct_challenger_register_theme_page' );
 
