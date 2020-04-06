@@ -804,8 +804,6 @@ function ct_challenger_social_icon_labels( $social_site ) {
 			
 	if ( $social_site == 'email' ) {
 		$label = __('Email Address', 'challenger' );
-	} elseif ( $social_site == 'google-plus' ) {
-		$label = __('Google Plus', 'challenger' );
 	} elseif ( $social_site == 'rss' ) {
 		$label = __('RSS', 'challenger' );
 	} elseif ( $social_site == 'soundcloud' ) {

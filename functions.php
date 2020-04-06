@@ -546,7 +546,6 @@ if ( ! function_exists( 'ct_challenger_social_array' ) ) {
 			'foursquare'     => 'ct_challenger_foursquare_profile',
 			'github'         => 'ct_challenger_github_profile',
 			'goodreads'			 => 'ct_challenger_goodreads_profile',
-			'google-plus'    => 'ct_challenger_googleplus_profile',
 			'google-wallet'  => 'ct_challenger_google_wallet_profile',
 			'hacker-news'    => 'ct_challenger_hacker-news_profile',
 			'medium'         => 'ct_challenger_medium_profile',
