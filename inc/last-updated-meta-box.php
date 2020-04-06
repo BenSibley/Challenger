@@ -25,7 +25,7 @@ function ct_challenger_last_updated_callback( $post ) {
 
   ?>
 	<p>
-		<select name="challenger-last-updated" id="challenger-last-updated" class="widefat">
+		<select name="challenger-last-updated" id="challenger-last-updated" style="box-sizing: border-box; width: 100%;">
 			<option value="default"><?php esc_html_e( 'Use Customizer setting', 'challenger' ); ?></option>
 			<option value="yes" <?php if ( $display == 'yes' ) {
 				echo 'selected';
