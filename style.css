@@ -50,7 +50,8 @@ button, .design-credit, .tagline {
 }
 
 .wp-block-table figcaption, .wp-caption-text,
-.gallery-caption, .sticky-status {
+.gallery-caption,
+.wp-block-image figcaption, .sticky-status {
   font-size: 0.75em;
   /* 12px / 16px */
   line-height: 1.5;
@@ -238,6 +239,10 @@ th {
 
 .wp-block-gallery.alignnone {
   display: flex;
+}
+
+.wp-block-image {
+  margin: 1.5em 0;
 }
 
 img,

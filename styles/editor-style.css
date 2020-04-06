@@ -19,7 +19,8 @@ h2 {
 }
 
 .wp-block-table figcaption, .wp-caption-text,
-.gallery-caption {
+.gallery-caption,
+.wp-block-image figcaption {
   font-size: 0.75em;
   /* 12px / 16px */
   line-height: 1.5;
@@ -188,6 +189,10 @@ th {
 
 .wp-block-gallery.alignnone {
   display: flex;
+}
+
+.wp-block-image {
+  margin: 1.5em 0;
 }
 
 .alignright,

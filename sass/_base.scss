@@ -173,6 +173,9 @@ th {
 .wp-block-gallery.alignnone {
   display: flex;
 }
+.wp-block-image {
+  margin: $baseline-height 0;
+}
 img,
 .alignright,
 .alignleft,
@@ -187,7 +190,8 @@ img,
   height: auto;
 }
 .wp-caption-text,
-.gallery-caption {
+.gallery-caption,
+.wp-block-image figcaption {
   @extend %twelve-pixels;
 }
 
