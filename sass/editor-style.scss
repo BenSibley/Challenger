@@ -112,7 +112,34 @@ table {
 td,
 th {
   padding: $baseline-height / 2;
-  border: solid 1px $color-gray-70;
+  border: solid 1px $color-gray-23;
+}
+.wp-block-table {
+  margin: 0;
+
+  thead {
+    background: $color-gray-93;
+  }
+  td,
+  th {
+    border-color: $color-gray-88;
+  }
+}
+.wp-block-table.is-style-stripes {
+  border-bottom: none;
+
+  thead {
+    background: none;
+  }
+  td,
+  th {
+    border-color: $color-gray-88;
+  }
+}
+.wp-block-table figcaption {
+  @extend %twelve-pixels;
+  margin: -$baseline-height 0 $baseline-height;
+  text-align: center;
 }
 
 /* Images */
