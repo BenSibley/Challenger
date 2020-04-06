@@ -6,7 +6,15 @@
 function ct_challenger_enqueue_scripts_styles() {
 
   // Enqueue Google Fonts
-  wp_enqueue_style( 'ct-challenger-google-fonts', '//fonts.googleapis.com/css?family=Poppins:300,300i,700' );
+	$font_args = array(
+		'family'  => urlencode( 'Poppins:300,300i,700' ),
+		'subset'  => urlencode( 'latin,latin-ext' ),
+		'display' => 'swap'
+	);
+	$fonts_url = add_query_arg( $font_args, '//fonts.googleapis.com/css' );
+	
+	wp_enqueue_style( 'ct-apex-google-fonts', $fonts_url );
+
   // Enqueue front-end JS file
   wp_enqueue_script( 'ct-challenger-js', get_template_directory_uri() . '/js/prod/front-end.min.js', array( 'jquery' ), '', true );
   // Localize all English text in JS files
