@@ -657,19 +657,23 @@ if ( ! function_exists( 'ct_challenger_output_social_icons' ) ) {
 
         // Escape the URL based on protocol being used
         if ( $name == 'email' ) {
-          $href = 'mailto:' . antispambot( is_email( $url ) );
+					$href = 'mailto:' . antispambot( is_email( $url ) );
+					$title = antispambot( is_email($url) );
         } elseif ( $name == 'skype' ) {
-          $href = esc_url( $url, array( 'http', 'https', 'skype' ) );
+					$href = esc_url( $url, array( 'http', 'https', 'skype' ) );
+					$title = esc_attr( $name );
         } elseif ( $name == 'phone' ) {
-          $href = esc_url( $url, array( 'tel' ) );
+					$href = esc_url( $url, array( 'tel' ) );
+					$title = esc_url( $url, array( 'tel' ) );
         } else {
-          $href = esc_url( $url );
+					$href = esc_url( $url );
+					$title = esc_attr( $name );
         }
         // Output the icon
         ?>
 				<li>
 				  <a class="<?php echo esc_attr( $name ); ?>" target="_blank" href="<?php echo $href; ?>">
-            <i class="<?php echo esc_attr( $class ); ?>" aria-hidden="true"></i>
+            <i class="<?php echo esc_attr( $class ); ?>" aria-hidden="true" title="<?php echo $title; ?>"></i>
             <span class="screen-reader-text"><?php echo esc_html( $name );  ?></span>
           </a>
         </li>
