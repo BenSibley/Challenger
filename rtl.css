@@ -210,6 +210,10 @@ th {
   text-align: center;
 }
 
+.wp-block-social-links a {
+  color: #fff;
+}
+
 /* Images */
 .alignleft {
   float: right;
