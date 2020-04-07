@@ -663,7 +663,7 @@ if ( ! function_exists( 'ct_challenger_output_social_icons' ) ) {
 					$title = esc_attr( $name );
         } elseif ( $name == 'phone' ) {
 					$href = esc_url( $url, array( 'tel' ) );
-					$title = esc_url( $url, array( 'tel' ) );
+					$title = str_replace( 'tel:', '', esc_url( $url, array( 'tel' ) ) );
         } else {
 					$href = esc_url( $url );
 					$title = esc_attr( $name );
