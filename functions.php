@@ -299,6 +299,9 @@ if ( ! function_exists( 'ct_challenger_add_read_more_link' ) ) {
 		if ( function_exists( 'ct_challenger_filter_read_more_link' ) ) {
 			return;
 		}
+		if ( is_feed() ) {
+			return;
+		}
 		global $post;
 		$custom_text  = get_theme_mod( 'read_more_text' );
 		$excerpt_more = ( get_theme_mod( 'excerpt_length' ) === 0 ) ? '' : '&#8230;';
