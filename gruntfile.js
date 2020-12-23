@@ -113,12 +113,12 @@ module.exports = function(grunt) {
             zip: {
                 command: [
                     // delete existing copies (if they exist)
-                    'rm -R /Users/bensibley/Documents/compete-themes/dist/challenger || true',
-                    'rm -R /Users/bensibley/Documents/compete-themes/dist/challenger.zip || true',
+                    'rm -R "/Users/bensibley/Dropbox/Compete Themes/Distribution/challenger" || true',
+                    'rm -R "/Users/bensibley/Dropbox/Compete Themes/Distribution/challenger.zip" || true',
                     // copy folder without any project/meta files
-                    'rsync -r "/Users/bensibley/Local Sites/challenger/app/public/wp-content/themes/challenger" /Users/bensibley/Documents/compete-themes/dist/ <%= excludeFiles %>',
+                    'rsync -r "/Users/bensibley/Sites/challenger/wp-content/themes/challenger" "/Users/bensibley/Dropbox/Compete Themes/Distribution/" <%= excludeFiles %>',
                     // open dist
-                    'cd /Users/bensibley/Documents/compete-themes/dist/',
+                    'cd "/Users/bensibley/Dropbox/Compete Themes/Distribution/"',
                     // zip the ct_mission_news folder
                     'zip -r challenger.zip challenger'
                 ].join('&&')
