@@ -847,7 +847,7 @@ function ct_challenger_social_icon_labels( $social_site ) {
 
 
 function ct_challenger_customize_preview_js() {
-	if ( !defined( 'CHALLENGER_PRO_FILE' ) ) {
+	if ( !defined( 'CHALLENGER_PRO_FILE' ) && !(isset($_GET['mailoptin_optin_campaign_id']) || isset($_GET['mailoptin_email_campaign_id'])) ) {
 		$url = 'https://www.competethemes.com/challenger-pro/?utm_source=wp-dashboard&utm_medium=Customizer&utm_campaign=Challenger%20Pro%20-%20Customizer';
 		$content = "<script>jQuery('#customize-info').prepend('<div class=\"upgrades-ad\"><a href=\"". $url ."\" target=\"_blank\">Change Layouts with Challenger Pro <span>&rarr;</span></a></div>')</script>";
 		echo apply_filters('ct_challenger_customizer_ad', $content);
