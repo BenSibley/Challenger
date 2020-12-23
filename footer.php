@@ -13,7 +13,7 @@ if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_
             <span>
                 <?php
                 // translators: placeholder is a URL
-                $footer_text = sprintf( __( '<a href="%s">Challenger WordPress Theme</a> by Compete Themes.', 'challenger' ), 'https://www.competethemes.com/challenger/' );
+                $footer_text = sprintf( __( '<a href="%s" rel="nofollow">Challenger WordPress Theme</a> by Compete Themes.', 'challenger' ), 'https://www.competethemes.com/challenger/' );
                 $footer_text = apply_filters( 'ct_challenger_footer_text', $footer_text );
                 echo do_shortcode( wp_kses_post( $footer_text ) );
                 ?>
