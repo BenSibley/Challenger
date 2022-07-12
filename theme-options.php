@@ -1,30 +1,31 @@
 <?php
 
-function ct_challenger_register_theme_page() {
-	add_theme_page( 
-		sprintf( esc_html__( '%s Dashboard', 'challenger' ), wp_get_theme() ), 
-		sprintf( esc_html__( '%s Dashboard', 'challenger' ), wp_get_theme() ), 
-		'edit_theme_options', 
-		'challenger-options', 
-		'ct_challenger_options_content' );
+function ct_challenger_register_theme_page()
+{
+    add_theme_page(
+        sprintf(esc_html__('%s Dashboard', 'challenger'), wp_get_theme()),
+        sprintf(esc_html__('%s Dashboard', 'challenger'), wp_get_theme()),
+        'edit_theme_options',
+        'challenger-options',
+        'ct_challenger_options_content'
+    );
 }
-add_action( 'admin_menu', 'ct_challenger_register_theme_page' );
+add_action('admin_menu', 'ct_challenger_register_theme_page');
 
-function ct_challenger_options_content() {
-
-	$pro_url = 'https://www.competethemes.com/challenger-pro/?utm_source=wp-dashboard&utm_medium=Dashboard&utm_campaign=Challenger%20Pro%20-%20Dashboard';
-	?>
+function ct_challenger_options_content()
+{
+    $pro_url = 'https://www.competethemes.com/challenger-pro/?utm_source=wp-dashboard&utm_medium=Dashboard&utm_campaign=Challenger%20Pro%20-%20Dashboard'; ?>
 	<div id="challenger-dashboard-wrap" class="wrap challenger-dashboard-wrap">
-		<h2><?php printf( esc_html__( '%s Dashboard', 'challenger' ), wp_get_theme() ); ?></h2>
-		<?php do_action( 'ct_challenger_theme_options_before' ); ?>
+		<h2><?php printf(esc_html__('%s Dashboard', 'challenger'), wp_get_theme()); ?></h2>
+		<?php do_action('ct_challenger_theme_options_before'); ?>
 		<div class="main">
-			<?php if ( defined( 'CHALLENGER_PRO_FILE' ) ) : ?>
+			<?php if (defined('CHALLENGER_PRO_FILE')) : ?>
 			<div class="thanks-upgrading" style="background-image: url(<?php echo trailingslashit(get_template_directory_uri()) . 'assets/img/bg-texture.png'; ?>)">
 				<h3>Thanks for upgrading!</h3>
 				<p>You can find the new features in the Customizer</p>
 			</div>
 			<?php endif; ?>
-			<?php if ( !defined( 'CHALLENGER_PRO_FILE' ) ) : ?>
+			<?php if (!defined('CHALLENGER_PRO_FILE')) : ?>
 			<div class="getting-started">
 				<h3>Get Started with Challenger</h3>
 				<p>Follow this step-by-step guide to customize your website with Challenger:</p>
@@ -32,7 +33,7 @@ function ct_challenger_options_content() {
 			</div>
 			<div class="pro">
 				<h3>Customize More with Challenger Pro</h3>
-				<p>Add 7 new customization features to your site with the <a href="<?php echo esc_url( $pro_url ); ?>" target="_blank">Challenger Pro</a> plugin.</p>
+				<p>Add 7 new customization features to your site with the <a href="<?php echo esc_url($pro_url); ?>" target="_blank">Challenger Pro</a> plugin.</p>
 				<ul class="feature-list">
 					<li>
 						<div class="image">
@@ -106,12 +107,12 @@ function ct_challenger_options_content() {
 						</div>
 					</li>
 				</ul>
-				<p><a href="<?php echo esc_url( $pro_url ); ?>" target="_blank">Click here</a> to view Challenger Pro now, and see what it can do for your site.</p>
+				<p><a href="<?php echo esc_url($pro_url); ?>" target="_blank">Click here</a> to view Challenger Pro now, and see what it can do for your site.</p>
 			</div>
 			<div class="pro-ad" style="background-image: url(<?php echo trailingslashit(get_template_directory_uri()) . 'assets/img/bg-texture.png'; ?>)">
 				<h3>Add Incredible Flexibility to Your Site</h3>
 				<p>Start customizing with Challenger Pro today</p>
-				<a href="<?php echo esc_url( $pro_url ); ?>" target="_blank">View Challenger Pro</a>
+				<a href="<?php echo esc_url($pro_url); ?>" target="_blank">View Challenger Pro</a>
 			</div>
 			<?php endif; ?>
 		</div>
@@ -125,8 +126,44 @@ function ct_challenger_options_content() {
 					<li><a href="https://www.competethemes.com/help/challenger-css-snippets/" target="_blank">CSS Snippets</a></li>
 					<li><a href="https://www.competethemes.com/help/child-theme-challenger/" target="_blank">Starter child theme</a></li>
 					<li><a href="https://www.competethemes.com/help/challenger-demo-data/" target="_blank">Challenger demo data</a></li>
-					<li><a href="<?php echo esc_url( $pro_url ); ?>" target="_blank">Challenger Pro</a></li>
+					<li><a href="<?php echo esc_url($pro_url); ?>" target="_blank">Challenger Pro</a></li>
 				</ul>
+			</div>
+			<div class="ad iawp">
+				<div class="logo-container">
+					<img width="308px" height="46px" src="<?php echo trailingslashit(get_template_directory_uri()) . 'assets/img/iawp.svg'; ?>" alt="Independent Analytics logo" />
+				</div>
+				<div class="features">
+					<div class="title">Free WordPress Analytics Plugin</div>
+					<ul>
+						<li>Beautiful analytics dashboard</li>
+						<li>Views & traffic sources</li>
+						<li>Easy setup</li>
+						<li>GDPR compliant</li>
+						<li>Google Analytics alternative</li>
+					</ul>
+				</div>
+				<div class="button">
+					<a href="https://independentwp.com" target="_blank" data-product-name="Independent Analytics">Learn More</a>
+				</div>
+			</div>
+			<div class="ad strive">
+				<div class="logo-container">
+					<img width="308px" height="62px" src="<?php echo trailingslashit(get_template_directory_uri()) . 'assets/img/strive.svg'; ?>" alt="Strive logo" />
+				</div>
+				<div class="features">
+					<div class="title">Content Calendar for WordPress</div>
+					<ul>
+						<li>Plan your posts visually</li>
+						<li>Track progress with post statuses</li>
+						<li>Create custom post checklists</li>
+						<li>Republish posts with revisions</li>
+						<li>Monitor content using the Pipeline</li>
+					</ul>
+				</div>
+				<div class="button">
+					<a href="https://strivecalendar.com/" target="_blank" data-product-name="Strive">Learn More</a>
+				</div>
 			</div>
 			<div class="dashboard-widget">
 				<h4>User Reviews</h4>
@@ -139,12 +176,13 @@ function ct_challenger_options_content() {
 				<form method="post">
 					<input type="hidden" name="challenger_reset_customizer" value="challenger_reset_customizer_settings"/>
 					<p>
-						<?php wp_nonce_field( 'challenger_reset_customizer_nonce', 'challenger_reset_customizer_nonce' ); ?>
-						<?php submit_button( 'Reset Customizer Settings', 'delete', 'delete', false ); ?>
+						<?php wp_nonce_field('challenger_reset_customizer_nonce', 'challenger_reset_customizer_nonce'); ?>
+						<?php submit_button('Reset Customizer Settings', 'delete', 'delete', false); ?>
 					</p>
 				</form>
 			</div>
 		</div>
-		<?php do_action( 'ct_challenger_theme_options_after' ); ?>
+		<?php do_action('ct_challenger_theme_options_after'); ?>
 	</div>
-<?php }
+<?php
+}
