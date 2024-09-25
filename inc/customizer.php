@@ -842,6 +842,8 @@ function ct_challenger_social_icon_labels( $social_site ) {
 		$label = __('OK.ru', 'challenger' );
 	} elseif ( $social_site == 'artstation' ) {
 		$label = __('ArtStation', 'challenger' );
+	} elseif ( $social_site == 'twitter' ) {
+		$label = __('X (Twitter)', 'challenger' );
 	}
 
 	return $label;

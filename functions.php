@@ -691,6 +691,8 @@ if (! function_exists('ct_challenger_output_social_icons')) {
                     $class = 'fab fa-get-pocket';
                 } elseif ($name == 'phone') {
                     $class = 'fas fa-phone';
+                } elseif ($name == 'twitter') {
+                    $class = 'fab fa-x-twitter';
                 } else {
                     $class = 'fab fa-' . $name;
                 }
