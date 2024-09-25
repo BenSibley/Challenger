@@ -116,7 +116,7 @@ module.exports = function(grunt) {
                     'rm -R "/Users/bensibley/Dropbox/Compete Themes/Distribution/challenger" || true',
                     'rm -R "/Users/bensibley/Dropbox/Compete Themes/Distribution/challenger.zip" || true',
                     // copy folder without any project/meta files
-                    'rsync -r "/Users/bensibley/Sites/challenger/wp-content/themes/challenger" "/Users/bensibley/Dropbox/Compete Themes/Distribution/" <%= excludeFiles %>',
+                    'rsync -r "/Users/bensibley/Sites/Compete Themes/challenger/wp-content/themes/challenger" "/Users/bensibley/Dropbox/Compete Themes/Distribution/" <%= excludeFiles %>',
                     // open dist
                     'cd "/Users/bensibley/Dropbox/Compete Themes/Distribution/"',
                     // zip the ct_mission_news folder
