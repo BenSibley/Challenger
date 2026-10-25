@@ -8,43 +8,23 @@ require_once(trailingslashit(get_template_directory()) . 'inc/customizer.php');
 require_once(trailingslashit(get_template_directory()) . 'inc/last-updated-meta-box.php');
 require_once(trailingslashit(get_template_directory()) . 'inc/scripts.php');
 require_once(trailingslashit(get_template_directory()) . 'inc/user-profile.php');
-// TGMP
-require_once(trailingslashit(get_template_directory()) . 'tgm/class-tgm-plugin-activation.php');
+// Recommended plugins notice
+require_once(trailingslashit(get_template_directory()) . 'inc/class-ct-recommended-plugins.php');
 
-function ct_challenger_register_required_plugins()
+function ct_challenger_register_recommended_plugins()
 {
-    $plugins = array(
-
-        array(
-            'name'      => 'Independent Analytics',
-            'slug'      => 'independent-analytics',
-            'required'  => false,
-        ),
-    );
-    
-    $config = array(
-        'id'           => 'ct-challenger',
-        'default_path' => '',
-        'menu'         => 'tgmpa-install-plugins',
-        'has_notices'  => true,
-        'dismissable'  => true,
-        'dismiss_msg'  => '',
-        'is_automatic' => false,
-        'message'      => '',
-        'strings'      => array(
-            'page_title'                      => __('Install Recommended Plugins', 'challenger'),
-            'menu_title'                      => __('Recommended Plugins', 'challenger'),
-            'notice_can_install_recommended'     => _n_noop(
-                'The makers of the Challenger theme now recommend installing Independent Analytics, their new plugin for visitor tracking: %1$s.',
-                'The makers of the Challenger theme now recommend installing Independent Analytics, their new plugin for visitor tracking: %1$s.',
-                'challenger'
+    new CT_Recommended_Plugins(array(
+        'id'      => 'ct-challenger',
+        'plugins' => array(
+            array(
+                'name' => 'Independent Analytics',
+                'slug' => 'independent-analytics',
             ),
-        )
-    );
-
-    tgmpa($plugins, $config);
+        ),
+        'message' => __('The makers of the Challenger theme now recommend installing Independent Analytics, their new plugin for visitor tracking.', 'challenger'),
+    ));
 }
-add_action('tgmpa_register', 'ct_challenger_register_required_plugins');
+add_action('admin_init', 'ct_challenger_register_recommended_plugins');
 
 //----------------------------------------------------------------------------------
 //	Set content width variable
