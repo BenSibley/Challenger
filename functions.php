@@ -17,14 +17,19 @@ function ct_challenger_register_recommended_plugins()
         'id'      => 'ct-challenger',
         'plugins' => array(
             array(
-                'name' => 'Independent Analytics',
-                'slug' => 'independent-analytics',
+                'name'        => 'Independent Analytics',
+                'slug'        => 'independent-analytics',
+                'description' => __('Simple, privacy-friendly visitor stats right in your WordPress dashboard. A Google Analytics alternative.', 'challenger'),
+            ),
+            array(
+                'name'        => 'Resolver',
+                'slug'        => 'resolver-ai-chatbot',
+                'description' => __('An AI chatbot that answers your visitors\' questions using your site\'s content.', 'challenger'),
             ),
         ),
-        'message' => __('The makers of the Challenger theme now recommend installing Independent Analytics, their new plugin for visitor tracking.', 'challenger'),
     ));
 }
-add_action('admin_init', 'ct_challenger_register_recommended_plugins');
+add_action('init', 'ct_challenger_register_recommended_plugins');
 
 //----------------------------------------------------------------------------------
 //	Set content width variable
