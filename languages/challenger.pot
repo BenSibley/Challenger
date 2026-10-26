@@ -1,17 +1,17 @@
-# <!=Copyright (C) 2020 Compete Themes
+# <!=Copyright (C) 2026 Compete Themes
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Challenger 1.14\n"
+"Project-Id-Version: Challenger 1.19\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/challenger\n"
-"POT-Creation-Date: 2020-12-23 19:34:44+00:00\n"
+"POT-Creation-Date: 2026-10-26 17:07:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 1.0.3\n"
+"X-Generator: grunt-wp-i18n 1.0.4\n"
 
 #: 404.php:6
 msgid "404: Page Not Found"
@@ -82,127 +82,178 @@ msgid ""
 "Themes."
 msgstr ""
 
-#: functions.php:21
+#: functions.php:22
 msgid ""
-"Hey! Sorry to interrupt, but you've been using Challenger for a little "
-"while now. If you're happy with this theme, could you take a minute to "
-"leave a review? <i>You won't see this notice again after closing it.</i>"
+"Simple, privacy-friendly visitor stats right in your WordPress dashboard. A "
+"Google Analytics alternative."
 msgstr ""
 
-#: functions.php:93
+#: functions.php:27
+msgid ""
+"An AI chatbot that answers your visitors' questions using your site's "
+"content."
+msgstr ""
+
+#: functions.php:104
 msgid "small"
 msgstr ""
 
-#: functions.php:94
+#: functions.php:105
 msgid "S"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:110
 msgid "regular"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:111
 msgid "M"
 msgstr ""
 
-#: functions.php:105
+#: functions.php:116
 msgid "large"
 msgstr ""
 
-#: functions.php:106
+#: functions.php:117
 msgid "L"
 msgstr ""
 
-#: functions.php:111
+#: functions.php:122
 msgid "larger"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:123
 msgid "XL"
 msgstr ""
 
-#: functions.php:120
+#: functions.php:131
 msgid "Primary"
 msgstr ""
 
-#: functions.php:207
+#: functions.php:223
 msgid "Before Post Content"
 msgstr ""
 
-#: functions.php:209
+#: functions.php:225
 msgid "Widgets in this area will be shown on post pages before the content."
 msgstr ""
 
-#: functions.php:218
+#: functions.php:234
 msgid "Before Page Content"
 msgstr ""
 
-#: functions.php:220
+#: functions.php:236
 msgid "Widgets in this area will be shown on pages before the content."
 msgstr ""
 
-#: functions.php:229
+#: functions.php:245
 msgid "After Post Content"
 msgstr ""
 
-#: functions.php:231
+#: functions.php:247
 msgid "Widgets in this area will be shown on post pages after the content."
 msgstr ""
 
-#: functions.php:240
+#: functions.php:256
 msgid "After Page Content"
 msgstr ""
 
-#: functions.php:242
+#: functions.php:258
 msgid "Widgets in this area will be shown on pages after the content."
 msgstr ""
 
-#: functions.php:321
+#: functions.php:342
 msgid "Continue Reading"
 msgstr ""
 
-#: functions.php:364
+#: functions.php:387
 msgid "Comment on this post"
 msgstr ""
 
-#: functions.php:487
+#: functions.php:511
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:494
+#: functions.php:518
 msgid "Reply"
 msgstr ""
 
-#: functions.php:499
+#: functions.php:523
 msgid "Edit"
 msgstr ""
 
-#: functions.php:741 functions.php:746
+#: functions.php:770 functions.php:775
 msgid "Previous"
 msgstr ""
 
-#: functions.php:742 functions.php:747
+#: functions.php:771 functions.php:776
 msgid "Next"
 msgstr ""
 
-#: functions.php:760
+#: functions.php:790
 msgid "Featured"
 msgstr ""
 
-#: functions.php:818
+#: functions.php:849
 msgid "Last updated on"
 msgstr ""
 
-#: functions.php:914
+#: functions.php:946
 msgid "Customizer settings deleted"
 msgstr ""
 
-#: header.php:11
+#: header.php:17
 msgid "Press \"Enter\" to skip to content"
 msgstr ""
 
-#: header.php:33 inc/scripts.php:22
+#: header.php:39 inc/scripts.php:22
 msgid "open menu"
+msgstr ""
+
+#: inc/class-ct-recommended-plugins.php:61
+#: inc/class-ct-recommended-plugins.php:62
+#: inc/class-ct-recommended-plugins.php:73
+msgid "Recommended Plugins"
+msgstr ""
+
+#: inc/class-ct-recommended-plugins.php:77
+#. translators: %s: theme name
+msgid "Free plugins from the makers of the %s theme."
+msgstr ""
+
+#: inc/class-ct-recommended-plugins.php:83
+msgid "Plugin"
+msgstr ""
+
+#: inc/class-ct-recommended-plugins.php:84
+msgid "Description"
+msgstr ""
+
+#: inc/class-ct-recommended-plugins.php:119
+msgid "See all recommended plugins"
+msgstr ""
+
+#: inc/class-ct-recommended-plugins.php:126
+#. translators: %s: theme name
+msgid "The makers of the %s theme recommend these free plugins:"
+msgstr ""
+
+#: inc/class-ct-recommended-plugins.php:177
+msgid "Active"
+msgstr ""
+
+#: inc/class-ct-recommended-plugins.php:179
+msgid "Coming soon"
+msgstr ""
+
+#: inc/class-ct-recommended-plugins.php:187
+#. translators: %s: plugin name
+msgid "Activate %s"
+msgstr ""
+
+#: inc/class-ct-recommended-plugins.php:195
+#. translators: %s: plugin name
+msgid "Install %s"
 msgstr ""
 
 #: inc/customizer.php:73
@@ -531,6 +582,10 @@ msgstr ""
 msgid "ArtStation"
 msgstr ""
 
+#: inc/customizer.php:846
+msgid "X (Twitter)"
+msgstr ""
+
 #: inc/last-updated-meta-box.php:12
 msgid "Last Updated Date"
 msgstr ""
@@ -545,10 +600,6 @@ msgstr ""
 
 #: inc/last-updated-meta-box.php:36
 msgid "Don't show the date"
-msgstr ""
-
-#: inc/review.php:113
-msgid "Click here to leave your review"
 msgstr ""
 
 #: inc/scripts.php:23
@@ -567,16 +618,16 @@ msgstr ""
 msgid "Social Profiles"
 msgstr ""
 
-#: search.php:6
+#: search.php:8
 #. translators: placeholder is the user's search query
 msgid "Search Results for %s"
 msgstr ""
 
-#: search.php:22
+#: search.php:26
 msgid "Can't find what you're looking for?  Try refining your search:"
 msgstr ""
 
-#: theme-options.php:5 theme-options.php:6 theme-options.php:18
+#: theme-options.php:6 theme-options.php:7 theme-options.php:19
 msgid "%s Dashboard"
 msgstr ""
 
