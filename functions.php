@@ -555,6 +555,8 @@ if (! function_exists('ct_challenger_social_array')) {
             'linkedin'       => 'ct_challenger_linkedin_profile',
             'pinterest'      => 'ct_challenger_pinterest_profile',
             'youtube'        => 'ct_challenger_youtube_profile',
+            'tiktok'         => 'ct_challenger_tiktok_profile',
+            'threads'        => 'ct_challenger_threads_profile',
             'rss'            => 'ct_challenger_rss_profile',
             'email'          => 'ct_challenger_email_profile',
             'phone'          => 'ct_challenger_phone_profile',
